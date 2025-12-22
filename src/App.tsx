@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { Search, Grid, List, Moon, Sun } from 'lucide-react';
+import { Search, Moon, Sun } from 'lucide-react';
 import { digimonData, evolutions } from './data/digimon-data';
 import { EvolutionTreeGraph } from './components/EvolutionTreeGraph';
 import { DigimonDetails } from './components/DigimonDetails';
 import { VerticalEvolutionView } from './components/VerticalEvolutionView';
+import { useIsMobile } from './components/ui/use-mobile';
 
 const LIGHT_MODE_COLOR = '#F8AE5C'; // Orange
 const DARK_MODE_COLOR = '#A398D3'; // Light purple
@@ -14,10 +15,10 @@ export default function App() {
   const [showDetails, setShowDetails] = useState(false);
   const [suggestions, setSuggestions] = useState<typeof digimonData>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
-  const [viewMode, setViewMode] = useState<'tree' | 'vertical'>('tree');
   const [darkMode, setDarkMode] = useState(false);
   const [themeColor, setThemeColor] = useState(LIGHT_MODE_COLOR);
   const [userChangedColor, setUserChangedColor] = useState(false);
+  const isMobile = useIsMobile();
 
   const handleDarkModeToggle = () => {
     const newDarkMode = !darkMode;
@@ -65,15 +66,16 @@ export default function App() {
 
   const currentDigimon = digimonData.find(d => d.id === selectedDigimon);
 
-  // If vertical view mode, render full-screen vertical view
-  if (viewMode === 'vertical') {
+  // If mobile, render full-screen vertical view
+  if (isMobile) {
     return (
       <>
         <VerticalEvolutionView
           digimonData={digimonData}
           evolutions={evolutions}
           onDigimonClick={handleDigimonClick}
-          onBackToTree={() => setViewMode('tree')}
+          onBackToTree={() => {}} // No back button on mobile
+          showBackButton={false}
           darkMode={darkMode}
           setDarkMode={setDarkMode}
           headerColor={themeColor}
@@ -196,37 +198,6 @@ export default function App() {
       {/* Main Content */}
       <main className="max-w-[95%] mx-auto p-4 md:p-6">
         <div className={`rounded-xl shadow-lg p-4 md:p-6 ${darkMode ? 'bg-[#3e3d32]' : 'bg-white'}`}>
-          <div className="flex items-center gap-2 mb-4">
-            <button
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
-                viewMode === 'tree' 
-                  ? 'text-white' 
-                  : darkMode 
-                    ? 'bg-[#49483e] text-[#f8f8f2] hover:bg-[#75715e]' 
-                    : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
-              }`}
-              style={viewMode === 'tree' ? { backgroundColor: themeColor } : undefined}
-              onClick={() => setViewMode('tree')}
-            >
-              <Grid size={16} />
-              <span>Tree View</span>
-            </button>
-            <button
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
-                viewMode === 'vertical' 
-                  ? 'text-white' 
-                  : darkMode 
-                    ? 'bg-[#49483e] text-[#f8f8f2] hover:bg-[#75715e]' 
-                    : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
-              }`}
-              style={viewMode === 'vertical' ? { backgroundColor: themeColor } : undefined}
-              onClick={() => setViewMode('vertical')}
-            >
-              <List size={16} />
-              <span>Vertical View</span>
-            </button>
-          </div>
-
           <EvolutionTreeGraph
             rootDigimonId={selectedDigimon}
             digimonData={digimonData}

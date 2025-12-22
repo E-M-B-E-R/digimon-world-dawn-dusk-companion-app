@@ -13,6 +13,7 @@ interface VerticalEvolutionViewProps {
   setHeaderColor: (value: string) => void;
   lineColor: string;
   setLineColor: (value: string) => void;
+  showBackButton?: boolean;
 }
 
 const stageOrder: DigimonStage[] = ['In-Training', 'Rookie', 'Champion', 'Ultimate', 'Mega'];
@@ -34,7 +35,8 @@ export function VerticalEvolutionView({
   headerColor,
   setHeaderColor,
   lineColor,
-  setLineColor
+  setLineColor,
+  showBackButton = true
 }: VerticalEvolutionViewProps) {
   const [positions, setPositions] = useState<DigimonPosition[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
@@ -402,14 +404,16 @@ export function VerticalEvolutionView({
       </div>
 
       {/* Bottom Button - Removed Toggle Legend */}
-      <div className="fixed bottom-4 left-0 right-0 flex justify-center gap-4 px-4 z-30">
-        <button
-          onClick={onBackToTree}
-          className="bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-red-700 transition-colors"
-        >
-          Back to Tree
-        </button>
-      </div>
+      {showBackButton && (
+        <div className="fixed bottom-4 left-0 right-0 flex justify-center gap-4 px-4 z-30">
+          <button
+            onClick={onBackToTree}
+            className="bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-red-700 transition-colors"
+          >
+            Back to Tree
+          </button>
+        </div>
+      )}
 
       {/* Click overlay to close suggestions */}
       {showSuggestions && (
