@@ -7,6 +7,9 @@ interface EvolutionTreeGraphProps {
   digimonData: Digimon[];
   evolutions: Evolution[];
   onDigimonClick: (id: string) => void;
+  darkMode?: boolean;
+  lineColor?: string;
+  digimonName?: string;
 }
 
 interface PositionedNode {
@@ -36,13 +39,16 @@ const STAGE_COLORS: Record<DigimonStage, string> = {
   'Mega': 'border-purple-400'
 };
 
-const LINE_COLOR = '#C084FC'; // Light purple color for all lines
+const DEFAULT_LINE_COLOR = '#C084FC'; // Light purple color for all lines
 
 export function EvolutionTreeGraph({ 
   rootDigimonId, 
   digimonData, 
   evolutions,
-  onDigimonClick 
+  onDigimonClick,
+  darkMode,
+  lineColor,
+  digimonName
 }: EvolutionTreeGraphProps) {
   const [nodes, setNodes] = useState<PositionedNode[]>([]);
   const [connections, setConnections] = useState<Array<{
@@ -153,7 +159,7 @@ export function EvolutionTreeGraph({
           from: evo.from,
           to: evo.to,
           requirements: evo.requirements,
-          color: LINE_COLOR,
+          color: lineColor || DEFAULT_LINE_COLOR,
           fromOffset,
           toOffset
         });
@@ -162,7 +168,7 @@ export function EvolutionTreeGraph({
     });
     
     setConnections(conns);
-  }, [rootDigimonId, digimonData, evolutions]);
+  }, [rootDigimonId, digimonData, evolutions, lineColor]);
 
   const getNodePosition = (id: string) => {
     return nodes.find(n => n.id === id);
@@ -172,9 +178,93 @@ export function EvolutionTreeGraph({
   const maxX = Math.max(...nodes.map(n => n.x), 0) + 200;
   const maxY = Math.max(...nodes.map(n => n.y), 0) + 250;
 
+  // Find the first node (top-left, column 0, row 0)
+  const firstNode = nodes.find(n => n.column === 0 && n.row === 0);
+
+  // Helper function to calculate dynamic box dimensions and check for overlap
+  const calculateBoxDimensions = (text: string, midX: number, reqY: number) => {
+    const charWidth = 6.5; // Approximate width per character at font size 10
+    const padding = 20; // Horizontal padding (10px each side)
+    const lineHeight = 14; // Height per line of text
+    const verticalPadding = 12; // Vertical padding
+    const minWidth = 100;
+    const maxWidth = 200;
+    
+    // Estimate text width more accurately
+    const estimatedWidth = Math.min(maxWidth, Math.max(minWidth, text.length * charWidth + padding));
+    
+    // Check if box would overlap with any Digimon card
+    const cardWidth = 160;
+    const cardHeight = 200;
+    let overlaps = false;
+    
+    // Calculate base box height for single line
+    const baseHeight = lineHeight + verticalPadding;
+    
+    for (const node of nodes) {
+      const boxLeft = midX - (estimatedWidth / 2);
+      const boxRight = midX + (estimatedWidth / 2);
+      const boxTop = reqY - (baseHeight / 2);
+      const boxBottom = reqY + (baseHeight / 2);
+      
+      const cardLeft = node.x;
+      const cardRight = node.x + cardWidth;
+      const cardTop = node.y;
+      const cardBottom = node.y + cardHeight;
+      
+      // Check for overlap
+      if (boxLeft < cardRight && boxRight > cardLeft &&
+          boxTop < cardBottom && boxBottom > cardTop) {
+        overlaps = true;
+        break;
+      }
+    }
+    
+    // If overlaps and text contains comma, split into two lines
+    if (overlaps && text.includes(',')) {
+      const parts = text.split(',').map(p => p.trim());
+      // Calculate width needed for the longest line
+      const maxLineLength = Math.max(...parts.slice(0, 2).map(p => p.length));
+      const multilineWidth = Math.min(maxWidth, Math.max(minWidth, maxLineLength * charWidth + padding));
+      
+      return {
+        width: multilineWidth,
+        height: lineHeight * 2 + verticalPadding, // Two lines
+        lines: parts.slice(0, 2), // Max 2 lines
+        multiline: true
+      };
+    }
+    
+    return {
+      width: estimatedWidth,
+      height: baseHeight,
+      lines: [text],
+      multiline: false
+    };
+  };
+
   return (
-    <div className="relative w-full overflow-auto bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-8" 
-         style={{ minHeight: '600px' }}>
+    <div 
+      className={`relative w-full overflow-auto rounded-lg p-8 ${
+        darkMode 
+          ? 'bg-[#3e3d32]' 
+          : 'bg-gradient-to-br from-gray-50 to-gray-100'
+      }`}
+      style={{ minHeight: '600px' }}
+    >
+      {/* Digimon Name - positioned above first node */}
+      {digimonName && firstNode && (
+        <h2 
+          className={`absolute text-2xl ${darkMode ? 'text-[#f8f8f2]' : 'text-gray-800'}`}
+          style={{
+            left: firstNode.x,
+            top: firstNode.y - 40
+          }}
+        >
+          {digimonName}
+        </h2>
+      )}
+      
       <div className="relative" style={{ width: maxX, height: maxY }}>
         {/* SVG for connections */}
         <svg 
@@ -192,14 +282,26 @@ export function EvolutionTreeGraph({
             const toX = toNode.x;
             const toY = toNode.y + 100 + conn.toOffset;
             
-            const midX = (fromX + toX) / 2;
+            // Calculate midX with offset based on the connection's vertical position
+            // This prevents overlapping by giving each line a unique horizontal path
+            const baseMidX = (fromX + toX) / 2;
+            const verticalSpan = Math.abs(toY - fromY);
+            const midXOffset = conn.fromOffset * 0.3; // Offset horizontal position based on connection point
+            const midX = baseMidX + midXOffset;
             
             // Create angular path with right angles (horizontal then vertical then horizontal)
             const path = `M ${fromX} ${fromY} L ${midX} ${fromY} L ${midX} ${toY} L ${toX} ${toY}`;
             
             // Calculate position for requirement box (at the vertical segment)
-            const reqX = midX - 60;
-            const reqY = (fromY + toY) / 2 - 15;
+            const baseReqY = (fromY + toY) / 2;
+            
+            // Calculate dynamic box dimensions and check for overlap
+            const boxDimensions = calculateBoxDimensions(conn.requirements || '', midX, baseReqY);
+            
+            // Position box centered on the line
+            const reqX = midX - (boxDimensions.width / 2);
+            const reqY = baseReqY - (boxDimensions.height / 2);
+            const lineHeight = 14; // Height per line of text
             
             return (
               <g key={`${conn.from}-${conn.to}-${index}`}>
@@ -217,23 +319,43 @@ export function EvolutionTreeGraph({
                     <rect
                       x={reqX}
                       y={reqY}
-                      width="120"
-                      height="30"
-                      fill="white"
+                      width={boxDimensions.width}
+                      height={boxDimensions.height}
+                      fill={darkMode ? '#49483e' : 'white'}
                       stroke={conn.color}
                       strokeWidth="2"
                       rx="4"
                     />
-                    <text
-                      x={midX}
-                      y={reqY + 19}
-                      textAnchor="middle"
-                      fontSize="11"
-                      fill="#374151"
-                      fontFamily="system-ui"
-                    >
-                      {conn.requirements}
-                    </text>
+                    {boxDimensions.multiline ? (
+                      boxDimensions.lines.map((line, lineIndex) => {
+                        const totalLines = boxDimensions.lines.length;
+                        const startY = reqY + (boxDimensions.height / 2) - ((totalLines - 1) * lineHeight / 2);
+                        return (
+                          <text
+                            key={lineIndex}
+                            x={midX}
+                            y={startY + (lineIndex * lineHeight) + 4}
+                            textAnchor="middle"
+                            fontSize="10"
+                            fill={darkMode ? '#f8f8f2' : '#374151'}
+                            fontFamily="system-ui"
+                          >
+                            {line}
+                          </text>
+                        );
+                      })
+                    ) : (
+                      <text
+                        x={midX}
+                        y={reqY + (boxDimensions.height / 2) + 4}
+                        textAnchor="middle"
+                        fontSize="10"
+                        fill={darkMode ? '#f8f8f2' : '#374151'}
+                        fontFamily="system-ui"
+                      >
+                        {conn.requirements}
+                      </text>
+                    )}
                   </>
                 )}
               </g>
@@ -245,17 +367,22 @@ export function EvolutionTreeGraph({
         {nodes.map(node => (
           <div
             key={node.id}
-            className={`absolute cursor-pointer transition-all hover:scale-105 hover:shadow-2xl hover:z-10 bg-white rounded-xl shadow-lg border-4 ${STAGE_COLORS[node.digimon.stage]}`}
+            className={`absolute cursor-pointer transition-all hover:scale-105 hover:shadow-2xl hover:z-10 rounded-xl shadow-lg border-4 ${
+              darkMode ? 'bg-[#49483e]' : 'bg-white'
+            }`}
             style={{
               left: node.x,
               top: node.y,
               width: '160px',
-              height: '200px'
+              height: '200px',
+              borderColor: lineColor || DEFAULT_LINE_COLOR
             }}
             onClick={() => onDigimonClick(node.id)}
           >
             <div className="p-3 h-full flex flex-col">
-              <div className="w-full h-32 mb-2 rounded-lg overflow-hidden bg-gray-100">
+              <div className={`w-full h-32 mb-2 rounded-lg overflow-hidden ${
+                darkMode ? 'bg-[#75715e]' : 'bg-gray-100'
+              }`}>
                 <img 
                   src={node.digimon.image}
                   alt={node.digimon.name}
@@ -263,10 +390,14 @@ export function EvolutionTreeGraph({
                 />
               </div>
               <div className="text-center flex-1 flex flex-col justify-end">
-                <div className="text-sm text-gray-900 truncate px-1">
+                <div className={`text-sm truncate px-1 ${
+                  darkMode ? 'text-[#f8f8f2]' : 'text-gray-900'
+                }`}>
                   {node.digimon.name}
                 </div>
-                <div className="text-xs text-gray-600 mt-1">
+                <div className={`text-xs mt-1 ${
+                  darkMode ? 'text-[#75715e]' : 'text-gray-600'
+                }`}>
                   {node.digimon.stage}
                 </div>
               </div>

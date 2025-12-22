@@ -1,12 +1,18 @@
 import { Digimon } from '../types/digimon';
 import { X } from 'lucide-react';
+import { evolutions, digimonData } from '../data/digimon-data';
 
 interface DigimonDetailsProps {
   digimon: Digimon;
   onClose: () => void;
+  darkMode?: boolean;
 }
 
-export function DigimonDetails({ digimon, onClose }: DigimonDetailsProps) {
+export function DigimonDetails({ digimon, onClose, darkMode }: DigimonDetailsProps) {
+  // Get evolutions from and to this Digimon
+  const evolvesFrom = evolutions.filter(evo => evo.to === digimon.id);
+  const evolvesTo = evolutions.filter(evo => evo.from === digimon.id);
+  
   const stageColors = {
     'Fresh': 'from-gray-400 to-gray-600',
     'In-Training': 'from-green-400 to-green-600',
@@ -17,7 +23,9 @@ export function DigimonDetails({ digimon, onClose }: DigimonDetailsProps) {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-2xl overflow-hidden max-w-md w-full mx-4">
+    <div className={`rounded-xl shadow-2xl overflow-hidden max-w-md w-full mx-4 ${
+      darkMode ? 'bg-[#3e3d32]' : 'bg-white'
+    }`}>
       {/* Header */}
       <div className={`bg-gradient-to-r ${stageColors[digimon.stage]} p-6 text-white relative`}>
         <button
@@ -52,29 +60,73 @@ export function DigimonDetails({ digimon, onClose }: DigimonDetailsProps) {
       </div>
 
       {/* Content */}
-      <div className="p-6">
-        <div className="mb-6">
-          <h3 className="text-sm text-gray-500 mb-2">Description</h3>
-          <p className="text-gray-800">{digimon.description}</p>
-        </div>
-
-        {digimon.stats && (
+      <div className="p-6 space-y-6">
+        {/* Evolves From Section */}
+        {evolvesFrom.length > 0 && (
           <div>
-            <h3 className="text-sm text-gray-500 mb-3">Stats</h3>
-            <div className="space-y-2">
-              {Object.entries(digimon.stats).map(([stat, value]) => (
-                <div key={stat} className="flex items-center gap-2">
-                  <div className="w-20 text-sm text-gray-600 capitalize">{stat}</div>
-                  <div className="flex-1 h-6 bg-gray-200 rounded-full overflow-hidden">
-                    <div 
-                      className={`h-full bg-gradient-to-r ${stageColors[digimon.stage]} transition-all`}
-                      style={{ width: `${Math.min(100, (value / 300) * 100)}%` }}
+            <h3 className={`mb-3 ${darkMode ? 'text-[#f8f8f2]' : 'text-gray-900'}`}>Evolves From</h3>
+            <div className="space-y-3">
+              {evolvesFrom.map(evo => {
+                const fromDigimon = digimonData.find(d => d.id === evo.from);
+                if (!fromDigimon) return null;
+                
+                return (
+                  <div key={evo.from} className={`flex items-center gap-3 p-3 rounded-lg ${
+                    darkMode ? 'bg-[#49483e]' : 'bg-gray-50'
+                  }`}>
+                    <img 
+                      src={fromDigimon.image} 
+                      alt={fromDigimon.name}
+                      className="w-12 h-12 rounded object-cover"
                     />
+                    <div className="flex-1">
+                      <div className={darkMode ? 'text-[#f8f8f2]' : 'text-gray-900'}>{fromDigimon.name}</div>
+                      <div className={`text-sm ${darkMode ? 'text-[#a6a49f]' : 'text-gray-600'}`}>
+                        {evo.requirements || 'No requirements'}
+                      </div>
+                    </div>
                   </div>
-                  <div className="w-12 text-sm text-right">{value}</div>
-                </div>
-              ))}
+                );
+              })}
             </div>
+          </div>
+        )}
+
+        {/* Evolves To Section */}
+        {evolvesTo.length > 0 && (
+          <div>
+            <h3 className={`mb-3 ${darkMode ? 'text-[#f8f8f2]' : 'text-gray-900'}`}>Evolves To</h3>
+            <div className="space-y-3">
+              {evolvesTo.map(evo => {
+                const toDigimon = digimonData.find(d => d.id === evo.to);
+                if (!toDigimon) return null;
+                
+                return (
+                  <div key={evo.to} className={`flex items-center gap-3 p-3 rounded-lg ${
+                    darkMode ? 'bg-[#49483e]' : 'bg-gray-50'
+                  }`}>
+                    <img 
+                      src={toDigimon.image} 
+                      alt={toDigimon.name}
+                      className="w-12 h-12 rounded object-cover"
+                    />
+                    <div className="flex-1">
+                      <div className={darkMode ? 'text-[#f8f8f2]' : 'text-gray-900'}>{toDigimon.name}</div>
+                      <div className={`text-sm ${darkMode ? 'text-[#a6a49f]' : 'text-gray-600'}`}>
+                        {evo.requirements || 'No requirements'}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* No evolutions message */}
+        {evolvesFrom.length === 0 && evolvesTo.length === 0 && (
+          <div className={`text-center py-4 ${darkMode ? 'text-[#a6a49f]' : 'text-gray-500'}`}>
+            No evolution data available
           </div>
         )}
       </div>
