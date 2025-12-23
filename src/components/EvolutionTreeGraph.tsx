@@ -89,7 +89,8 @@ export function EvolutionTreeGraph({
     const cardWidth = 160;
     const cardHeight = 200;
     const horizontalGap = 200;
-    const verticalGap = 40;
+    // Increased vertical space between cards to reduce overlaps
+    const verticalGap = 200;
     
     const stages = Array.from(nodesByStage.keys()).sort((a, b) => a - b);
     
@@ -245,96 +246,105 @@ export function EvolutionTreeGraph({
           className="absolute inset-0 pointer-events-none"
           style={{ width: maxX, height: maxY }}
         >
-          {connections.map((conn, index) => {
-            const fromNode = getNodePosition(conn.from);
-            const toNode = getNodePosition(conn.to);
-            
-            if (!fromNode || !toNode) return null;
-            
-            const fromX = fromNode.x + 160; // Card width
-            const fromY = fromNode.y + 100 + conn.fromOffset; // Half card height
-            const toX = toNode.x;
-            const toY = toNode.y + 100 + conn.toOffset;
-            
-            // Calculate midX with offset based on the connection's vertical position
-            // This prevents overlapping by giving each line a unique horizontal path
-            const baseMidX = (fromX + toX) / 2;
-            const verticalSpan = Math.abs(toY - fromY);
-            const midXOffset = conn.fromOffset * 0.3; // Offset horizontal position based on connection point
-            const midX = baseMidX + midXOffset;
-            
-            // Create angular path with right angles (horizontal then vertical then horizontal)
-            const path = `M ${fromX} ${fromY} L ${midX} ${fromY} L ${midX} ${toY} L ${toX} ${toY}`;
-            
-            // Calculate position for requirement box (at the vertical segment)
-            const baseReqY = (fromY + toY) / 2;
-            
-            // Calculate dynamic box dimensions and check for overlap
-            const boxDimensions = calculateBoxDimensions(conn.requirements || '', midX, baseReqY);
-            
-            // Position box centered on the line
-            const reqX = midX - (boxDimensions.width / 2);
-            const reqY = baseReqY - (boxDimensions.height / 2);
-            const lineHeight = 14; // Height per line of text
-            
-            return (
-              <g key={`${conn.from}-${conn.to}-${index}`}>
+          {
+            // First pass: render all paths so they sit underneath requirement boxes
+            connections.map((conn, index) => {
+              const fromNode = getNodePosition(conn.from);
+              const toNode = getNodePosition(conn.to);
+              if (!fromNode || !toNode) return null;
+
+              const fromX = fromNode.x + 160; // Card width
+              const fromY = fromNode.y + 100 + conn.fromOffset; // Half card height
+              const toX = toNode.x;
+              const toY = toNode.y + 100 + conn.toOffset;
+
+              const baseMidX = (fromX + toX) / 2;
+              const midXOffset = conn.fromOffset * 0.3;
+              const midX = baseMidX + midXOffset;
+
+              const path = `M ${fromX} ${fromY} L ${midX} ${fromY} L ${midX} ${toY} L ${toX} ${toY}`;
+
+              return (
                 <path
+                  key={`path-${conn.from}-${conn.to}-${index}`}
                   d={path}
                   stroke={conn.color}
                   strokeWidth="3"
                   fill="none"
                   strokeLinecap="square"
                 />
-                
-                {/* Requirement box */}
-                {conn.requirements && (
-                  <>
-                    <rect
-                      x={reqX}
-                      y={reqY}
-                      width={boxDimensions.width}
-                      height={boxDimensions.height}
-                      fill={darkMode ? '#49483e' : 'white'}
-                      stroke={conn.color}
-                      strokeWidth="2"
-                      rx="4"
-                    />
-                    {boxDimensions.multiline ? (
-                      boxDimensions.lines.map((line, lineIndex) => {
-                        const totalLines = boxDimensions.lines.length;
-                        const startY = reqY + (boxDimensions.height / 2) - ((totalLines - 1) * lineHeight / 2);
-                        return (
-                          <text
-                            key={lineIndex}
-                            x={midX}
-                            y={startY + (lineIndex * lineHeight) + 4}
-                            textAnchor="middle"
-                            fontSize="10"
-                            fill={darkMode ? '#f8f8f2' : '#374151'}
-                            fontFamily="system-ui"
-                          >
-                            {line}
-                          </text>
-                        );
-                      })
-                    ) : (
-                      <text
-                        x={midX}
-                        y={reqY + (boxDimensions.height / 2) + 4}
-                        textAnchor="middle"
-                        fontSize="10"
-                        fill={darkMode ? '#f8f8f2' : '#374151'}
-                        fontFamily="system-ui"
-                      >
-                        {conn.requirements}
-                      </text>
-                    )}
-                  </>
-                )}
-              </g>
-            );
-          })}
+              );
+            })
+          }
+
+          {
+            // Second pass: render requirement boxes and text on top of paths
+            connections.map((conn, index) => {
+              const fromNode = getNodePosition(conn.from);
+              const toNode = getNodePosition(conn.to);
+              if (!fromNode || !toNode || !conn.requirements) return null;
+
+              const fromX = fromNode.x + 160;
+              const fromY = fromNode.y + 100 + conn.fromOffset;
+              const toX = toNode.x;
+              const toY = toNode.y + 100 + conn.toOffset;
+
+              const baseMidX = (fromX + toX) / 2;
+              const midXOffset = conn.fromOffset * 0.3;
+              const midX = baseMidX + midXOffset;
+
+              const baseReqY = (fromY + toY) / 2;
+              const boxDimensions = calculateBoxDimensions(conn.requirements || '', midX, baseReqY);
+              const reqX = midX - (boxDimensions.width / 2);
+              const reqY = baseReqY - (boxDimensions.height / 2);
+              const lineHeight = 14;
+
+              return (
+                <g key={`box-${conn.from}-${conn.to}-${index}`}>
+                  <rect
+                    x={reqX}
+                    y={reqY}
+                    width={boxDimensions.width}
+                    height={boxDimensions.height}
+                    fill={darkMode ? '#49483e' : 'white'}
+                    stroke={conn.color}
+                    strokeWidth="2"
+                    rx="4"
+                  />
+                  {boxDimensions.multiline ? (
+                    boxDimensions.lines.map((line, lineIndex) => {
+                      const totalLines = boxDimensions.lines.length;
+                      const startY = reqY + (boxDimensions.height / 2) - ((totalLines - 1) * lineHeight / 2);
+                      return (
+                        <text
+                          key={lineIndex}
+                          x={midX}
+                          y={startY + (lineIndex * lineHeight) + 4}
+                          textAnchor="middle"
+                          fontSize="10"
+                          fill={darkMode ? '#f8f8f2' : '#374151'}
+                          fontFamily="system-ui"
+                        >
+                          {line}
+                        </text>
+                      );
+                    })
+                  ) : (
+                    <text
+                      x={midX}
+                      y={reqY + (boxDimensions.height / 2) + 4}
+                      textAnchor="middle"
+                      fontSize="10"
+                      fill={darkMode ? '#f8f8f2' : '#374151'}
+                      fontFamily="system-ui"
+                    >
+                      {conn.requirements}
+                    </text>
+                  )}
+                </g>
+              );
+            })
+          }
         </svg>
         
         {/* Digimon cards */}
