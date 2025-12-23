@@ -178,15 +178,20 @@ export function VerticalEvolutionView({
       }
     };
 
+    // Helper function to clear trailing timeout
+    const clearTrailingTimeout = () => {
+      if (trailingTimeoutRef.current !== null) {
+        clearTimeout(trailingTimeoutRef.current);
+        trailingTimeoutRef.current = null;
+      }
+    };
+
     // Throttle function with trailing call to capture final scroll position
     const throttledUpdatePositions = () => {
       const now = Date.now();
       
       // Clear any pending trailing call
-      if (trailingTimeoutRef.current !== null) {
-        clearTimeout(trailingTimeoutRef.current);
-        trailingTimeoutRef.current = null;
-      }
+      clearTrailingTimeout();
       
       // If enough time has passed, update immediately
       if (now - lastCallRef.current >= SCROLL_THROTTLE_DELAY) {
@@ -205,21 +210,21 @@ export function VerticalEvolutionView({
     // Initial update
     const timer = setTimeout(updatePositions, 100);
     
+    // Capture container ref for cleanup
+    const container = containerRef.current;
+    
     // Listen to resize and scroll with throttling
     window.addEventListener('resize', updatePositions);
-    if (containerRef.current) {
-      containerRef.current.addEventListener('scroll', throttledUpdatePositions);
+    if (container) {
+      container.addEventListener('scroll', throttledUpdatePositions);
     }
     
     return () => {
       clearTimeout(timer);
-      if (trailingTimeoutRef.current !== null) {
-        clearTimeout(trailingTimeoutRef.current);
-        trailingTimeoutRef.current = null;
-      }
+      clearTrailingTimeout();
       window.removeEventListener('resize', updatePositions);
-      if (containerRef.current) {
-        containerRef.current.removeEventListener('scroll', throttledUpdatePositions);
+      if (container) {
+        container.removeEventListener('scroll', throttledUpdatePositions);
       }
     };
   }, [rootDigimonId, treeDigimon]);
