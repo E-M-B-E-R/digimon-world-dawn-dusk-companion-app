@@ -47,7 +47,7 @@ export function VerticalEvolutionView({
   const [showSuggestions, setShowSuggestions] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const lastCallRef = useRef<number>(0);
-  const trailingTimeoutRef = useRef<number | null>(null);
+  const trailingTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Get the first In-Training Digimon as default root
   const inTrainingDigimon = useMemo(() => 
@@ -194,7 +194,7 @@ export function VerticalEvolutionView({
         updatePositions();
       } else {
         // Only schedule trailing call if we skipped the immediate execution
-        trailingTimeoutRef.current = window.setTimeout(() => {
+        trailingTimeoutRef.current = setTimeout(() => {
           lastCallRef.current = Date.now();
           updatePositions();
           trailingTimeoutRef.current = null;
