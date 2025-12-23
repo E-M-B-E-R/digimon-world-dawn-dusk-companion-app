@@ -80,8 +80,6 @@ export default function App() {
           digimonData={digimonData}
           evolutions={evolutions}
           onDigimonClick={handleDigimonClick}
-          onBackToTree={() => {}} // No back button on mobile
-          showBackButton={false}
           darkMode={darkMode}
           setDarkMode={setDarkMode}
           headerColor={themeColor}
