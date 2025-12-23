@@ -212,6 +212,7 @@ export default function App() {
             darkMode={darkMode}
             lineColor={themeColor}
             digimonName={currentRootDigimon?.name}
+            isMobile={isMobile}
           />
         </div>
       </main>

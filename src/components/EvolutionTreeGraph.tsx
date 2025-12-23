@@ -10,6 +10,7 @@ interface EvolutionTreeGraphProps {
   darkMode?: boolean;
   lineColor?: string;
   digimonName?: string;
+  isMobile?: boolean;
 }
 
 interface PositionedNode {
@@ -49,6 +50,7 @@ export function EvolutionTreeGraph({
   darkMode,
   lineColor,
   digimonName
+  , isMobile
 }: EvolutionTreeGraphProps) {
   const [nodes, setNodes] = useState<PositionedNode[]>([]);
   const [connections, setConnections] = useState<Array<{
@@ -59,6 +61,30 @@ export function EvolutionTreeGraph({
     fromOffset: number;
     toOffset: number;
   }>>([]);
+  const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
+  const [collapsedChildrenCounts, setCollapsedChildrenCounts] = useState<Record<string, number>>({});
+
+  const toggleCollapse = (id: string) => {
+    setCollapsed(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  };
+
+  const expandChildrenOf = (parentId: string) => {
+    setCollapsed(prev => {
+      const next = new Set(prev);
+      // remove any collapsed child whose parent is parentId
+      evolutions.forEach(evo => {
+        if (evo.from === parentId && next.has(evo.to)) {
+          next.delete(evo.to);
+        }
+      });
+      return next;
+    });
+  };
 
   useEffect(() => {
     // Build the tree structure
@@ -83,6 +109,18 @@ export function EvolutionTreeGraph({
     };
     
     findConnected(rootDigimonId);
+
+    // Compute set of hidden nodes (descendants of collapsed nodes, not the nodes themselves)
+    const hiddenNodes = new Set<string>();
+    const computeDescendants = (id: string) => {
+      // Mark descendants as hidden (but not the node itself)
+      getEvolutionsFrom(id).forEach(evo => {
+        if (hiddenNodes.has(evo.to)) return;
+        hiddenNodes.add(evo.to);
+        computeDescendants(evo.to);
+      });
+    };
+    collapsed.forEach(id => computeDescendants(id));
     
     // Position nodes
     const positionedNodes: PositionedNode[] = [];
@@ -95,7 +133,7 @@ export function EvolutionTreeGraph({
     const stages = Array.from(nodesByStage.keys()).sort((a, b) => a - b);
     
     stages.forEach((stageLevel, columnIndex) => {
-      const digimonIds = Array.from(nodesByStage.get(stageLevel) || []);
+      const digimonIds = Array.from(nodesByStage.get(stageLevel) || []).filter(id => !hiddenNodes.has(id));
       
       digimonIds.forEach((id, rowIndex) => {
         const digimon = getDigimonById(id);
@@ -126,6 +164,8 @@ export function EvolutionTreeGraph({
     const toConnectionCounts = new Map<string, number>();
     
     evolutions.forEach(evo => {
+      // Skip connections involving hidden nodes
+      if (hiddenNodes.has(evo.from) || hiddenNodes.has(evo.to)) return;
       const fromNode = positionedNodes.find(n => n.id === evo.from);
       const toNode = positionedNodes.find(n => n.id === evo.to);
       if (fromNode && toNode) {
@@ -133,29 +173,40 @@ export function EvolutionTreeGraph({
         toConnectionCounts.set(evo.to, (toConnectionCounts.get(evo.to) || 0) + 1);
       }
     });
+
+    // Count collapsed children per parent to render an expand affordance
+    const collapsedCounts: Record<string, number> = {};
+    evolutions.forEach(evo => {
+      if (collapsed.has(evo.to) && !collapsed.has(evo.from)) {
+        collapsedCounts[evo.from] = (collapsedCounts[evo.from] || 0) + 1;
+      }
+    });
+    setCollapsedChildrenCounts(collapsedCounts);
     
     const fromConnectionIndex = new Map<string, number>();
     const toConnectionIndex = new Map<string, number>();
     
     evolutions.forEach(evo => {
+      // skip connections involving hidden nodes
+      if (hiddenNodes.has(evo.from) || hiddenNodes.has(evo.to)) return;
       const fromNode = positionedNodes.find(n => n.id === evo.from);
       const toNode = positionedNodes.find(n => n.id === evo.to);
-      
+
       if (fromNode && toNode) {
         const fromCount = fromConnectionCounts.get(evo.from) || 1;
         const toCount = toConnectionCounts.get(evo.to) || 1;
-        
+
         const fromIdx = fromConnectionIndex.get(evo.from) || 0;
         const toIdx = toConnectionIndex.get(evo.to) || 0;
-        
+
         fromConnectionIndex.set(evo.from, fromIdx + 1);
         toConnectionIndex.set(evo.to, toIdx + 1);
-        
+
         // Calculate offsets based on position in the list
         const cardHeight = 200;
         const fromOffset = fromCount > 1 ? (fromIdx / (fromCount - 1) - 0.5) * (cardHeight * 0.6) : 0;
         const toOffset = toCount > 1 ? (toIdx / (toCount - 1) - 0.5) * (cardHeight * 0.6) : 0;
-        
+
         conns.push({
           from: evo.from,
           to: evo.to,
@@ -169,7 +220,7 @@ export function EvolutionTreeGraph({
     });
     
     setConnections(conns);
-  }, [rootDigimonId, digimonData, evolutions, lineColor]);
+  }, [rootDigimonId, digimonData, evolutions, lineColor, collapsed]);
 
   const getNodePosition = (id: string) => {
     return nodes.find(n => n.id === id);
@@ -351,10 +402,11 @@ export function EvolutionTreeGraph({
         {nodes.map(node => (
           <div
             key={node.id}
-            className={`absolute cursor-pointer transition-all hover:scale-105 hover:shadow-2xl hover:z-10 rounded-xl shadow-lg border-4 ${
+            className={`relative cursor-pointer transition-all hover:scale-105 hover:shadow-2xl hover:z-10 rounded-xl shadow-lg border-4 overflow-visible ${
               darkMode ? 'bg-[#49483e]' : 'bg-white'
             }`}
             style={{
+              position: 'absolute',
               left: node.x,
               top: node.y,
               width: '160px',
@@ -363,25 +415,32 @@ export function EvolutionTreeGraph({
             }}
             onClick={() => onDigimonClick(node.id)}
           >
+            {!isMobile && getEvolutionsFrom(node.id).length > 0 && (
+              <div className="absolute top-2 right-2 z-50 pointer-events-auto">
+                <button
+                  onClick={(e) => { e.stopPropagation(); toggleCollapse(node.id); }}
+                  className="w-10 h-10 flex items-center justify-center rounded-full text-2xl font-bold shadow-lg leading-none"
+                  style={{ 
+                    lineHeight: '1',
+                    backgroundColor: collapsed.has(node.id) ? '#ef4444' : '#22c55e',
+                    color: '#000000'
+                  }}
+                >
+                  <span>{collapsed.has(node.id) ? '+' : '-'}</span>
+                </button>
+              </div>
+            )}
             <div className="p-3 h-full flex flex-col">
               <div className={`w-full h-32 mb-2 rounded-lg overflow-hidden ${
                 darkMode ? 'bg-[#75715e]' : 'bg-gray-100'
               }`}>
-                <img 
-                  src={node.digimon.image}
-                  alt={node.digimon.name}
-                  className="w-full h-full object-cover"
-                />
+                <img src={node.digimon.image} alt={node.digimon.name} className="w-full h-full object-cover" />
               </div>
               <div className="text-center flex-1 flex flex-col justify-end">
-                <div className={`text-sm truncate px-1 ${
-                  darkMode ? 'text-[#f8f8f2]' : 'text-gray-900'
-                }`}>
+                <div className={`text-sm truncate px-1 ${darkMode ? 'text-[#f8f8f2]' : 'text-gray-900'}`}>
                   {node.digimon.name}
                 </div>
-                <div className={`text-xs mt-1 ${
-                  darkMode ? 'text-[#75715e]' : 'text-gray-600'
-                }`}>
+                <div className={`text-xs mt-1 ${darkMode ? 'text-[#75715e]' : 'text-gray-600'}`}>
                   {node.digimon.stage}
                 </div>
               </div>
