@@ -253,7 +253,7 @@ export function VerticalEvolutionView({
   const currentRootDigimon = digimonData.find(d => d.id === rootDigimonId);
 
   return (
-    <div className={`flex flex-col h-screen ${darkMode ? 'bg-[#272822]' : 'bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300'}`}>
+    <div className={`flex flex-col min-h-screen ${darkMode ? 'bg-[#272822]' : 'bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300'}`}>
       {/* Header */}
       <header className="text-white sticky top-0 z-50 shadow-lg flex-shrink-0" style={{ backgroundColor: headerColor }}>
         <div className="px-4 py-4 space-y-3">
