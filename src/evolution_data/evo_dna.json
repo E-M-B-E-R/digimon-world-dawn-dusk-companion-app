@@ -1520,7 +1520,7 @@
     },
     "dnaEvolvesInto": [
       "Myotismon",
-      "WereGarurumon(Black)"
+      "WarGarurumon(Black)"
     ],
     "dnaDegensInto": [
       {
@@ -5783,7 +5783,7 @@
         "target": "Mojyamon",
         "neededDigimon": [
           {
-            "digimon": "WereGarurumon(Blue)",
+            "digimon": "WarGarurumon(Blue)",
             "level": 21
           },
           {
@@ -8675,7 +8675,7 @@
     "dnaReqs": {
       "possibleDigimon": [
         "Knightmon",
-        "WereGarurumon(Black)"
+        "WarGarurumon(Black)"
       ],
       "evoReqs": {
         "level": 60,
@@ -8698,7 +8698,7 @@
         ]
       },
       {
-        "target": "WereGarurumon(Black)",
+        "target": "WarGarurumon(Black)",
         "neededDigimon": [
           {
             "digimon": "Minervamon",
@@ -8835,7 +8835,7 @@
             "level": 8
           },
           {
-            "digimon": "WereGarurumon(Blue)"
+            "digimon": "WarGarurumon(Blue)"
           }
         ],
         "befriended": "MetalGarurumon"
@@ -10237,7 +10237,7 @@
           "digi2": "Shakkoumon"
         },
         {
-          "digi1": "WereGarurumon(Blue)",
+          "digi1": "WarGarurumon(Blue)",
           "digi2": "Whamon (Ultimate)"
         }
       ],
@@ -10280,7 +10280,7 @@
         "befriended": "Shakkoumon"
       },
       {
-        "target": "WereGarurumon(Blue)",
+        "target": "WarGarurumon(Blue)",
         "neededDigimon": [
           {
             "digimon": "Vikemon",
