@@ -1,0 +1,4447 @@
+[
+  {
+    "id": 1,
+    "fullName": "Chicchimon",
+    "evoReqs": {
+      "level": 5,
+      "befriended": [
+        "Chicchimon"
+      ]
+    },
+    "habitat": "Unknown",
+    "stage": "In-Training"
+  },
+  {
+    "id": 2,
+    "fullName": "Koromon",
+    "evoReqs": {
+      "level": 3
+    },
+    "habitat": "Limit Valley",
+    "stage": "In-Training"
+  },
+  {
+    "id": 3,
+    "fullName": "Tsunomon",
+    "evoReqs": {
+      "level": 3
+    },
+    "habitat": "Unknown",
+    "stage": "In-Training"
+  },
+  {
+    "id": 4,
+    "fullName": "Poyomon",
+    "evoReqs": {
+      "level": 3
+    },
+    "habitat": "Loop Swamp",
+    "stage": "In-Training"
+  },
+  {
+    "id": 5,
+    "fullName": "Tokomon",
+    "evoReqs": {
+      "level": 4
+    },
+    "habitat": "Login Mountain",
+    "stage": "In-Training"
+  },
+  {
+    "id": 6,
+    "fullName": "Tanemon",
+    "evoReqs": {
+      "level": 3
+    },
+    "habitat": "Chip Forest",
+    "stage": "In-Training"
+  },
+  {
+    "id": 7,
+    "fullName": "Pagumon",
+    "evoReqs": {
+      "level": 4
+    },
+    "habitat": "Thriller Ruins",
+    "stage": "In-Training"
+  },
+  {
+    "id": 8,
+    "fullName": "Kapurimon",
+    "evoReqs": {
+      "level": 5
+    },
+    "habitat": "Sunken Tunnel",
+    "stage": "In-Training"
+  },
+  {
+    "id": 9,
+    "fullName": "Kuramon",
+    "evoReqs": {
+      "level": 3,
+      "befriended": [
+        "Kuramon"
+      ]
+    },
+    "habitat": "Magnet Mine",
+    "stage": "In-Training"
+  },
+  {
+    "id": 10,
+    "altNames": [
+      "Puttomon"
+    ],
+    "fullName": "Puttimon",
+    "evoReqs": {
+      "level": 3,
+      "befriended": [
+        "Puttimon"
+      ]
+    },
+    "habitat": "HighlightHaven",
+    "stage": "In-Training"
+  },
+  {
+    "id": 11,
+    "altNames": [
+      "Chicomon"
+    ],
+    "fullName": "Chibomon",
+    "evoReqs": {
+      "level": 4,
+      "befriended": [
+        "Chibomon"
+      ]
+    },
+    "habitat": "Task Canyon",
+    "stage": "In-Training"
+  },
+  {
+    "id": 12,
+    "fullName": "Dorimon",
+    "evoReqs": {
+      "level": 4
+    },
+    "habitat": "Unknown",
+    "stage": "In-Training"
+  },
+  {
+    "id": 13,
+    "fullName": "Calumon",
+    "habitat": "Unknown",
+    "stage": "In-Training"
+  },
+  {
+    "id": 14,
+    "fullName": "Gigimon",
+    "evoReqs": {
+      "level": 5
+    },
+    "habitat": "Task Canyon",
+    "stage": "In-Training"
+  },
+  {
+    "id": 15,
+    "fullName": "Gummymon",
+    "evoReqs": {
+      "level": 4
+    },
+    "habitat": "Chip Forest",
+    "stage": "In-Training"
+  },
+  {
+    "id": 16,
+    "altNames": [
+      "Chocomon"
+    ],
+    "fullName": "Kokomon",
+    "evoReqs": {
+      "level": 4
+    },
+    "habitat": "Chip Forest",
+    "stage": "In-Training"
+  },
+  {
+    "id": 17,
+    "fullName": "Tsumemon",
+    "evoReqs": {
+      "level": 9,
+      "befriended": [
+        "Tsumemon"
+      ]
+    },
+    "habitat": "Shadow Abyss",
+    "stage": "In-Training"
+  },
+  {
+    "id": 18,
+    "fullName": "Minomon",
+    "evoReqs": {
+      "level": 3
+    },
+    "habitat": "Unknown",
+    "stage": "In-Training"
+  },
+  {
+    "id": 19,
+    "fullName": "Wanyamon",
+    "evoReqs": {
+      "level": 3
+    },
+    "habitat": "Unknown",
+    "stage": "In-Training"
+  },
+  {
+    "id": 20,
+    "fullName": "Budmon",
+    "evoReqs": {
+      "level": 2
+    },
+    "habitat": "Unknown",
+    "stage": "In-Training"
+  },
+  {
+    "id": 21,
+    "fullName": "Botamon",
+    "evoReqs": {
+      "level": 3
+    },
+    "habitat": "Unknown",
+    "stage": "In-Training"
+  },
+  {
+    "id": 22,
+    "fullName": "Sunmon",
+    "evoReqs": {
+      "level": 1,
+      "befriended": [
+        "Sunmon"
+      ]
+    },
+    "habitat": "Task Canyon",
+    "stage": "In-Training"
+  },
+  {
+    "id": 23,
+    "fullName": "Moonmon",
+    "evoReqs": {
+      "level": 1,
+      "befriended": [
+        "Moonmon"
+      ]
+    },
+    "habitat": "Magnet Mine",
+    "stage": "In-Training"
+  },
+  {
+    "id": 24,
+    "fullName": "Monodramon",
+    "evoReqs": {
+      "level": 15,
+      "dragonExp": 300
+    },
+    "habitat": "Login Mountain",
+    "stage": "Rookie"
+  },
+  {
+    "id": 25,
+    "fullName": "Agumon",
+    "evoReqs": {
+      "level": 7
+    },
+    "habitat": "Limit Valley",
+    "stage": "Rookie"
+  },
+  {
+    "id": 26,
+    "fullName": "Veemon",
+    "evoReqs": {
+      "level": 10,
+      "friendship": 50
+    },
+    "habitat": "Login Mountain",
+    "stage": "Rookie"
+  },
+  {
+    "id": 27,
+    "fullName": "Guilmon",
+    "evoReqs": {
+      "level": 11,
+      "befriended": [
+        "Guilmon"
+      ]
+    },
+    "habitat": "Task Canyon",
+    "stage": "Rookie"
+  },
+  {
+    "id": 28,
+    "fullName": "Dorumon",
+    "evoReqs": {
+      "level": 8,
+      "beastExp": 100
+    },
+    "habitat": "Unknown",
+    "stage": "Rookie"
+  },
+  {
+    "id": 29,
+    "fullName": "Betamon",
+    "evoReqs": {
+      "level": 7
+    },
+    "habitat": "Sunken Tunnel",
+    "stage": "Rookie"
+  },
+  {
+    "id": 30,
+    "fullName": "Gabumon",
+    "evoReqs": {
+      "level": 8
+    },
+    "habitat": "ResistorJungle",
+    "stage": "Rookie"
+  },
+  {
+    "id": 31,
+    "fullName": "Patamon",
+    "evoReqs": {
+      "level": 8,
+      "friendship": 50
+    },
+    "habitat": "Login Mountain",
+    "stage": "Rookie"
+  },
+  {
+    "id": 32,
+    "fullName": "Biyomon",
+    "evoReqs": {
+      "level": 8
+    },
+    "habitat": "Limit Valley",
+    "stage": "Rookie"
+  },
+  {
+    "id": 33,
+    "fullName": "Palmon",
+    "evoReqs": {
+      "level": 8
+    },
+    "habitat": "Unknown",
+    "stage": "Rookie"
+  },
+  {
+    "id": 34,
+    "fullName": "Tentomon",
+    "evoReqs": {
+      "level": 13,
+      "defense": 50
+    },
+    "habitat": "Chip Forest",
+    "stage": "Rookie"
+  },
+  {
+    "id": 35,
+    "fullName": "Gotsumon",
+    "habitat": "Login Mountain",
+    "stage": "Rookie"
+  },
+  {
+    "id": 36,
+    "fullName": "Otamamon",
+    "habitat": "Loop Swamp",
+    "stage": "Rookie"
+  },
+  {
+    "id": 37,
+    "fullName": "Gomamon",
+    "evoReqs": {
+      "level": 11,
+      "aquaExp": 100
+    },
+    "habitat": "Unknown",
+    "stage": "Rookie"
+  },
+  {
+    "id": 38,
+    "fullName": "Tapirmon",
+    "evoReqs": {
+      "level": 16,
+      "holyExp": 470
+    },
+    "habitat": "Thriller Ruins",
+    "stage": "Rookie"
+  },
+  {
+    "id": 39,
+    "altNames": [
+      "PicoDevimon"
+    ],
+    "fullName": "DemiDevimon",
+    "evoReqs": {
+      "level": 10
+    },
+    "habitat": "Unknown",
+    "stage": "Rookie"
+  },
+  {
+    "id": 40,
+    "fullName": "ToyAgumon",
+    "habitat": "ProcessFactory",
+    "stage": "Rookie"
+  },
+  {
+    "id": 41,
+    "fullName": "Hagurumon",
+    "evoReqs": {
+      "level": 10,
+      "friendship": 50
+    },
+    "habitat": "Sunken Tunnel",
+    "stage": "Rookie"
+  },
+  {
+    "id": 42,
+    "altNames": [
+      "Plotmon"
+    ],
+    "fullName": "Salamon",
+    "evoReqs": {
+      "level": 7
+    },
+    "habitat": "Unknown",
+    "stage": "Rookie"
+  },
+  {
+    "id": 43,
+    "fullName": "Wormmon",
+    "evoReqs": {
+      "level": 10,
+      "friendship": 50
+    },
+    "habitat": "ResistorJungle",
+    "stage": "Rookie"
+  },
+  {
+    "id": 44,
+    "fullName": "Hawkmon",
+    "habitat": "Login Mountain",
+    "stage": "Rookie"
+  },
+  {
+    "id": 45,
+    "fullName": "Armadillomon",
+    "evoReqs": {
+      "level": 11,
+      "friendship": 60
+    },
+    "habitat": "Login Mountain",
+    "stage": "Rookie"
+  },
+  {
+    "id": 46,
+    "fullName": "Terriermon",
+    "evoReqs": {
+      "level": 9
+    },
+    "habitat": "Unknown",
+    "stage": "Rookie"
+  },
+  {
+    "id": 47,
+    "fullName": "Lopmon",
+    "evoReqs": {
+      "level": 9
+    },
+    "habitat": "Unknown",
+    "stage": "Rookie"
+  },
+  {
+    "id": 48,
+    "fullName": "Renamon",
+    "evoReqs": {
+      "level": 12,
+      "speed": 70
+    },
+    "habitat": "Limit Valley",
+    "stage": "Rookie"
+  },
+  {
+    "id": 49,
+    "fullName": "Impmon",
+    "evoReqs": {
+      "level": 15,
+      "spirit": 80,
+      "darkExp": 490
+    },
+    "habitat": "Unknown",
+    "stage": "Rookie"
+  },
+  {
+    "id": 50,
+    "fullName": "Keramon",
+    "evoReqs": {
+      "level": 18,
+      "darkExp": 450,
+      "befriended": [
+        "Keramon"
+      ]
+    },
+    "habitat": "Magnet Mine",
+    "stage": "Rookie"
+  },
+  {
+    "id": 51,
+    "fullName": "Falcomon",
+    "evoReqs": {
+      "level": 12,
+      "friendship": 60
+    },
+    "habitat": "Unknown",
+    "stage": "Rookie"
+  },
+  {
+    "id": 52,
+    "altNames": [
+      "Penmon"
+    ],
+    "fullName": "Penguinmon",
+    "evoReqs": {
+      "level": 10,
+      "aquaExp": 100
+    },
+    "habitat": "Unknown",
+    "stage": "Rookie"
+  },
+  {
+    "id": 53,
+    "fullName": "Goburimon",
+    "evoReqs": {
+      "level": 12,
+      "attack": 60
+    },
+    "habitat": "Chip Forest",
+    "stage": "Rookie"
+  },
+  {
+    "id": 54,
+    "altNames": [
+      "Bearmon"
+    ],
+    "fullName": "Kumamon",
+    "evoReqs": {
+      "level": 10
+    },
+    "habitat": "Chip Forest",
+    "stage": "Rookie"
+  },
+  {
+    "id": 55,
+    "fullName": "Kotemon",
+    "evoReqs": {
+      "level": 12,
+      "attack": 60
+    },
+    "habitat": "Sunken Tunnel",
+    "stage": "Rookie"
+  },
+  {
+    "id": 56,
+    "altNames": [
+      "Shamanmon"
+    ],
+    "fullName": "Shamamon",
+    "evoReqs": {
+      "level": 14,
+      "spirit": 75
+    },
+    "habitat": "Limit Valley",
+    "stage": "Rookie"
+  },
+  {
+    "id": 57,
+    "shortName": "SnowGoburimn",
+    "altNames": [
+      "SnowGoburimon"
+    ],
+    "fullName": "Snow Goblimon",
+    "habitat": "Unknown",
+    "stage": "Rookie"
+  },
+  {
+    "id": 58,
+    "fullName": "Syakomon",
+    "evoReqs": {
+      "level": 9
+    },
+    "habitat": "Macro Sea",
+    "stage": "Rookie"
+  },
+  {
+    "id": 59,
+    "altNames": [
+      "YukiAgumon"
+    ],
+    "fullName": "SnowAgumon",
+    "habitat": "Unknown",
+    "stage": "Rookie"
+  },
+  {
+    "id": 60,
+    "fullName": "BlackAgumon",
+    "evoReqs": {
+      "level": 7,
+      "attack": 75
+    },
+    "habitat": "ProcessFactory",
+    "stage": "Rookie"
+  },
+  {
+    "id": 61,
+    "fullName": "Muchomon",
+    "evoReqs": {
+      "level": 11
+    },
+    "habitat": "PaletteAmazon",
+    "stage": "Rookie"
+  },
+  {
+    "id": 62,
+    "fullName": "Crabmon",
+    "evoReqs": {
+      "level": 16,
+      "defense": 75
+    },
+    "habitat": "PaletteAmazon",
+    "stage": "Rookie"
+  },
+  {
+    "id": 63,
+    "fullName": "Floramon",
+    "evoReqs": {
+      "level": 12,
+      "insectPlantExp": 100
+    },
+    "habitat": "ResistorJungle",
+    "stage": "Rookie"
+  },
+  {
+    "id": 64,
+    "fullName": "Gizamon",
+    "evoReqs": {
+      "level": 13,
+      "beastExp": 150
+    },
+    "habitat": "Sunken Tunnel",
+    "stage": "Rookie"
+  },
+  {
+    "id": 65,
+    "altNames": [
+      "Raramon"
+    ],
+    "fullName": "Lalamon",
+    "evoReqs": {
+      "level": 7
+    },
+    "habitat": "Unknown",
+    "stage": "Rookie"
+  },
+  {
+    "id": 66,
+    "altNames": [
+      "Arurarumon",
+      "Alraunemon"
+    ],
+    "fullName": "Aruraumon",
+    "evoReqs": {
+      "level": 14,
+      "totalExp": 1100
+    },
+    "habitat": "Unknown",
+    "stage": "Rookie"
+  },
+  {
+    "id": 67,
+    "shortName": "ToyAgumonB",
+    "fullName": "ToyAgumon(Black)",
+    "habitat": "Sunken Tunnel",
+    "stage": "Rookie"
+  },
+  {
+    "id": 68,
+    "fullName": "Tsukaimon",
+    "evoReqs": {
+      "level": 8
+    },
+    "habitat": "Thriller Ruins",
+    "stage": "Rookie"
+  },
+  {
+    "id": 69,
+    "shortName": "PwnChssmnB",
+    "fullName": "PawnChessmon(Black)",
+    "evoReqs": {
+      "level": 11,
+      "machineExp": 200
+    },
+    "habitat": "Thriller Ruins",
+    "stage": "Rookie"
+  },
+  {
+    "id": 70,
+    "fullName": "Gaomon",
+    "evoReqs": {
+      "level": 7,
+      "friendship": 60
+    },
+    "habitat": "Unknown",
+    "stage": "Rookie"
+  },
+  {
+    "id": 71,
+    "altNames": [
+      "DotFalcomon"
+    ],
+    "fullName": "Dfalcomon",
+    "evoReqs": {
+      "level": 30,
+      "aptitude": 45,
+      "befriended": [
+        "DotFalcomon"
+      ]
+    },
+    "habitat": "Unknown",
+    "stage": "Rookie"
+  },
+  {
+    "id": 72,
+    "fullName": "Kudamon",
+    "evoReqs": {
+      "level": 15,
+      "aptitude": 25,
+      "befriended": [
+        "Kudamon"
+      ]
+    },
+    "habitat": "Task Canyon",
+    "stage": "Rookie"
+  },
+  {
+    "id": 73,
+    "fullName": "Kamemon",
+    "evoReqs": {
+      "level": 9
+    },
+    "habitat": "Loop Swamp",
+    "stage": "Rookie"
+  },
+  {
+    "id": 74,
+    "fullName": "Dracmon",
+    "evoReqs": {
+      "level": 9
+    },
+    "habitat": "Thriller Ruins",
+    "stage": "Rookie"
+  },
+  {
+    "id": 75,
+    "shortName": "PwnChssmnW",
+    "fullName": "PawnChessmon(White)",
+    "evoReqs": {
+      "level": 11,
+      "machineExp": 200
+    },
+    "habitat": "Thriller Ruins",
+    "stage": "Rookie"
+  },
+  {
+    "id": 76,
+    "fullName": "DotAgumon",
+    "evoReqs": {
+      "level": 30,
+      "aptitude": 45,
+      "befriended": [
+        "DotAgumon"
+      ]
+    },
+    "habitat": "Unknown",
+    "stage": "Rookie"
+  },
+  {
+    "id": 77,
+    "fullName": "Kunemon",
+    "evoReqs": {
+      "level": 7
+    },
+    "habitat": "Chip Forest",
+    "stage": "Rookie"
+  },
+  {
+    "id": 78,
+    "fullName": "Mushroomon",
+    "evoReqs": {
+      "level": 13,
+      "attack": 65
+    },
+    "habitat": "Chip Forest",
+    "stage": "Rookie"
+  },
+  {
+    "id": 79,
+    "fullName": "Solarmon",
+    "habitat": "Proxy Island",
+    "stage": "Rookie"
+  },
+  {
+    "id": 80,
+    "altNames": [
+      "Candmon"
+    ],
+    "fullName": "Candlemon",
+    "evoReqs": {
+      "level": 13,
+      "darkExp": 120
+    },
+    "habitat": "Thriller Ruins",
+    "stage": "Rookie"
+  },
+  {
+    "id": 81,
+    "fullName": "Kokuwamon",
+    "habitat": "Thriller Ruins",
+    "stage": "Rookie"
+  },
+  {
+    "id": 82,
+    "fullName": "DoKunemon",
+    "evoReqs": {
+      "level": 10,
+      "insectPlantExp": 130
+    },
+    "habitat": "Unknown",
+    "stage": "Rookie"
+  },
+  {
+    "id": 83,
+    "fullName": "Coronamon",
+    "evoReqs": {
+      "level": 11,
+      "friendship": 50
+    },
+    "habitat": "Unknown",
+    "stage": "Rookie"
+  },
+  {
+    "id": 84,
+    "fullName": "Lunamon",
+    "evoReqs": {
+      "level": 9,
+      "friendship": 50
+    },
+    "habitat": "Unknown",
+    "stage": "Rookie"
+  },
+  {
+    "id": 85,
+    "altNames": [
+      "Mechanorimon"
+    ],
+    "fullName": "Mekanorimon",
+    "evoReqs": {
+      "level": 20,
+      "machineExp": 410
+    },
+    "habitat": "ProcessFactory",
+    "stage": "Champion"
+  },
+  {
+    "id": 86,
+    "fullName": "Greymon",
+    "evoReqs": {
+      "level": 18,
+      "dragonExp": 280
+    },
+    "habitat": "Task Canyon",
+    "stage": "Champion"
+  },
+  {
+    "id": 87,
+    "fullName": "Tyrannomon",
+    "evoReqs": {
+      "level": 21,
+      "dragonExp": 340
+    },
+    "habitat": "Task Canyon",
+    "stage": "Champion"
+  },
+  {
+    "id": 88,
+    "fullName": "Devimon",
+    "evoReqs": {
+      "level": 21,
+      "darkExp": 450
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 89,
+    "fullName": "Airdramon",
+    "evoReqs": {
+      "level": 21,
+      "totalExp": 4000,
+      "befriended": [
+        "Airdramon"
+      ]
+    },
+    "habitat": "HighlightHaven",
+    "stage": "Champion"
+  },
+  {
+    "id": 90,
+    "fullName": "Seadramon",
+    "evoReqs": {
+      "level": 24
+    },
+    "habitat": "Loop Swamp",
+    "stage": "Champion"
+  },
+  {
+    "id": 91,
+    "fullName": "Numemon",
+    "evoReqs": {
+      "level": 19,
+      "totalExp": 1400
+    },
+    "habitat": "Loop Swamp",
+    "stage": "Champion"
+  },
+  {
+    "id": 92,
+    "fullName": "Kabuterimon",
+    "evoReqs": {
+      "level": 21,
+      "insectPlantExp": 410
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 93,
+    "fullName": "Garurumon",
+    "evoReqs": {
+      "level": 19,
+      "friendship": 60,
+      "attack": 100
+    },
+    "habitat": "AccessGlacier",
+    "stage": "Champion"
+  },
+  {
+    "id": 94,
+    "fullName": "Angemon",
+    "evoReqs": {
+      "level": 19,
+      "friendship": 70,
+      "holyExp": 300
+    },
+    "habitat": "AccessGlacier",
+    "stage": "Champion"
+  },
+  {
+    "id": 95,
+    "altNames": [
+      "Vegiemon"
+    ],
+    "fullName": "Veggiemon",
+    "evoReqs": {
+      "level": 23,
+      "insectPlantExp": 500
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 96,
+    "fullName": "Ogremon",
+    "evoReqs": {
+      "level": 26,
+      "attack": 120,
+      "beastExp": 750
+    },
+    "habitat": "Chip Forest",
+    "stage": "Champion"
+  },
+  {
+    "id": 97,
+    "fullName": "Bakemon",
+    "evoReqs": {
+      "level": 19,
+      "darkExp": 420
+    },
+    "habitat": "Thriller Ruins",
+    "stage": "Champion"
+  },
+  {
+    "id": 98,
+    "fullName": "Sukamon",
+    "evoReqs": {
+      "level": 18,
+      "totalExp": 1500
+    },
+    "habitat": "Sunken Tunnel",
+    "stage": "Champion"
+  },
+  {
+    "id": 99,
+    "fullName": "Kokatorimon",
+    "evoReqs": {
+      "level": 21,
+      "friendship": 70,
+      "darkExp": 370
+    },
+    "habitat": "PaletteAmazon",
+    "stage": "Champion"
+  },
+  {
+    "id": 100,
+    "fullName": "Leomon",
+    "evoReqs": {
+      "level": 28,
+      "attack": 150,
+      "spirit": 130
+    },
+    "habitat": "ResistorJungle",
+    "stage": "Champion"
+  },
+  {
+    "id": 101,
+    "fullName": "Kuwagamon",
+    "evoReqs": {
+      "level": 20,
+      "insectPlantExp": 380
+    },
+    "habitat": "ResistorJungle",
+    "stage": "Champion"
+  },
+  {
+    "id": 102,
+    "fullName": "Raremon",
+    "evoReqs": {
+      "level": 22,
+      "defense": 90,
+      "machineExp": 440
+    },
+    "habitat": "Sunken Tunnel",
+    "stage": "Champion"
+  },
+  {
+    "id": 103,
+    "fullName": "Gekomon",
+    "evoReqs": {
+      "level": 18,
+      "aquaExp": 370
+    },
+    "habitat": "Loop Swamp",
+    "stage": "Champion"
+  },
+  {
+    "id": 104,
+    "altNames": [
+      "Tailmon"
+    ],
+    "fullName": "Gatomon",
+    "evoReqs": {
+      "level": 18,
+      "friendship": 70
+    },
+    "habitat": "HighlightHaven",
+    "stage": "Champion"
+  },
+  {
+    "id": 105,
+    "fullName": "Wizardmon",
+    "evoReqs": {
+      "level": 25,
+      "friendship": 70,
+      "darkExp": 700
+    },
+    "habitat": "Shadow Abyss",
+    "stage": "Champion"
+  },
+  {
+    "id": 106,
+    "fullName": "Togemon",
+    "evoReqs": {
+      "level": 19,
+      "friendship": 60,
+      "attack": 95
+    },
+    "habitat": "PaletteAmazon",
+    "stage": "Champion"
+  },
+  {
+    "id": 107,
+    "fullName": "Guardromon",
+    "evoReqs": {
+      "level": 20,
+      "defense": 105
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 108,
+    "altNames": [
+      "XVmon"
+    ],
+    "fullName": "ExVeemon",
+    "evoReqs": {
+      "level": 23,
+      "attack": 120,
+      "spirit": 115
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 109,
+    "fullName": "Stingmon",
+    "evoReqs": {
+      "level": 23,
+      "defense": 110,
+      "speed": 115
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 110,
+    "fullName": "Birdramon",
+    "evoReqs": {
+      "level": 19,
+      "friendship": 60
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 111,
+    "fullName": "Ankylomon",
+    "evoReqs": {
+      "level": 23,
+      "defense": 100,
+      "beastExp": 500
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 112,
+    "fullName": "Gargomon",
+    "evoReqs": {
+      "level": 20,
+      "friendship": 60,
+      "beastExp": 480
+    },
+    "habitat": "ResistorJungle",
+    "stage": "Champion"
+  },
+  {
+    "id": 113,
+    "fullName": "Growlmon",
+    "evoReqs": {
+      "level": 21,
+      "attack": 105,
+      "befriended": [
+        "Guilmon"
+      ]
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 114,
+    "fullName": "Kyubimon",
+    "evoReqs": {
+      "level": 23,
+      "spirit": 125
+    },
+    "habitat": "Limit Valley",
+    "stage": "Champion"
+  },
+  {
+    "id": 115,
+    "altNames": [
+      "Chrysalimon"
+    ],
+    "fullName": "Kurisarimon",
+    "evoReqs": {
+      "level": 27,
+      "defense": 110,
+      "befriended": [
+        "Keramon"
+      ]
+    },
+    "habitat": "Magnet Mine",
+    "stage": "Champion"
+  },
+  {
+    "id": 116,
+    "altNames": [
+      "Saesarmon"
+    ],
+    "fullName": "Seasarmon",
+    "evoReqs": {
+      "level": 24,
+      "defense": 120,
+      "holyExp": 800
+    },
+    "habitat": "Limit Valley",
+    "stage": "Champion"
+  },
+  {
+    "id": 117,
+    "altNames": [
+      "Evilmon"
+    ],
+    "fullName": "Vilemon",
+    "evoReqs": {
+      "level": 23,
+      "darkExp": 950
+    },
+    "habitat": "Thriller Ruins",
+    "stage": "Champion"
+  },
+  {
+    "id": 118,
+    "fullName": "Aquilamon",
+    "evoReqs": {
+      "level": 20,
+      "attack": 105
+    },
+    "habitat": "Login Mountain",
+    "stage": "Champion"
+  },
+  {
+    "id": 119,
+    "altNames": [
+      "Gokimon"
+    ],
+    "fullName": "Roachmon",
+    "evoReqs": {
+      "level": 17,
+      "speed": 95
+    },
+    "habitat": "Thriller Ruins",
+    "stage": "Champion"
+  },
+  {
+    "id": 120,
+    "fullName": "Dinohumon",
+    "evoReqs": {
+      "level": 24,
+      "dragonExp": 900
+    },
+    "habitat": "PaletteAmazon",
+    "stage": "Champion"
+  },
+  {
+    "id": 121,
+    "fullName": "Hookmon",
+    "evoReqs": {
+      "level": 22,
+      "machineExp": 450,
+      "aquaExp": 300
+    },
+    "habitat": "Sunken Tunnel",
+    "stage": "Champion"
+  },
+  {
+    "id": 122,
+    "fullName": "Grizzmon",
+    "evoReqs": {
+      "level": 19,
+      "beastExp": 390
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 123,
+    "fullName": "Dorugamon",
+    "evoReqs": {
+      "level": 24,
+      "dragonExp": 4800,
+      "machineExp": 3000
+    },
+    "habitat": "Login Mountain",
+    "stage": "Champion"
+  },
+  {
+    "id": 124,
+    "altNames": [
+      "RaptorDramon"
+    ],
+    "fullName": "Reptiledramon",
+    "habitat": "AccessGlacier",
+    "stage": "Champion"
+  },
+  {
+    "id": 125,
+    "altNames": [
+      "Hanumon"
+    ],
+    "fullName": "Apemon",
+    "evoReqs": {
+      "level": 26,
+      "holyExp": 260,
+      "befriended": [
+        "Apemon"
+      ]
+    },
+    "habitat": "Limit Valley",
+    "stage": "Champion"
+  },
+  {
+    "id": 126,
+    "fullName": "Starmon",
+    "evoReqs": {
+      "level": 24,
+      "friendship": 70,
+      "spirit": 115
+    },
+    "habitat": "PaletteAmazon",
+    "stage": "Champion"
+  },
+  {
+    "id": 127,
+    "shortName": "BomberNanimn",
+    "fullName": "BomberNanimon",
+    "evoReqs": {
+      "level": 24,
+      "friendship": 70,
+      "machineExp": 960
+    },
+    "habitat": "Magnet Mine",
+    "stage": "Champion"
+  },
+  {
+    "id": 128,
+    "fullName": "Kiwimon",
+    "evoReqs": {
+      "level": 18,
+      "defense": 80,
+      "insectPlantExp": 400
+    },
+    "habitat": "PaletteAmazon",
+    "stage": "Champion"
+  },
+  {
+    "id": 129,
+    "fullName": "Unimon",
+    "evoReqs": {
+      "level": 22,
+      "speed": 90
+    },
+    "habitat": "HighlightHaven",
+    "stage": "Champion"
+  },
+  {
+    "id": 130,
+    "fullName": "Sorcerymon",
+    "evoReqs": {
+      "friendship": 70,
+      "holyExp": 700
+    },
+    "habitat": "HighlightHaven",
+    "stage": "Champion"
+  },
+  {
+    "id": 131,
+    "shortName": "DKTyrannomn",
+    "altNames": [
+      "DarkTyrannomon"
+    ],
+    "fullName": "DKTyrannomon",
+    "evoReqs": {
+      "level": 21,
+      "attack": 100,
+      "darkExp": 1000
+    },
+    "habitat": "ProcessFactory",
+    "stage": "Champion"
+  },
+  {
+    "id": 132,
+    "fullName": "Akatorimon",
+    "evoReqs": {
+      "level": 21,
+      "friendship": 70,
+      "birdExp": 700
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 133,
+    "shortName": "PltSukamon",
+    "fullName": "PlatinumSukamon",
+    "evoReqs": {
+      "level": 25,
+      "defense": 120
+    },
+    "habitat": "Sunken Tunnel",
+    "stage": "Champion"
+  },
+  {
+    "id": 134,
+    "fullName": "Ikkakumon",
+    "evoReqs": {
+      "level": 21,
+      "friendship": 70
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 135,
+    "altNames": [
+      "Minotaurmon"
+    ],
+    "fullName": "Minotarumon",
+    "evoReqs": {
+      "level": 23,
+      "defense": 95,
+      "beastExp": 360
+    },
+    "habitat": "Transfield",
+    "stage": "Champion"
+  },
+  {
+    "id": 136,
+    "fullName": "Icemon",
+    "evoReqs": {
+      "level": 19,
+      "defense": 90,
+      "aquaExp": 400
+    },
+    "habitat": "AccessGlacier",
+    "stage": "Champion"
+  },
+  {
+    "id": 137,
+    "shortName": "DKLizardmon",
+    "altNames": [
+      "DarkRizamon"
+    ],
+    "fullName": "DarkLizardmon",
+    "evoReqs": {
+      "level": 20,
+      "dragonExp": 650
+    },
+    "habitat": "Shadow Abyss",
+    "stage": "Champion"
+  },
+  {
+    "id": 138,
+    "altNames": [
+      "FlaRizamon"
+    ],
+    "fullName": "Flarerizamon",
+    "evoReqs": {
+      "level": 20,
+      "dragonExp": 650
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 139,
+    "fullName": "GeoGreymon",
+    "evoReqs": {
+      "level": 20,
+      "friendship": 60,
+      "attack": 90
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 140,
+    "fullName": "Gaogamon",
+    "evoReqs": {
+      "level": 17,
+      "speed": 90,
+      "beastExp": 250
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 141,
+    "fullName": "Diatrymon",
+    "evoReqs": {
+      "level": 29,
+      "defense": 150,
+      "birdExp": 2400
+    },
+    "habitat": "Proxy Island",
+    "stage": "Champion"
+  },
+  {
+    "id": 142,
+    "fullName": "Reppamon",
+    "evoReqs": {
+      "level": 27,
+      "speed": 125,
+      "holyExp": 800
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 143,
+    "fullName": "Sunflowmon",
+    "evoReqs": {
+      "level": 18,
+      "friendship": 70,
+      "insectPlantExp": 380
+    },
+    "habitat": "PaletteAmazon",
+    "stage": "Champion"
+  },
+  {
+    "id": 144,
+    "altNames": [
+      "Gwappamon"
+    ],
+    "fullName": "Gawappamon",
+    "evoReqs": {
+      "level": 19,
+      "machineExp": 370
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 145,
+    "fullName": "Sangloupmon",
+    "evoReqs": {
+      "level": 19,
+      "beastExp": 500
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 146,
+    "fullName": "Peckmon",
+    "evoReqs": {
+      "level": 20,
+      "speed": 100
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 147,
+    "altNames": [
+      "Dorimogemon"
+    ],
+    "fullName": "Drimogemon",
+    "evoReqs": {
+      "level": 19,
+      "attack": 90,
+      "aptitude": 25
+    },
+    "habitat": "Login Mountain",
+    "stage": "Champion"
+  },
+  {
+    "id": 148,
+    "shortName": "NDrimogemon",
+    "altNames": [
+      "NiseDorimogemon"
+    ],
+    "fullName": "NiseDrimogemon",
+    "evoReqs": {
+      "level": 19,
+      "attack": 90,
+      "aptitude": 25
+    },
+    "habitat": "Limit Valley",
+    "stage": "Champion"
+  },
+  {
+    "id": 149,
+    "fullName": "MoriShellmon",
+    "evoReqs": {
+      "level": 22,
+      "defense": 105,
+      "beastExp": 900
+    },
+    "habitat": "PaletteAmazon",
+    "stage": "Champion"
+  },
+  {
+    "id": 150,
+    "altNames": [
+      "Wendimon"
+    ],
+    "fullName": "Wendigomon",
+    "evoReqs": {
+      "level": 29,
+      "darkExp": 1800
+    },
+    "habitat": "ResistorJungle",
+    "stage": "Champion"
+  },
+  {
+    "id": 151,
+    "altNames": [
+      "Fuugamon"
+    ],
+    "fullName": "Fugamon",
+    "evoReqs": {
+      "level": 24,
+      "attack": 120,
+      "beastExp": 450
+    },
+    "habitat": "PaletteAmazon",
+    "stage": "Champion"
+  },
+  {
+    "id": 152,
+    "shortName": "Tsuchidarumn",
+    "altNames": [
+      "MudFrigimon",
+      "MudFigimon"
+    ],
+    "fullName": "Tsuchidarumon",
+    "evoReqs": {
+      "level": 20,
+      "friendship": 70,
+      "befriended": [
+        "MudFrigimon"
+      ]
+    },
+    "habitat": "Magnet Mine",
+    "stage": "Champion"
+  },
+  {
+    "id": 153,
+    "altNames": [
+      "Tortomon"
+    ],
+    "fullName": "Tortamon",
+    "evoReqs": {
+      "level": 23,
+      "defense": 110
+    },
+    "habitat": "Proxy Island",
+    "stage": "Champion"
+  },
+  {
+    "id": 154,
+    "fullName": "Ebidramon",
+    "evoReqs": {
+      "level": 27,
+      "defense": 140,
+      "dragonExp": 1100
+    },
+    "habitat": "Macro Sea",
+    "stage": "Champion"
+  },
+  {
+    "id": 155,
+    "fullName": "Octomon",
+    "evoReqs": {
+      "level": 21,
+      "defense": 95,
+      "aquaExp": 550
+    },
+    "habitat": "Proxy Island",
+    "stage": "Champion"
+  },
+  {
+    "id": 156,
+    "fullName": "Gesomon",
+    "evoReqs": {
+      "level": 21,
+      "attack": 95,
+      "aquaExp": 550
+    },
+    "habitat": "Proxy Island",
+    "stage": "Champion"
+  },
+  {
+    "id": 157,
+    "fullName": "Coelamon",
+    "evoReqs": {
+      "level": 18,
+      "attack": 95,
+      "aquaExp": 410
+    },
+    "habitat": "Macro Sea",
+    "stage": "Champion"
+  },
+  {
+    "id": 158,
+    "fullName": "Shellmon",
+    "evoReqs": {
+      "level": 23,
+      "beastExp": 410
+    },
+    "habitat": "Loop Swamp",
+    "stage": "Champion"
+  },
+  {
+    "id": 159,
+    "altNames": [
+      "Yukidarumon"
+    ],
+    "fullName": "Frigimon",
+    "evoReqs": {
+      "level": 21,
+      "friendship": 70,
+      "aquaExp": 700
+    },
+    "habitat": "AccessGlacier",
+    "stage": "Champion"
+  },
+  {
+    "id": 160,
+    "fullName": "Geremon",
+    "evoReqs": {
+      "level": 19,
+      "befriended": [
+        "Numemon"
+      ]
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 161,
+    "fullName": "Hyogamon",
+    "evoReqs": {
+      "level": 23,
+      "attack": 110
+    },
+    "habitat": "AccessGlacier",
+    "stage": "Champion"
+  },
+  {
+    "id": 162,
+    "shortName": "KaraNumemon",
+    "altNames": [
+      "ShellNumemon"
+    ],
+    "fullName": "KaratsukiNumemon",
+    "evoReqs": {
+      "level": 26,
+      "defense": 135,
+      "aptitude": 30
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 163,
+    "fullName": "IceDevimon",
+    "evoReqs": {
+      "level": 25,
+      "darkExp": 350
+    },
+    "habitat": "AccessGlacier",
+    "stage": "Champion"
+  },
+  {
+    "id": 164,
+    "altNames": [
+      "Rukamon"
+    ],
+    "fullName": "Dolphmon",
+    "evoReqs": {
+      "level": 17,
+      "spirit": 100,
+      "aquaExp": 500
+    },
+    "habitat": "Macro Sea",
+    "stage": "Champion"
+  },
+  {
+    "id": 165,
+    "fullName": "Saberdramon",
+    "evoReqs": {
+      "level": 18,
+      "speed": 95,
+      "birdExp": 210
+    },
+    "habitat": "Proxy Island",
+    "stage": "Champion"
+  },
+  {
+    "id": 166,
+    "fullName": "Woodmon",
+    "evoReqs": {
+      "level": 27,
+      "defense": 125,
+      "insectPlantExp": 1800
+    },
+    "habitat": "ResistorJungle",
+    "stage": "Champion"
+  },
+  {
+    "id": 167,
+    "fullName": "Snimon",
+    "evoReqs": {
+      "level": 19,
+      "attack": 90
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 168,
+    "fullName": "Flymon",
+    "evoReqs": {
+      "level": 19,
+      "insectPlantExp": 500
+    },
+    "habitat": "Chip Forest",
+    "stage": "Champion"
+  },
+  {
+    "id": 169,
+    "fullName": "Yanmamon",
+    "evoReqs": {
+      "level": 18,
+      "speed": 75,
+      "insectPlantExp": 250
+    },
+    "habitat": "Loop Swamp",
+    "stage": "Champion"
+  },
+  {
+    "id": 170,
+    "shortName": "SYanmamon",
+    "fullName": "Sand Yanmamon",
+    "evoReqs": {
+      "level": 18,
+      "defense": 90,
+      "insectPlantExp": 250
+    },
+    "habitat": "Limit Valley",
+    "stage": "Champion"
+  },
+  {
+    "id": 171,
+    "shortName": "RedVeggiemon",
+    "fullName": "Red Vegiemon",
+    "evoReqs": {
+      "level": 22,
+      "friendship": 70,
+      "speed": 115
+    },
+    "habitat": "ResistorJungle",
+    "stage": "Champion"
+  },
+  {
+    "id": 172,
+    "altNames": [
+      "Zassoumon"
+    ],
+    "fullName": "Weedmon",
+    "evoReqs": {
+      "level": 23,
+      "spirit": 95
+    },
+    "habitat": "Loop Swamp",
+    "stage": "Champion"
+  },
+  {
+    "id": 173,
+    "altNames": [
+      "Igamon"
+    ],
+    "fullName": "Ninjamon",
+    "evoReqs": {
+      "level": 22,
+      "friendship": 70,
+      "speed": 115
+    },
+    "habitat": "ResistorJungle",
+    "stage": "Champion"
+  },
+  {
+    "id": 174,
+    "altNames": [
+      "Kougamon"
+    ],
+    "fullName": "Kogamon",
+    "evoReqs": {
+      "level": 22,
+      "attack": 105,
+      "speed": 110
+    },
+    "habitat": "Loop Swamp",
+    "stage": "Champion"
+  },
+  {
+    "id": 175,
+    "fullName": "Omekamon",
+    "evoReqs": {
+      "level": 22,
+      "machineExp": 580
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 176,
+    "fullName": "Clockmon",
+    "evoReqs": {
+      "level": 33,
+      "aptitude": 40,
+      "machineExp": 6000
+    },
+    "habitat": "Chaos Brain",
+    "stage": "Champion"
+  },
+  {
+    "id": 177,
+    "shortName": "TDBallmon",
+    "fullName": "Thunderballmon",
+    "evoReqs": {
+      "level": 23,
+      "machineExp": 460
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 178,
+    "fullName": "Tankmon",
+    "evoReqs": {
+      "level": 19,
+      "attack": 110
+    },
+    "habitat": "ProcessFactory",
+    "stage": "Champion"
+  },
+  {
+    "id": 179,
+    "fullName": "Nanimon",
+    "evoReqs": {
+      "level": 20,
+      "friendship": 70,
+      "aptitude": 28
+    },
+    "habitat": "Chip Forest",
+    "stage": "Champion"
+  },
+  {
+    "id": 180,
+    "fullName": "Golemon",
+    "evoReqs": {
+      "level": 21,
+      "attack": 120,
+      "machineExp": 500
+    },
+    "habitat": "Magnet Mine",
+    "stage": "Champion"
+  },
+  {
+    "id": 181,
+    "fullName": "Monochromon",
+    "evoReqs": {
+      "level": 19,
+      "dragonExp": 220
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 182,
+    "fullName": "Mojyamon",
+    "evoReqs": {
+      "level": 21,
+      "beastExp": 220,
+      "aquaExp": 180
+    },
+    "habitat": "AccessGlacier",
+    "stage": "Champion"
+  },
+  {
+    "id": 183,
+    "shortName": "JMojyamon",
+    "altNames": [
+      "J-Mojyamon"
+    ],
+    "fullName": "Jungle Mojyamon",
+    "evoReqs": {
+      "level": 17,
+      "beastExp": 350
+    },
+    "habitat": "Proxy Island",
+    "stage": "Champion"
+  },
+  {
+    "id": 184,
+    "altNames": [
+      "Revolmon"
+    ],
+    "fullName": "Deputymon",
+    "evoReqs": {
+      "level": 22,
+      "friendship": 70,
+      "machineExp": 600
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 185,
+    "altNames": [
+      "Centaurmon"
+    ],
+    "fullName": "Centarumon",
+    "evoReqs": {
+      "level": 20,
+      "machineExp": 480
+    },
+    "habitat": "Transfield",
+    "stage": "Champion"
+  },
+  {
+    "id": 186,
+    "fullName": "Devidramon",
+    "evoReqs": {
+      "level": 22,
+      "dragonExp": 350,
+      "darkExp": 300
+    },
+    "habitat": "Shadow Abyss",
+    "stage": "Champion"
+  },
+  {
+    "id": 187,
+    "fullName": "Dokugumon",
+    "evoReqs": {
+      "level": 24,
+      "darkExp": 450
+    },
+    "habitat": "ResistorJungle",
+    "stage": "Champion"
+  },
+  {
+    "id": 188,
+    "fullName": "Veedramon",
+    "evoReqs": {
+      "level": 18,
+      "attack": 90,
+      "dragonExp": 340
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 189,
+    "fullName": "Musyamon",
+    "evoReqs": {
+      "level": 26,
+      "attack": 130,
+      "darkExp": 1200
+    },
+    "habitat": "Loop Swamp",
+    "stage": "Champion"
+  },
+  {
+    "id": 190,
+    "shortName": "KChessmonWH",
+    "fullName": "KnightChessmon(White)",
+    "evoReqs": {
+      "level": 21,
+      "speed": 100
+    },
+    "habitat": "Thriller Ruins",
+    "stage": "Champion"
+  },
+  {
+    "id": 191,
+    "shortName": "KChessmonB",
+    "fullName": "KnightChessmon(Black)",
+    "evoReqs": {
+      "level": 21,
+      "speed": 100
+    },
+    "habitat": "Thriller Ruins",
+    "stage": "Champion"
+  },
+  {
+    "id": 192,
+    "fullName": "Firamon",
+    "evoReqs": {
+      "level": 25,
+      "friendship": 70,
+      "beastExp": 700
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 193,
+    "altNames": [
+      "Rekismon"
+    ],
+    "fullName": "Lekismon",
+    "evoReqs": {
+      "level": 19,
+      "friendship": 70
+    },
+    "habitat": "Unknown",
+    "stage": "Champion"
+  },
+  {
+    "id": 194,
+    "altNames": [
+      "Volcamon"
+    ],
+    "fullName": "Volcanomon",
+    "evoReqs": {
+      "level": 26,
+      "attack": 160,
+      "darkExp": 3400
+    },
+    "habitat": "Shadow Abyss",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 195,
+    "fullName": "MetalGreymon",
+    "evoReqs": {
+      "level": 34,
+      "friendship": 70,
+      "dragonExp": 3000
+    },
+    "habitat": "Chaos Brain",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 196,
+    "fullName": "Monzaemon",
+    "evoReqs": {
+      "level": 33,
+      "friendship": 80,
+      "holyExp": 4000
+    },
+    "habitat": "Proxy Island",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 197,
+    "fullName": "SkullGreymon",
+    "evoReqs": {
+      "level": 42,
+      "darkExp": 7000,
+      "befriended": [
+        "SkullGreymon"
+      ]
+    },
+    "habitat": "Shadow Abyss",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 198,
+    "shortName": "MtlMamemon",
+    "fullName": "MetalMamemon",
+    "evoReqs": {
+      "level": 34,
+      "attack": 165,
+      "machineExp": 3300
+    },
+    "habitat": "Chaos Brain",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 199,
+    "fullName": "Andromon",
+    "evoReqs": {
+      "level": 35,
+      "friendship": 80,
+      "attack": 165
+    },
+    "habitat": "Chaos Brain",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 200,
+    "fullName": "Etemon",
+    "evoReqs": {
+      "level": 34,
+      "spirit": 135,
+      "beastExp": 3800
+    },
+    "habitat": "Proxy Island",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 201,
+    "fullName": "Megadramon",
+    "evoReqs": {
+      "level": 34,
+      "machineExp": 3800
+    },
+    "habitat": "AccessGlacier",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 202,
+    "altNames": [
+      "Pixiemon",
+      "Piccolomon"
+    ],
+    "fullName": "Piximon",
+    "evoReqs": {
+      "level": 33,
+      "spirit": 145,
+      "holyExp": 4300
+    },
+    "habitat": "HighlightHaven",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 203,
+    "fullName": "Digitamamon",
+    "evoReqs": {
+      "level": 38,
+      "holyExp": 3100,
+      "befriended": [
+        "Tapirmon"
+      ]
+    },
+    "habitat": "Thriller Ruins",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 204,
+    "fullName": "Mammothmon",
+    "evoReqs": {
+      "level": 35,
+      "attack": 180,
+      "defense": 185
+    },
+    "habitat": "AccessGlacier",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 205,
+    "shortName": "MKabuterimon",
+    "altNames": [
+      "AlturKabuterimon"
+    ],
+    "fullName": "Megakabuterimon(Blue)",
+    "evoReqs": {
+      "level": 33,
+      "spirit": 140
+    },
+    "habitat": "ResistorJungle",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 206,
+    "altNames": [
+      "Ookuwamon"
+    ],
+    "fullName": "Okuwamon",
+    "evoReqs": {
+      "level": 35,
+      "defense": 145,
+      "insectPlantExp": 4000
+    },
+    "habitat": "Proxy Island",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 207,
+    "shortName": "ShogunGekomn",
+    "altNames": [
+      "TonosamaGekomon"
+    ],
+    "fullName": "ShogunGekomon",
+    "evoReqs": {
+      "level": 32,
+      "friendship": 70,
+      "machineExp": 2900
+    },
+    "habitat": "Loop Swamp",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 208,
+    "fullName": "Angewomon",
+    "evoReqs": {
+      "level": 35,
+      "attack": 160,
+      "holyExp": 2700
+    },
+    "habitat": "HighlightHaven",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 209,
+    "fullName": "Tylomon",
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 210,
+    "altNames": [
+      "Anomarokarimon"
+    ],
+    "fullName": "Scorpiomon",
+    "evoReqs": {
+      "level": 31,
+      "spirit": 130,
+      "aquaExp": 3200
+    },
+    "habitat": "Proxy Island",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 211,
+    "shortName": "MSeadramon",
+    "fullName": "MegaSeadramon",
+    "evoReqs": {
+      "level": 37,
+      "attack": 155,
+      "aquaExp": 4000
+    },
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 212,
+    "fullName": "Dragomon",
+    "habitat": "Macro Sea",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 213,
+    "shortName": "WGarurumonB",
+    "altNames": [
+      "WereGarurumonBlack"
+    ],
+    "fullName": "WarGarurumon(Black)",
+    "evoReqs": {
+      "level": 41,
+      "speed": 190,
+      "darkExp": 6500
+    },
+    "habitat": "Thriller Ruins",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 214,
+    "shortName": "WGarurumon",
+    "altNames": [
+      "WereGarurumon",
+      "WereGarurumonBlue"
+    ],
+    "fullName": "WarGarurumon(Blue)",
+    "evoReqs": {
+      "level": 35,
+      "speed": 170,
+      "beastExp": 4500
+    },
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 215,
+    "altNames": [
+      "Vamdemon"
+    ],
+    "fullName": "Myotismon",
+    "evoReqs": {
+      "level": 42,
+      "spirit": 195,
+      "darkExp": 10000
+    },
+    "habitat": "Thriller Ruins",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 216,
+    "fullName": "LadyDevimon",
+    "evoReqs": {
+      "level": 39,
+      "attack": 185,
+      "darkExp": 6200
+    },
+    "habitat": "Shadow Abyss",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 217,
+    "fullName": "Garudamon",
+    "evoReqs": {
+      "level": 32,
+      "friendship": 80,
+      "birdExp": 2700
+    },
+    "habitat": "Task Canyon",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 218,
+    "fullName": "Blossomon",
+    "evoReqs": {
+      "level": 34,
+      "attack": 140,
+      "aquaExp": 3200
+    },
+    "habitat": "Loop Swamp",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 219,
+    "altNames": [
+      "Lilymon"
+    ],
+    "fullName": "Lillymon",
+    "evoReqs": {
+      "level": 33,
+      "friendship": 80
+    },
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 220,
+    "shortName": "MKabuterimnR",
+    "altNames": [
+      "AlturKabuterimonRed"
+    ],
+    "fullName": "MegaKabuterimon(Red)",
+    "evoReqs": {
+      "level": 36,
+      "friendship": 80,
+      "spirit": 170
+    },
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 221,
+    "altNames": [
+      "Nanomon"
+    ],
+    "fullName": "Datamon",
+    "evoReqs": {
+      "level": 35,
+      "machineExp": 4400
+    },
+    "habitat": "Chaos Brain",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 222,
+    "fullName": "Cyberdramon",
+    "evoReqs": {
+      "level": 38,
+      "attack": 195,
+      "machineExp": 3800
+    },
+    "habitat": "AccessGlacier",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 223,
+    "shortName": "MAngemon",
+    "altNames": [
+      "HolyAngemon"
+    ],
+    "fullName": "MagnaAngemon",
+    "evoReqs": {
+      "level": 34,
+      "spirit": 160,
+      "holyExp": 3100
+    },
+    "habitat": "HighlightHaven",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 224,
+    "fullName": "Paildramon",
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 225,
+    "fullName": "Dinobeemon",
+    "evoReqs": {
+      "level": 41,
+      "dragonExp": 8800,
+      "befriended": [
+        "Dinobeemon"
+      ]
+    },
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 226,
+    "fullName": "Antylamon",
+    "evoReqs": {
+      "level": 41,
+      "friendship": 80
+    },
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 227,
+    "altNames": [
+      "Arachnemon"
+    ],
+    "fullName": "Arukenimon",
+    "evoReqs": {
+      "level": 40,
+      "spirit": 220,
+      "darkExp": 7500
+    },
+    "habitat": "ResistorJungle",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 228,
+    "fullName": "Mummymon",
+    "evoReqs": {
+      "level": 36,
+      "spirit": 180,
+      "darkExp": 5100
+    },
+    "habitat": "Thriller Ruins",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 229,
+    "altNames": [
+      "MegaloGrowmon"
+    ],
+    "fullName": "WarGrowlmon",
+    "evoReqs": {
+      "level": 36,
+      "spirit": 130,
+      "machineExp": 2100
+    },
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 230,
+    "fullName": "Rapidmon",
+    "evoReqs": {
+      "level": 33,
+      "speed": 145,
+      "machineExp": 3500
+    },
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 231,
+    "fullName": "Taomon",
+    "evoReqs": {
+      "level": 36,
+      "friendship": 80,
+      "spirit": 185
+    },
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 232,
+    "fullName": "Parrotmon",
+    "evoReqs": {
+      "level": 35,
+      "holyExp": 2200,
+      "birdExp": 3300
+    },
+    "habitat": "PaletteAmazon",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 233,
+    "fullName": "Infermon",
+    "evoReqs": {
+      "level": 36,
+      "attack": 200
+    },
+    "habitat": "Chaos Brain",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 234,
+    "shortName": "BRapidmon",
+    "fullName": "BlackRapidmon",
+    "evoReqs": {
+      "level": 33,
+      "speed": 145,
+      "machineExp": 3500
+    },
+    "habitat": "ProcessFactory",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 235,
+    "fullName": "Pandamon",
+    "evoReqs": {
+      "level": 36,
+      "beastExp": 8000,
+      "befriended": [
+        "Pandamon"
+      ]
+    },
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 236,
+    "shortName": "MarineDevimn",
+    "fullName": "Marine Devimon",
+    "evoReqs": {
+      "level": 35,
+      "darkExp": 2100,
+      "aquaExp": 2700
+    },
+    "habitat": "Macro Sea",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 237,
+    "fullName": "Karatenmon",
+    "evoReqs": {
+      "level": 33,
+      "spirit": 170
+    },
+    "habitat": "Chaos Brain",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 238,
+    "fullName": "Kyukimon",
+    "evoReqs": {
+      "level": 34,
+      "speed": 180,
+      "beastExp": 4000
+    },
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 239,
+    "fullName": "Sinduramon",
+    "evoReqs": {
+      "level": 40,
+      "birdExp": 8000,
+      "befriended": [
+        "Sinduramon"
+      ]
+    },
+    "habitat": "Transfield",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 240,
+    "fullName": "Pipismon",
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 241,
+    "altNames": [
+      "DORUgremon"
+    ],
+    "fullName": "DoruGreymon",
+    "evoReqs": {
+      "level": 38,
+      "dragonExp": 4800,
+      "machineExp": 3000
+    },
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 242,
+    "fullName": "Divermon",
+    "evoReqs": {
+      "level": 36,
+      "machineExp": 2900,
+      "befriended": [
+        "Divermon"
+      ]
+    },
+    "habitat": "Macro Sea",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 243,
+    "fullName": "Kimeramon",
+    "evoReqs": {
+      "level": 44,
+      "darkExp": 11000,
+      "befriended": [
+        "Kimeramon"
+      ]
+    },
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 244,
+    "fullName": "Triceramon",
+    "evoReqs": {
+      "level": 33,
+      "defense": 135,
+      "dragonExp": 2000
+    },
+    "habitat": "Proxy Island",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 245,
+    "fullName": "Deramon",
+    "evoReqs": {
+      "level": 36,
+      "insectPlantExp": 4000
+    },
+    "habitat": "PaletteAmazon",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 246,
+    "fullName": "Silphymon",
+    "habitat": "Transfield",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 247,
+    "shortName": "SPStarmon",
+    "fullName": "SuperStarmon",
+    "evoReqs": {
+      "level": 41,
+      "attack": 190,
+      "holyExp": 8800
+    },
+    "habitat": "Transfield",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 248,
+    "shortName": "BWGrowlmon",
+    "altNames": [
+      "B-Megalogrowmon"
+    ],
+    "fullName": "BlackWarGrowlmon",
+    "evoReqs": {
+      "level": 40,
+      "darkExp": 3600,
+      "machineExp": 3300
+    },
+    "habitat": "Shadow Abyss",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 249,
+    "fullName": "Zudomon",
+    "evoReqs": {
+      "level": 32,
+      "attack": 160,
+      "aquaExp": 4100
+    },
+    "habitat": "AccessGlacier",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 250,
+    "shortName": "Whamon",
+    "fullName": "Whamon (Ultimate)",
+    "evoReqs": {
+      "level": 32,
+      "aquaExp": 6000
+    },
+    "habitat": "Macro Sea",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 251,
+    "fullName": "Mamemon",
+    "evoReqs": {
+      "level": 33,
+      "attack": 150,
+      "speed": 140
+    },
+    "habitat": "Proxy Island",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 252,
+    "fullName": "Toucanmon",
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 253,
+    "altNames": [
+      "Owlmon"
+    ],
+    "fullName": "Aurumon",
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 254,
+    "fullName": "Meteormon",
+    "evoReqs": {
+      "level": 37,
+      "defense": 210,
+      "speed": 175
+    },
+    "habitat": "Magnet Mine",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 255,
+    "fullName": "Gigadramon",
+    "evoReqs": {
+      "level": 40,
+      "attack": 195,
+      "machineExp": 4400
+    },
+    "habitat": "ProcessFactory",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 256,
+    "altNames": [
+      "RizeGreymon"
+    ],
+    "fullName": "RiseGreymon",
+    "evoReqs": {
+      "level": 35,
+      "dragonExp": 3500,
+      "machineExp": 3500
+    },
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 257,
+    "shortName": "MGaogamon",
+    "fullName": "MachGaogamon",
+    "evoReqs": {
+      "level": 33,
+      "friendship": 80,
+      "machineExp": 2800
+    },
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 258,
+    "altNames": [
+      "Qilinmon"
+    ],
+    "fullName": "Tyilinmon",
+    "evoReqs": {
+      "level": 43,
+      "spirit": 210,
+      "holyExp": 7100
+    },
+    "habitat": "HighlightHaven",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 259,
+    "altNames": [
+      "Lylamon"
+    ],
+    "fullName": "Lilamon",
+    "evoReqs": {
+      "level": 35,
+      "friendship": 80,
+      "speed": 135
+    },
+    "habitat": "PaletteAmazon",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 260,
+    "fullName": "Shadramon",
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 261,
+    "fullName": "Matadormon",
+    "evoReqs": {
+      "level": 35,
+      "speed": 175,
+      "darkExp": 3900
+    },
+    "habitat": "Shadow Abyss",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 262,
+    "fullName": "Kabukimon",
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 263,
+    "fullName": "Cherrymon",
+    "evoReqs": {
+      "level": 41,
+      "attack": 200,
+      "spirit": 320
+    },
+    "habitat": "ResistorJungle",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 264,
+    "fullName": "Garbagemon",
+    "evoReqs": {
+      "level": 35,
+      "attack": 170,
+      "machineExp": 5000
+    },
+    "habitat": "ProcessFactory",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 265,
+    "shortName": "Lucemon CM",
+    "altNames": [
+      "LucemonFM",
+      "CM"
+    ],
+    "fullName": "Lucemon Chaos Mode",
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 266,
+    "shortName": "Mametyramon",
+    "fullName": "MameTyramon",
+    "evoReqs": {
+      "level": 37,
+      "defense": 170,
+      "dragonExp": 3900
+    },
+    "habitat": "AccessGlacier",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 267,
+    "fullName": "Giromon",
+    "evoReqs": {
+      "level": 38,
+      "attack": 175,
+      "machineExp": 4000
+    },
+    "habitat": "Chaos Brain",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 268,
+    "altNames": [
+      "Vadermon"
+    ],
+    "fullName": "Vademon",
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 269,
+    "shortName": "METyrannomn",
+    "fullName": "MetalTyrannomon",
+    "evoReqs": {
+      "level": 34,
+      "machineExp": 5500
+    },
+    "habitat": "AccessGlacier",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 270,
+    "fullName": "Tekkamon",
+    "evoReqs": {
+      "level": 37,
+      "attack": 170,
+      "speed": 150
+    },
+    "habitat": "Magnet Mine",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 271,
+    "fullName": "Big Mamemon",
+    "habitat": "Transfield",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 272,
+    "shortName": "EXTyrannomn",
+    "fullName": "EXTyrannomon",
+    "evoReqs": {
+      "level": 34,
+      "darkExp": 4500
+    },
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 273,
+    "altNames": [
+      "Vermillimon"
+    ],
+    "fullName": "Vermilimon",
+    "evoReqs": {
+      "level": 37,
+      "defense": 175,
+      "dragonExp": 3500
+    },
+    "habitat": "Proxy Island",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 274,
+    "fullName": "Phantomon",
+    "evoReqs": {
+      "level": 34,
+      "darkExp": 4200
+    },
+    "habitat": "Thriller Ruins",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 275,
+    "altNames": [
+      "Vajiramon"
+    ],
+    "fullName": "Vajramon",
+    "evoReqs": {
+      "level": 35,
+      "defense": 160,
+      "beastExp": 3700
+    },
+    "habitat": "Transfield",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 276,
+    "shortName": "ARVeedramon",
+    "fullName": "AeroVeedramon",
+    "evoReqs": {
+      "level": 36,
+      "attack": 190,
+      "dragonExp": 4100
+    },
+    "habitat": "Task Canyon",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 277,
+    "altNames": [
+      "GrappLeomon"
+    ],
+    "fullName": "Grapleomon",
+    "evoReqs": {
+      "level": 39,
+      "speed": 190,
+      "machineExp": 5500
+    },
+    "habitat": "PaletteAmazon",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 278,
+    "fullName": "Knightmon",
+    "evoReqs": {
+      "level": 40,
+      "attack": 200,
+      "defense": 180
+    },
+    "habitat": "Transfield",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 279,
+    "fullName": "Brachiomon",
+    "evoReqs": {
+      "level": 38,
+      "aquaExp": 7500,
+      "befriended": [
+        "Brachiomon"
+      ]
+    },
+    "habitat": "Transfield",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 280,
+    "fullName": "Allomon",
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 281,
+    "altNames": [
+      "Lynxmon"
+    ],
+    "fullName": "Lanksmon",
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 282,
+    "altNames": [
+      "Shawujinmon"
+    ],
+    "fullName": "Shaujinmon",
+    "evoReqs": {
+      "level": 34,
+      "spirit": 155,
+      "aquaExp": 3600
+    },
+    "habitat": "Transfield",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 283,
+    "fullName": "Yatagaramon",
+    "evoReqs": {
+      "level": 37,
+      "friendship": 80,
+      "birdExp": 3500
+    },
+    "habitat": "HighlightHaven",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 284,
+    "shortName": "BPChessmon",
+    "fullName": "BishopChessmon",
+    "evoReqs": {
+      "level": 34,
+      "attack": 175
+    },
+    "habitat": "Chaos Brain",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 285,
+    "fullName": "RookChessmon",
+    "evoReqs": {
+      "level": 34,
+      "defense": 175
+    },
+    "habitat": "ProcessFactory",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 286,
+    "fullName": "Flaremon",
+    "evoReqs": {
+      "level": 40,
+      "friendship": 80,
+      "spirit": 140
+    },
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 287,
+    "fullName": "Crescemon",
+    "evoReqs": {
+      "level": 33,
+      "friendship": 80,
+      "darkExp": 2800
+    },
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 288,
+    "fullName": "Flamedramon",
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 289,
+    "fullName": "Magnamon",
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 290,
+    "altNames": [
+      "Prairemon"
+    ],
+    "fullName": "Prairiemon",
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 291,
+    "fullName": "Kongoumon",
+    "habitat": "Transfield",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 292,
+    "fullName": "Seahomon",
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 293,
+    "fullName": "Shurimon",
+    "habitat": "Transfield",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 294,
+    "fullName": "Kenkimon",
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 295,
+    "fullName": "Ponchomon",
+    "habitat": "Unknown",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 296,
+    "shortName": "ArgomonUT",
+    "altNames": [
+      "Argomon Ultimate (ArgomonUT)"
+    ],
+    "fullName": "Argomon Ultimate",
+    "evoReqs": {
+      "level": 48,
+      "spirit": 320,
+      "insectPlantExp": 20000
+    },
+    "habitat": "Thriller Ruins",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 297,
+    "fullName": "Shakkoumon",
+    "habitat": "Task Canyon",
+    "stage": "Ultimate"
+  },
+  {
+    "id": 298,
+    "fullName": "Lampmon",
+    "evoReqs": {
+      "level": 49,
+      "defense": 220,
+      "holyExp": 11500
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 299,
+    "shortName": "HEKabuterimn",
+    "altNames": [
+      "HeracleKabuterimon"
+    ],
+    "fullName": "HerculesKabuterimon",
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 300,
+    "fullName": "SaberLeomon",
+    "evoReqs": {
+      "level": 57,
+      "attack": 290,
+      "beastExp": 20000
+    },
+    "habitat": "Proxy Island",
+    "stage": "Mega"
+  },
+  {
+    "id": 301,
+    "fullName": "MetalEtemon",
+    "evoReqs": {
+      "level": 46,
+      "defense": 200,
+      "beastExp": 10000
+    },
+    "habitat": "Chaos Brain",
+    "stage": "Mega"
+  },
+  {
+    "id": 302,
+    "shortName": "MA Angemon",
+    "fullName": "MarineAngemon",
+    "evoReqs": {
+      "level": 47,
+      "holyExp": 8000,
+      "aquaExp": 13000
+    },
+    "habitat": "Macro Sea",
+    "stage": "Mega"
+  },
+  {
+    "id": 303,
+    "shortName": "GigaSeadramn",
+    "fullName": "GigaSeadramon",
+    "evoReqs": {
+      "level": 59,
+      "aquaExp": 25000,
+      "befriended": [
+        "GigaSeadramon"
+      ]
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 304,
+    "fullName": "Piedmon",
+    "evoReqs": {
+      "level": 55,
+      "befriended": [
+        "Piedmon",
+        "Puppetmon"
+      ]
+    },
+    "habitat": "Shadow Abyss",
+    "stage": "Mega"
+  },
+  {
+    "id": 305,
+    "altNames": [
+      "Daemon"
+    ],
+    "fullName": "Creepymon",
+    "evoReqs": {
+      "level": 67,
+      "attack": 390,
+      "darkExp": 50000
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 306,
+    "fullName": "Phoenixmon",
+    "evoReqs": {
+      "level": 52,
+      "holyExp": 11000,
+      "birdExp": 11000
+    },
+    "habitat": "HighlightHaven",
+    "stage": "Mega"
+  },
+  {
+    "id": 307,
+    "fullName": "Puppetmon",
+    "evoReqs": {
+      "level": 55,
+      "machineExp": 20000,
+      "befriended": [
+        "Machinedramon"
+      ]
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 308,
+    "fullName": "Rosemon",
+    "evoReqs": {
+      "level": 50,
+      "attack": 225,
+      "insectPlantExp": 17000
+    },
+    "habitat": "Transfield",
+    "stage": "Mega"
+  },
+  {
+    "id": 309,
+    "fullName": "WarGreymon",
+    "evoReqs": {
+      "level": 52,
+      "friendship": 90,
+      "befriended": [
+        "Agumon"
+      ]
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 310,
+    "shortName": "MGarurumon",
+    "fullName": "MetalGarurumon",
+    "evoReqs": {
+      "level": 52,
+      "friendship": 90,
+      "befriended": [
+        "Gabumon"
+      ]
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 311,
+    "shortName": "MachDramon",
+    "altNames": [
+      "Mugendramon"
+    ],
+    "fullName": "MachineDramon",
+    "evoReqs": {
+      "level": 55,
+      "attack": 280,
+      "befriended": [
+        "MetalSeadramon"
+      ]
+    },
+    "habitat": "ProcessFactory",
+    "stage": "Mega"
+  },
+  {
+    "id": 312,
+    "shortName": "VNMyotismon",
+    "altNames": [
+      "VenomVamdemon"
+    ],
+    "fullName": "VenomMyotismon",
+    "evoReqs": {
+      "level": 66,
+      "beastExp": 6666,
+      "befriended": [
+        "PicoDevimon"
+      ]
+    },
+    "habitat": "Shadow Abyss",
+    "stage": "Mega"
+  },
+  {
+    "id": 313,
+    "altNames": [
+      "Omegamon"
+    ],
+    "fullName": "Omnimon",
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 314,
+    "shortName": "IPDramonDM",
+    "altNames": [
+      "ImperialdramonDM",
+      "Imperialdramon Dragon Mode (ImperialdramonDM)"
+    ],
+    "fullName": "Imperialdramon Dragon Mode",
+    "evoReqs": {
+      "level": 56,
+      "dragonExp": 22000,
+      "befriended": [
+        "Chicomon"
+      ]
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 315,
+    "shortName": "IPDramonFM",
+    "altNames": [
+      "ImperialdramonFM",
+      "Imperialdramon Fighter Mode (ImperialdramonFM)"
+    ],
+    "fullName": "Imperialdramon Fighter Mode",
+    "evoReqs": {
+      "level": 60,
+      "friendship": 80,
+      "befriended": [
+        "ImperialdramonDM"
+      ]
+    },
+    "habitat": "Task Canyon",
+    "stage": "Mega"
+  },
+  {
+    "id": 316,
+    "shortName": "IPDramonPM",
+    "altNames": [
+      "Imperialdramon Paladin Mode (ImperialdramonPM)"
+    ],
+    "fullName": "Imperialdramon Paladin Mode",
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 317,
+    "altNames": [
+      "Deathmon"
+    ],
+    "fullName": "Ghoulmon",
+    "evoReqs": {
+      "level": 49,
+      "defense": 230,
+      "spirit": 230
+    },
+    "habitat": "Chaos Brain",
+    "stage": "Mega"
+  },
+  {
+    "id": 318,
+    "fullName": "Seraphimon",
+    "evoReqs": {
+      "level": 66,
+      "spirit": 380,
+      "holyExp": 77777
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 319,
+    "fullName": "HiAndromon",
+    "evoReqs": {
+      "level": 50,
+      "spirit": 250,
+      "machineExp": 15000
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 320,
+    "fullName": "Devitamamon",
+    "evoReqs": {
+      "level": 50,
+      "attack": 250,
+      "darkExp": 18000
+    },
+    "habitat": "Chaos Brain",
+    "stage": "Mega"
+  },
+  {
+    "id": 321,
+    "shortName": "CherubimonG",
+    "altNames": [
+      "Cherubimon (Vaccine)"
+    ],
+    "fullName": "Cherubimon (Good)",
+    "evoReqs": {
+      "level": 62,
+      "spirit": 360,
+      "holyExp": 30000
+    },
+    "habitat": "HighlightHaven",
+    "stage": "Mega"
+  },
+  {
+    "id": 322,
+    "shortName": "CherubimonE",
+    "altNames": [
+      "Cherubimon (Virus)"
+    ],
+    "fullName": "Cherubimon (Evil)",
+    "evoReqs": {
+      "level": 62,
+      "attack": 300,
+      "darkExp": 23000
+    },
+    "habitat": "Transfield",
+    "stage": "Mega"
+  },
+  {
+    "id": 323,
+    "altNames": [
+      "Dukemon"
+    ],
+    "fullName": "Gallantmon",
+    "evoReqs": {
+      "level": 60,
+      "friendship": 90,
+      "befriended": [
+        "Megidramon"
+      ]
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 324,
+    "shortName": "GallantmnCM",
+    "altNames": [
+      "DukemonCM",
+      "GallantmonCM (Crimson Mode)"
+    ],
+    "fullName": "Gallantmon Crimson Mode",
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 325,
+    "shortName": "MegaGargomn",
+    "altNames": [
+      "SaintGargomon"
+    ],
+    "fullName": "Mega Gargomon",
+    "evoReqs": {
+      "level": 50,
+      "holyExp": 8000,
+      "machineExp": 8000
+    },
+    "habitat": "Chaos Brain",
+    "stage": "Mega"
+  },
+  {
+    "id": 326,
+    "fullName": "Sakuyamon",
+    "evoReqs": {
+      "level": 52,
+      "holyExp": 16000,
+      "befriended": [
+        "Kuzuhamon"
+      ]
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 327,
+    "fullName": "Diaboromon",
+    "evoReqs": {
+      "level": 45,
+      "darkExp": 25000,
+      "befriended": [
+        "Keramon"
+      ]
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 328,
+    "altNames": [
+      "Neptunemon"
+    ],
+    "fullName": "Neptunmon",
+    "evoReqs": {
+      "level": 62,
+      "spirit": 340,
+      "aquaExp": 44000
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 329,
+    "fullName": "Pukumon",
+    "evoReqs": {
+      "level": 45,
+      "attack": 200,
+      "aquaExp": 9900
+    },
+    "habitat": "Macro Sea",
+    "stage": "Mega"
+  },
+  {
+    "id": 330,
+    "altNames": [
+      "Gryphomon"
+    ],
+    "fullName": "Gryphonmon",
+    "evoReqs": {
+      "level": 47,
+      "attack": 240,
+      "beastExp": 8000
+    },
+    "habitat": "Task Canyon",
+    "stage": "Mega"
+  },
+  {
+    "id": 331,
+    "altNames": [
+      "Plesiomon"
+    ],
+    "fullName": "Preciomon",
+    "evoReqs": {
+      "level": 47,
+      "aquaExp": 17500
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 332,
+    "shortName": "Armageddemn",
+    "fullName": "Armageddemon",
+    "habitat": "Magnet Mine",
+    "stage": "Mega"
+  },
+  {
+    "id": 333,
+    "shortName": "MMyotismon",
+    "altNames": [
+      "BelialVamdemon"
+    ],
+    "fullName": "MaloMyotismon",
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 334,
+    "shortName": "IPDramonDB",
+    "altNames": [
+      "Imperialdramon Dragon Black (ImperialdramonDB)",
+      "BlackImperialdramon"
+    ],
+    "fullName": "Imperialdramon Dragon Mode(Black)",
+    "evoReqs": {
+      "level": 60,
+      "attack": 315,
+      "dragonExp": 20000
+    },
+    "habitat": "Transfield",
+    "stage": "Mega"
+  },
+  {
+    "id": 335,
+    "fullName": "Boltmon",
+    "evoReqs": {
+      "level": 47,
+      "speed": 240,
+      "darkExp": 13000
+    },
+    "habitat": "Thriller Ruins",
+    "stage": "Mega"
+  },
+  {
+    "id": 336,
+    "shortName": "PrMamemon",
+    "fullName": "PrinceMamemon",
+    "evoReqs": {
+      "level": 46,
+      "spirit": 220,
+      "machineExp": 9300
+    },
+    "habitat": "Magnet Mine",
+    "stage": "Mega"
+  },
+  {
+    "id": 337,
+    "fullName": "Ophanimon",
+    "evoReqs": {
+      "level": 64,
+      "spirit": 255,
+      "holyExp": 27000
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 338,
+    "fullName": "Zanbamon",
+    "evoReqs": {
+      "level": 47,
+      "speed": 240,
+      "darkExp": 13000
+    },
+    "habitat": "Shadow Abyss",
+    "stage": "Mega"
+  },
+  {
+    "id": 339,
+    "shortName": "BSGargomon",
+    "altNames": [
+      "BlackMegaGargomon"
+    ],
+    "fullName": "Black SaintGargomon",
+    "evoReqs": {
+      "level": 50,
+      "darkExp": 8000,
+      "machineExp": 8000
+    },
+    "habitat": "Transfield",
+    "stage": "Mega"
+  },
+  {
+    "id": 340,
+    "fullName": "Jijimon",
+    "evoReqs": {},
+    "habitat": "Transfield",
+    "stage": "Mega"
+  },
+  {
+    "id": 341,
+    "fullName": "Babamon",
+    "evoReqs": {
+      "level": 48,
+      "spirit": 220,
+      "holyExp": 8000
+    },
+    "habitat": "Transfield",
+    "stage": "Mega"
+  },
+  {
+    "id": 342,
+    "altNames": [
+      "Anubimon"
+    ],
+    "fullName": "Anubismon",
+    "habitat": "Thriller Ruins",
+    "stage": "Mega"
+  },
+  {
+    "id": 343,
+    "fullName": "Parasimon",
+    "evoReqs": {
+      "level": 48,
+      "aptitude": 52,
+      "darkExp": 8800
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 344,
+    "shortName": "Cannondramn",
+    "fullName": "Cannondramon",
+    "evoReqs": {
+      "level": 47,
+      "attack": 255,
+      "machineExp": 12500
+    },
+    "habitat": "Transfield",
+    "stage": "Mega"
+  },
+  {
+    "id": 345,
+    "altNames": [
+      "SlashAngemon",
+      "GuardiAngemon"
+    ],
+    "fullName": "SL Angemon",
+    "evoReqs": {
+      "level": 48,
+      "attack": 250,
+      "machineExp": 8500
+    },
+    "habitat": "Chaos Brain",
+    "stage": "Mega"
+  },
+  {
+    "id": 346,
+    "altNames": [
+      "Crossmon"
+    ],
+    "fullName": "Eaglemon",
+    "evoReqs": {
+      "level": 51,
+      "defense": 265,
+      "holyExp": 7500
+    },
+    "habitat": "Transfield",
+    "stage": "Mega"
+  },
+  {
+    "id": 347,
+    "fullName": "Dorugoramon",
+    "evoReqs": {
+      "level": 54,
+      "attack": 265,
+      "totalExp": 57000
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 348,
+    "fullName": "Beelzemon",
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 349,
+    "shortName": "BAN Leomon",
+    "altNames": [
+      "BanchoLeomon",
+      "BanchouLeomon"
+    ],
+    "fullName": "Bantyo Leomon",
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 350,
+    "shortName": "Darkdramon",
+    "fullName": "Dark Dramon",
+    "evoReqs": {
+      "level": 52,
+      "darkExp": 12000,
+      "machineExp": 9000
+    },
+    "habitat": "AccessGlacier",
+    "stage": "Mega"
+  },
+  {
+    "id": 351,
+    "fullName": "Apocalymon",
+    "evoReqs": {
+      "level": 71,
+      "darkExp": 44444,
+      "befriended": [
+        "Apocalymon"
+      ]
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 352,
+    "fullName": "Ebemon",
+    "evoReqs": {
+      "level": 47,
+      "attack": 245,
+      "machineExp": 11000
+    },
+    "habitat": "Chaos Brain",
+    "stage": "Mega"
+  },
+  {
+    "id": 353,
+    "fullName": "Gulfmon",
+    "evoReqs": {
+      "level": 56,
+      "darkExp": 15000,
+      "beastExp": 10000
+    },
+    "habitat": "Transfield",
+    "stage": "Mega"
+  },
+  {
+    "id": 354,
+    "altNames": [
+      "Goddramon"
+    ],
+    "fullName": "Goldramon",
+    "evoReqs": {
+      "level": 63,
+      "holyExp": 45000,
+      "befriended": [
+        "Airdramon"
+      ]
+    },
+    "habitat": "HighlightHaven",
+    "stage": "Mega"
+  },
+  {
+    "id": 355,
+    "shortName": "ZDMillenniumn",
+    "altNames": [
+      "ZeedMilleniumon"
+    ],
+    "fullName": "ZeedMillenniummon",
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 356,
+    "shortName": "GhoulmonB",
+    "altNames": [
+      "DeathmonBlack"
+    ],
+    "fullName": "Ghoulmon (Black)",
+    "evoReqs": {
+      "level": 49,
+      "attack": 230,
+      "darkExp": 10500
+    },
+    "habitat": "Chaos Brain",
+    "stage": "Mega"
+  },
+  {
+    "id": 357,
+    "fullName": "Kuzuhamon",
+    "evoReqs": {
+      "level": 48,
+      "holyExp": 9800,
+      "befriended": [
+        "Kuzuhamon"
+      ]
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 358,
+    "shortName": "CAGallantmn",
+    "altNames": [
+      "ChaosDukemon"
+    ],
+    "fullName": "Chaos Gallantmon",
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 359,
+    "shortName": "MESeadramon",
+    "fullName": "MetalSeadramon",
+    "evoReqs": {
+      "level": 55,
+      "machineExp": 10000,
+      "aquaExp": 11000
+    },
+    "habitat": "Macro Sea",
+    "stage": "Mega"
+  },
+  {
+    "id": 360,
+    "altNames": [
+      "Valkyriemon"
+    ],
+    "fullName": "Valkyrimon",
+    "evoReqs": {
+      "level": 52,
+      "speed": 260,
+      "holyExp": 12000
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 361,
+    "fullName": "Justimon",
+    "evoReqs": {
+      "level": 51,
+      "spirit": 250,
+      "machineExp": 18000
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 362,
+    "fullName": "Vikemon",
+    "evoReqs": {
+      "level": 50,
+      "defense": 230,
+      "spirit": 230
+    },
+    "habitat": "AccessGlacier",
+    "stage": "Mega"
+  },
+  {
+    "id": 363,
+    "shortName": "BW Greymon",
+    "fullName": "BlackWarGreymon",
+    "evoReqs": {
+      "level": 58,
+      "spirit": 290,
+      "darkExp": 21000
+    },
+    "habitat": "Transfield",
+    "stage": "Mega"
+  },
+  {
+    "id": 364,
+    "shortName": "SMammothmon",
+    "fullName": "Skull Mammothmon",
+    "evoReqs": {
+      "level": 49,
+      "darkExp": 6000,
+      "beastExp": 8000
+    },
+    "habitat": "Transfield",
+    "stage": "Mega"
+  },
+  {
+    "id": 365,
+    "shortName": "GKuwagamon",
+    "altNames": [
+      "GranKuwagamon"
+    ],
+    "fullName": "GrandisKuwagamon",
+    "evoReqs": {
+      "level": 49,
+      "attack": 255,
+      "insectPlantExp": 17000
+    },
+    "habitat": "Transfield",
+    "stage": "Mega"
+  },
+  {
+    "id": 366,
+    "fullName": "Pharaohmon",
+    "evoReqs": {
+      "level": 50,
+      "holyExp": 9000,
+      "darkExp": 9000
+    },
+    "habitat": "Thriller Ruins",
+    "stage": "Mega"
+  },
+  {
+    "id": 367,
+    "fullName": "Susanoomon",
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 368,
+    "fullName": "Alphamon",
+    "evoReqs": {
+      "level": 65,
+      "holyExp": 50000,
+      "befriended": [
+        "Clockmon"
+      ]
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 369,
+    "shortName": "MagnaDramon",
+    "altNames": [
+      "Holydramon"
+    ],
+    "fullName": "Magna Dramon",
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 370,
+    "altNames": [
+      "Milleniumon"
+    ],
+    "fullName": "Millenniummon",
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 371,
+    "shortName": "MMillenniummn",
+    "altNames": [
+      "MoonMillenniummon",
+      "MoonMilleniumon"
+    ],
+    "fullName": "Moon=Millenniummon",
+    "evoReqs": {
+      "level": 66,
+      "spirit": 370,
+      "befriended": [
+        "Milleniumon"
+      ]
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 372,
+    "altNames": [
+      "Megiddramon"
+    ],
+    "fullName": "Megidramon",
+    "evoReqs": {
+      "level": 48,
+      "darkExp": 9000,
+      "befriended": [
+        "Guilmon"
+      ]
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 373,
+    "fullName": "Sleipmon",
+    "evoReqs": {
+      "level": 65,
+      "attack": 370,
+      "holyExp": 48000
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 374,
+    "shortName": "SN Greymon",
+    "fullName": "ShineGreymon",
+    "evoReqs": {
+      "level": 54,
+      "attack": 270,
+      "holyExp": 13000
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 375,
+    "shortName": "MRGaogamon",
+    "fullName": "MirageGaogamon",
+    "evoReqs": {
+      "level": 53,
+      "attack": 235,
+      "speed": 280
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 376,
+    "shortName": "JumboGamemn",
+    "fullName": "JumboGamemon",
+    "evoReqs": {
+      "level": 51,
+      "attack": 270,
+      "machineExp": 9600
+    },
+    "habitat": "Transfield",
+    "stage": "Mega"
+  },
+  {
+    "id": 377,
+    "fullName": "Ravemon",
+    "evoReqs": {
+      "level": 50,
+      "speed": 255,
+      "machineExp": 10000
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 378,
+    "shortName": "QUChessmon",
+    "fullName": "QueenChessmon",
+    "evoReqs": {
+      "level": 50,
+      "spirit": 220,
+      "machineExp": 13000
+    },
+    "habitat": "Transfield",
+    "stage": "Mega"
+  },
+  {
+    "id": 379,
+    "fullName": "KingChessmon",
+    "evoReqs": {
+      "level": 50,
+      "aptitude": 55,
+      "machineExp": 13000
+    },
+    "habitat": "Transfield",
+    "stage": "Mega"
+  },
+  {
+    "id": 380,
+    "shortName": "ChronomonHM",
+    "altNames": [
+      "Chronomon Holy Mode (ChronomonHM)"
+    ],
+    "fullName": "Chronomon Holy Mode",
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 381,
+    "fullName": "Lilithmon",
+    "evoReqs": {
+      "level": 64,
+      "spirit": 300,
+      "darkExp": 32000
+    },
+    "habitat": "Transfield",
+    "stage": "Mega"
+  },
+  {
+    "id": 382,
+    "altNames": [
+      "Valdurmon"
+    ],
+    "fullName": "Varodurumon",
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 383,
+    "fullName": "Apollomon",
+    "evoReqs": {
+      "level": 55,
+      "friendship": 100,
+      "holyExp": 17500
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 384,
+    "fullName": "Dianamon",
+    "evoReqs": {
+      "level": 50,
+      "friendship": 100,
+      "darkExp": 14500
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 385,
+    "shortName": "SGreymonBM",
+    "altNames": [
+      "ShineGreymon Burst Mode (ShineGreymonBM)"
+    ],
+    "fullName": "Shine Greymon Burst Mode",
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 386,
+    "shortName": "SGreymonRM",
+    "altNames": [
+      "ShineGreymon Ruin mode (ShineGreymonRM)"
+    ],
+    "fullName": "Shine Greymon Ruin Mode",
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 387,
+    "shortName": "MGaogamnBM",
+    "altNames": [
+      "MirageGaogamon Burst Mode (MirageGaogamonBM)"
+    ],
+    "fullName": "MirageGaogamon Burst Mode",
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 388,
+    "shortName": "Ravemon BM",
+    "altNames": [
+      "Ravemon Burst Mode (RavemonBM)"
+    ],
+    "fullName": "Ravemon Burst Mode",
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 389,
+    "altNames": [
+      "Lotusmon"
+    ],
+    "fullName": "Lotosmon",
+    "evoReqs": {
+      "level": 57,
+      "insectPlantExp": 29000,
+      "befriended": [
+        "Rosemon"
+      ]
+    },
+    "habitat": "Transfield",
+    "stage": "Mega"
+  },
+  {
+    "id": 390,
+    "shortName": "DSGreymon",
+    "fullName": "DotShineGreymon",
+    "evoReqs": {
+      "level": 50,
+      "aptitude": 55,
+      "machineExp": 12000
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 391,
+    "shortName": "DMGaogamon",
+    "fullName": "DotMirageGaogamon",
+    "evoReqs": {
+      "level": 60,
+      "machineExp": 30000,
+      "befriended": [
+        "DotMirageGaogamon"
+      ]
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 392,
+    "shortName": "BeelzemonBM",
+    "altNames": [
+      "Beelzemon Blast Mode (BeelzemonBM)"
+    ],
+    "fullName": "Beelzemon Blast Mode",
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 393,
+    "shortName": "Rosemon BM",
+    "altNames": [
+      "Rosemon Burst Mode (RosemonBM)"
+    ],
+    "fullName": "Rosemon Burst Mode",
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 394,
+    "shortName": "ArgomonMG",
+    "altNames": [
+      "Argomon Mega (ArgomonMG)"
+    ],
+    "fullName": "Argomon Mega",
+    "evoReqs": {
+      "level": 62,
+      "attack": 400,
+      "darkExp": 40000
+    },
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 395,
+    "fullName": "Minervamon",
+    "habitat": "PaletteAmazon",
+    "stage": "Mega"
+  },
+  {
+    "id": 396,
+    "fullName": "Duftmon",
+    "habitat": "Unknown",
+    "stage": "Mega"
+  },
+  {
+    "id": 397,
+    "fullName": "Chaosmon",
+    "habitat": "Unknown",
+    "stage": "Mega"
+  }
+]

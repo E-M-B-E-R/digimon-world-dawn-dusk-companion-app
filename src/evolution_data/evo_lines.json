@@ -1,0 +1,830 @@
+{
+  "Gummymon": {
+    "Gummymon": [
+      "Terriermon",
+      "Tapirmon",
+      "Renamon"
+    ],
+    "Terriermon": [
+      "Gargomon"
+    ],
+    "Gargomon": [
+      "Rapidmon"
+    ],
+    "Rapidmon": [
+      "Mega Gargomon"
+    ],
+    "Tapirmon": [
+      "Unimon",
+      "Seasarmon"
+    ],
+    "Unimon": [
+      "Piximon"
+    ],
+    "Pixiemon": [
+      "Jijimon"
+    ],
+    "Renamon": [
+      "Kyubimon",
+      "Sorcerymon"
+    ],
+    "Kyubimon": [
+      "Taomon"
+    ],
+    "Taomon": [
+      "Sakuyamon"
+    ]
+  },
+  "Puttomon": {
+    "Puttomon": [
+      "Salamon",
+      "Kudamon",
+      "PawnChessmon(White)"
+    ],
+    "Plotmon": [
+      "Gatomon"
+    ],
+    "Tailmon": [
+      "Angewomon"
+    ],
+    "Angewomon": [
+      "Ophanimon"
+    ],
+    "Kudamon": [
+      "Reppamon",
+      "Starmon"
+    ],
+    "Reppamon": [
+      "Tyilinmon"
+    ],
+    "Tyilinmon": [
+      "Sleipmon"
+    ],
+    "Starmon": [
+      "SuperStarmon"
+    ],
+    "PawnChessmonWhite": [
+      "KnightChessmon(White)"
+    ],
+    "KnightChessmonWhite": [
+      "BishopChessmon"
+    ],
+    "BishopChessmon": [
+      "KingChessmon"
+    ]
+  },
+  "Sunmon": {
+    "Sunmon": [
+      "Coronamon"
+    ],
+    "Coronamon": [
+      "Firamon"
+    ],
+    "Firamon": [
+      "Flaremon"
+    ],
+    "Flaremon": [
+      "Apollomon"
+    ]
+  },
+  "Botamon": {
+    "Botamon": [
+      "BlackAgumon",
+      "Candlemon"
+    ],
+    "BlackAgumon": [
+      "Monochromon",
+      "DKTyrannomon"
+    ],
+    "Monochromon": [
+      "Vermilimon"
+    ],
+    "Vermillimon": [
+      "BlackWarGreymon"
+    ],
+    "DarkTyrannomon": [
+      "SkullGreymon",
+      "MetalTyrannomon"
+    ],
+    "SkullGreymon": [
+      "MachineDramon"
+    ],
+    "Candlemon": [
+      "DarkLizardmon",
+      "Flarerizamon"
+    ],
+    "DarkRizamon": [
+      "Volcanomon"
+    ]
+  },
+  "Chocomon": {
+    "Chocomon": [
+      "Lopmon"
+    ],
+    "Lopmon": [
+      "Centarumon",
+      "Wendigomon"
+    ],
+    "Centaurmon": [
+      "BlackRapidmon"
+    ],
+    "BlackRapidmon": [
+      "Black SaintGargomon"
+    ],
+    "Wendigomon": [
+      "Antylamon"
+    ],
+    "Antylamon": [
+      "Cherubimon (Good)",
+      "Cherubimon (Evil)"
+    ]
+  },
+  "Kuramon": {
+    "Kuramon": [
+      "Tsukaimon"
+    ],
+    "Tsukaimon": [
+      "Bakemon",
+      "Devidramon"
+    ],
+    "Bakemon": [
+      "Phantomon"
+    ],
+    "Phantomon": [
+      "Ghoulmon (Black)",
+      "Apocalymon"
+    ],
+    "Devidramon": [
+      "Kimeramon",
+      "Gigadramon"
+    ],
+    "Kimeramon": [
+      "Moon=Millenniummon"
+    ]
+  },
+  "Moonmon": {
+    "Moonmon": [
+      "Lunamon"
+    ],
+    "Lunamon": [
+      "Lekismon"
+    ],
+    "Lekismon": [
+      "Crescemon"
+    ],
+    "Crescemon": [
+      "Dianamon"
+    ]
+  },
+  "Pagumon": {
+    "Pagumon": [
+      "DemiDevimon",
+      "Impmon"
+    ],
+    "PicoDevimon": [
+      "Devimon",
+      "Musyamon"
+    ],
+    "Devimon": [
+      "Myotismon"
+    ],
+    "Vamdemon": [
+      "VenomMyotismon"
+    ],
+    "Musyamon": [
+      "Vajramon"
+    ],
+    "Vajiramon": [
+      "Zanbamon",
+      "Boltmon"
+    ],
+    "Impmon": [
+      "Vilemon",
+      "Wizardmon"
+    ],
+    "Evilmon": [
+      "LadyDevimon"
+    ],
+    "LadyDevimon": [
+      "Lilithmon"
+    ],
+    "Wizardmon": [
+      "Mummymon"
+    ],
+    "Mummymon": [
+      "Pharaohmon"
+    ]
+  },
+  "Tsumemon:": {
+    "Tsumemon": [
+      "Keramon",
+      "Dracmon"
+    ],
+    "Keramon": [
+      "Kurisarimon"
+    ],
+    "Chrysalimon": [
+      "Infermon",
+      "Argomon Ultimate"
+    ],
+    "Infermon": [
+      "Diaboromon"
+    ],
+    "ArgomonUT": [
+      "Argomon Mega"
+    ],
+    "Dracmon": [
+      "Sangloupmon"
+    ],
+    "SangLoupmon": [
+      "Matadormon"
+    ],
+    "Matadormon": [
+      "Piedmon"
+    ]
+  },
+  "Chicomon": {
+    "Chicomon": [
+      "Veemon",
+      "Monodramon"
+    ],
+    "Veemon": [
+      "ExVeemon",
+      "Veedramon"
+    ],
+    "Veedramon": [
+      "AeroVeedramon"
+    ],
+    "AeroVeedramon": [
+      "Goldramon"
+    ],
+    "Monodramon": [
+      "Dinohumon",
+      "Airdramon"
+    ],
+    "Dinohumon": [
+      "Cyberdramon"
+    ],
+    "Cyberdramon": [
+      "Justimon"
+    ],
+    "Airdramon": [
+      "Megadramon"
+    ],
+    "Megadramon": [
+      "Dark Dramon"
+    ]
+  },
+  "Gigimon": {
+    "Gigimon": [
+      "Guilmon"
+    ],
+    "Guilmon": [
+      "Growlmon",
+      "Tyrannomon"
+    ],
+    "Growlmon": [
+      "WarGrowlmon",
+      "BlackWarGrowlmon"
+    ],
+    "WarGrowlmon": [
+      "Megidramon",
+      "Gallantmon"
+    ],
+    "Tyrannomon": [
+      "Triceramon"
+    ],
+    "Triceramon": [
+      "Cannondramon"
+    ]
+  },
+  "Koromon": {
+    "Koromon": [
+      "Agumon",
+      "DotAgumon"
+    ],
+    "Agumon": [
+      "Greymon",
+      "GeoGreymon"
+    ],
+    "Greymon": [
+      "MetalGreymon"
+    ],
+    "MetalGreymon": [
+      "WarGreymon"
+    ],
+    "GeoGreymon": [
+      "RiseGreymon"
+    ],
+    "RizeGreymon": [
+      "ShineGreymon",
+      "DotShineGreymon"
+    ]
+  },
+  "Dorimon": {
+    "Dorimon": [
+      "Dorumon",
+      "Armadillomon",
+      "Shamamon"
+    ],
+    "Dorumon": [
+      "Dorugamon",
+      "Drimogemon"
+    ],
+    "Dorugamon": [
+      "DoruGreymon"
+    ],
+    "DoruGreymon": [
+      "Dorugoramon"
+    ],
+    "Armadillomon": [
+      "Ankylomon",
+      "NiseDrimogemon"
+    ],
+    "Shamanmon": [
+      "Fugamon",
+      "Apemon"
+    ],
+    "Apemon": [
+      "Kyukimon"
+    ],
+    "Kyukimon": [
+      "Kuzuhamon"
+    ]
+  },
+  "Tsunomon": {
+    "Tsunomon": [
+      "Gabumon",
+      "Goburimon"
+    ],
+    "Gabumon": [
+      "Garurumon",
+      "Jungle Mojyamon"
+    ],
+    "Garurumon": [
+      "WarGarurumon(Blue)"
+    ],
+    "WereGarurumon": [
+      "MetalGarurumon"
+    ],
+    "Goburimon": [
+      "Ogremon",
+      "Minotarumon",
+      "Nanimon"
+    ],
+    "Ogremon": [
+      "WarGarurumon(Black)"
+    ],
+    "WereGarurumonBlack": [
+      "Gulfmon"
+    ],
+    "Minotarumon": [
+      "Etemon"
+    ],
+    "Etemon": [
+      "MetalEtemon"
+    ]
+  },
+  "Wanyamon": {
+    "Wanyamon": [
+      "Gaomon",
+      "Kumamon"
+    ],
+    "Gaomon": [
+      "Gaogamon",
+      "Leomon"
+    ],
+    "Gaogamon": [
+      "MachGaogamon"
+    ],
+    "MachGaogamon": [
+      "MirageGaogamon",
+      "DotMirageGaogamon"
+    ],
+    "Leomon": [
+      "Grapleomon"
+    ],
+    "GrappLeomon": [
+      "SaberLeomon"
+    ],
+    "Kumamon": [
+      "Grizzmon",
+      "Mojyamon"
+    ],
+    "Grizzmon": [
+      "Monzaemon",
+      "Pandamon"
+    ],
+    "Monzaemon": [
+      "Babamon"
+    ],
+    "Mojyamon": [
+      "Mammothmon"
+    ],
+    "Mammothmon": [
+      "Skull Mammothmon"
+    ]
+  },
+  "Kapurimon": {
+    "Kapurimon": [
+      "Hagurumon",
+      "Kotemon",
+      "PawnChessmon(Black)"
+    ],
+    "Hagurumon": [
+      "Guardromon",
+      "Hookmon"
+    ],
+    "Guardromon": [
+      "Andromon"
+    ],
+    "Andromon": [
+      "HiAndromon"
+    ],
+    "Kotemon": [
+      "Omekamon",
+      "PlatinumSukamon"
+    ],
+    "Omekamon": [
+      "Tekkamon"
+    ],
+    "Tekkamon": [
+      "Puppetmon"
+    ],
+    "PawnChessmonBlack": [
+      "KnightChessmon(Black)"
+    ],
+    "KnightChessmonBlack": [
+      "RookChessmon"
+    ],
+    "RookChessmon": [
+      "QueenChessmon"
+    ]
+  },
+  "Poyomon": {
+    "Poyomon": [
+      "Kamemon",
+      "Gomamon",
+      "Crabmon"
+    ],
+    "Kamemon": [
+      "Gawappamon",
+      "Tortamon"
+    ],
+    "Gwappamon": [
+      "Shaujinmon"
+    ],
+    "Shawujinmon": [
+      "JumboGamemon"
+    ],
+    "Tortomon": [
+      "Brachiomon"
+    ],
+    "Brachiomon": [
+      "Preciomon"
+    ],
+    "Gomamon": [
+      "Ikkakumon"
+    ],
+    "Ikkakumon": [
+      "Zudomon"
+    ],
+    "Zudomon": [
+      "Vikemon"
+    ],
+    "Crabmon": [
+      "Ebidramon"
+    ]
+  },
+  "Tokomon": {
+    "Tokomon": [
+      "Patamon",
+      "Falcomon",
+      "Dfalcomon"
+    ],
+    "Patamon": [
+      "Angemon"
+    ],
+    "Angemon": [
+      "MagnaAngemon"
+    ],
+    "HolyAngemon": [
+      "SL Angemon",
+      "Seraphimon"
+    ],
+    "Falcomon": [
+      "Peckmon"
+    ],
+    "Peckmon": [
+      "Yatagaramon"
+    ],
+    "Yatagaramon": [
+      "Ravemon"
+    ]
+  },
+  "Chicchimon": {
+    "Chicchimon": [
+      "Penguinmon",
+      "Muchomon"
+    ],
+    "Penmon": [
+      "Kiwimon",
+      "Kokatorimon"
+    ],
+    "Kiwimon": [
+      "Deramon",
+      "Phoenixmon"
+    ],
+    "Muchomon": [
+      "Diatrymon",
+      "Akatorimon"
+    ],
+    "Diatrymon": [
+      "Sinduramon"
+    ],
+    "Akatorimon": [
+      "Parrotmon"
+    ],
+    "Parrotmon": [
+      "Eaglemon"
+    ]
+  },
+  "Budmon": {
+    "Budmon": [
+      "Lalamon",
+      "Mushroomon",
+      "DoKunemon"
+    ],
+    "Raramon": [
+      "Sunflowmon",
+      "Red Vegiemon"
+    ],
+    "Sunflowmon": [
+      "Lilamon"
+    ],
+    "Lylamon": [
+      "Rosemon",
+      "Lotosmon"
+    ],
+    "Mushroomon": [
+      "Ninjamon",
+      "Kogamon"
+    ],
+    "DoKunemon": [
+      "Kuwagamon",
+      "Dokugumon",
+      "Roachmon"
+    ],
+    "Kuwagamon": [
+      "Okuwamon"
+    ],
+    "Ookuwamon": [
+      "GrandisKuwagamon"
+    ],
+    "Dokugumon": [
+      "Arukenimon"
+    ]
+  },
+  "Minomon": {
+    "Minomon": [
+      "Wormmon",
+      "Tentomon",
+      "Kunemon"
+    ],
+    "Wormmon": [
+      "Stingmon",
+      "Snimon"
+    ],
+    "Tentomon": [
+      "Kabuterimon",
+      "Sand Yanmamon"
+    ],
+    "Kabuterimon": [
+      "MegaKabuterimon(Red)",
+      "Megakabuterimon(Blue)"
+    ],
+    "Kunemon": [
+      "Yanmamon",
+      "Flymon",
+      "Sukamon"
+    ],
+    "Flymon": [
+      "Dinobeemon"
+    ],
+    "Dinobeemon": [
+      "Imperialdramon Dragon Mode(Black)"
+    ],
+    "Sukamon": [
+      "Garbagemon"
+    ]
+  },
+  "Tanemon": {
+    "Tanemon": [
+      "Palmon",
+      "Aruraumon",
+      "Floramon"
+    ],
+    "Palmon": [
+      "Togemon",
+      "MoriShellmon"
+    ],
+    "Togemon": [
+      "Lillymon"
+    ],
+    "Aruraumon": [
+      "Weedmon",
+      "Woodmon"
+    ],
+    "Zassoumon": [
+      "Blossomon"
+    ],
+    "Woodmon": [
+      "Cherrymon"
+    ],
+    "Floramon": [
+      "Veggiemon"
+    ]
+  },
+  "Gotsumon": {
+    "Gotsumon": [
+      "Icemon",
+      "Golemon",
+      "Tsuchidarumon"
+    ],
+    "Icemon": [
+      "Meteormon"
+    ]
+  },
+  "Kokuwamon": {
+    "Kokuwamon": [
+      "Thunderballmon"
+    ],
+    "Thunderballmon": [
+      "Mamemon"
+    ]
+  },
+  "Solarmon": {
+    "Solarmon": [
+      "Clockmon",
+      "BomberNanimon"
+    ],
+    "Clockmon": [
+      "Knightmon"
+    ],
+    "Knightmon": [
+      "Alphamon"
+    ],
+    "BomberNanimon": [
+      "Giromon"
+    ]
+  },
+  "ToyAgumon": {
+    "ToyAgumon": [
+      "Tankmon",
+      "Deputymon"
+    ],
+    "Tankmon": [
+      "MetalMamemon"
+    ],
+    "MetalMamemon": [
+      "PrinceMamemon"
+    ],
+    "Revolmon": [
+      "MameTyramon"
+    ]
+  },
+  "ToyAgumonB": {
+    "ToyAgumonB": [
+      "Mekanorimon"
+    ],
+    "Mekanorimon": [
+      "EXTyrannomon"
+    ],
+    "EXTyrannomon": [
+      "Ghoulmon"
+    ]
+  },
+  "Betamon": {
+    "Betamon": [
+      "Octomon",
+      "Gesomon",
+      "Dolphmon"
+    ],
+    "Dolphmon": [
+      "Whamon (Ultimate)",
+      "Divermon"
+    ],
+    "Whamon": [
+      "MarineAngemon"
+    ]
+  },
+  "Gizamon": {
+    "Gizamon": [
+      "IceDevimon",
+      "Raremon"
+    ],
+    "IceDevimon": [
+      "Marine Devimon"
+    ],
+    "Raremon": [
+      "Datamon"
+    ],
+    "Nanomon": [
+      "Parasimon"
+    ]
+  },
+  "Otamamon": {
+    "Otamamon": [
+      "Gekomon",
+      "Geremon",
+      "Numemon"
+    ],
+    "Gekomon": [
+      "ShogunGekomon"
+    ]
+  },
+  "SnowAgumon": {
+    "SnowAgumon": [
+      "Seadramon"
+    ],
+    "Seadramon": [
+      "MegaSeadramon"
+    ],
+    "MegaSeadramon": [
+      "MetalSeadramon",
+      "GigaSeadramon"
+    ]
+  },
+  "SnowGoburimon": {
+    "SnowGoburimon": [
+      "Hyogamon",
+      "Frigimon"
+    ]
+  },
+  "Syakomon": {
+    "Syakomon": [
+      "Coelamon",
+      "Shellmon",
+      "KaratsukiNumemon"
+    ],
+    "Coelamon": [
+      "Scorpiomon"
+    ],
+    "Scorpiomon": [
+      "Pukumon"
+    ],
+    "KaratsukiNumemon": [
+      "Digitamamon"
+    ],
+    "Digitamamon": [
+      "Lampmon",
+      "Devitamamon"
+    ]
+  },
+  "Biyomon": {
+    "Biyomon": [
+      "Birdramon",
+      "Saberdramon"
+    ],
+    "Birdramon": [
+      "Garudamon"
+    ],
+    "Garudamon": [
+      "Gryphonmon"
+    ],
+    "Saberdramon": [
+      "Karatenmon"
+    ]
+  },
+  "Hawkmon": {
+    "Hawkmon": [
+      "Aquilamon"
+    ]
+  },
+  "LucemonFM": {
+    "LucemonFM": [
+      "Creepymon"
+    ]
+  },
+  "Paildramon": {
+    "Paildramon": [
+      "Imperialdramon Dragon Mode",
+      "Imperialdramon Fighter Mode"
+    ]
+  },
+  "Vadermon": {
+    "Vadermon": [
+      "Ebemon"
+    ]
+  },
+  "Dragomon": {
+    "Dragomon": [
+      "Neptunmon"
+    ]
+  },
+  "Silphymon": {
+    "Silphymon": [
+      "Valkyrimon"
+    ]
+  }
+}

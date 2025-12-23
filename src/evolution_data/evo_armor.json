@@ -1,0 +1,144 @@
+{
+  "Armadillomon": {
+    "devolveFriendship": 60,
+    "eggs": {
+      "friendship": {
+        "result": "Kenkimon",
+        "reqs": {
+          "level": 24,
+          "machineExp": 2300
+        }
+      },
+      "light": {
+        "result": "Seahomon",
+        "reqs": {
+          "level": 27,
+          "dragonExp": 2700
+        }
+      }
+    }
+  },
+  "Hawkmon": {
+    "devolveFriendship": 70,
+    "eggs": {
+      "kindness": {
+        "result": "Toucanmon",
+        "reqs": {
+          "level": 20,
+          "defense": 105
+        }
+      },
+      "courage": {
+        "result": "Allomon",
+        "reqs": {
+          "level": 21,
+          "attack": 110
+        }
+      },
+      "purity": {
+        "result": "Shurimon",
+        "reqs": {
+          "level": 22,
+          "insectPlantExp": 800
+        }
+      }
+    }
+  },
+  "Patamon": {
+    "devolveFriendship": 50,
+    "eggs": {
+      "love": {
+        "result": "Pipismon",
+        "reqs": {
+          "level": 21,
+          "speed": 100
+        }
+      },
+      "purity": {
+        "result": "Ponchomon",
+        "reqs": {
+          "level": 23,
+          "darkExp": 2000
+        }
+      },
+      "kindness": {
+        "result": "Prairiemon",
+        "reqs": {
+          "level": 27,
+          "attack": 135
+        }
+      }
+    }
+  },
+  "Veemon": {
+    "devolveFriendship": 50,
+    "eggs": {
+      "courage": {
+        "result": "Flamedramon",
+        "reqs": {
+          "level": 22,
+          "dragonExp": 2500
+        }
+      },
+      "miracles": {
+        "result": "Magnamon",
+        "reqs": {
+          "level": 40,
+          "holyExp": 10000
+        }
+      }
+    }
+  },
+  "Wormmon": {
+    "devolveFriendship": 50,
+    "eggs": {
+      "love": {
+        "result": "Aurumon",
+        "reqs": {
+          "level": 21,
+          "spirit": 110
+        }
+      },
+      "courage": {
+        "result": "Shadramon",
+        "reqs": {
+          "level": 30,
+          "darkExp": 6000
+        }
+      },
+      "miracles": {
+        "result": "Kongoumon",
+        "reqs": {
+          "level": 32,
+          "attack": 190
+        }
+      }
+    }
+  },
+  "Gatomon": {
+    "devolveFriendship": 70,
+    "eggs": {
+      "honesty": {
+        "result": "Tylomon",
+        "reqs": {
+          "level": 27,
+          "aquaExp": 2200
+        }
+      },
+      "purity": {
+        "result": "Kabukimon",
+        "reqs": {
+          "level": 31,
+          "insectPlantExp": 2000
+        }
+      },
+      "courage": {
+        "result": "Lanksmon",
+        "reqs": {
+          "level": 29,
+          "speed": 130
+        }
+      }
+    }
+  }
+}

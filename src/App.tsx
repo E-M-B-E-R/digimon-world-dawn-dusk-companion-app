@@ -1,15 +1,42 @@
-import { useState } from 'react';
-import { Search } from 'lucide-react';
+import React, { useState } from 'react';
+import { Search, Moon, Sun } from 'lucide-react';
 import { digimonData, evolutions } from './data/digimon-data';
 import { EvolutionTreeGraph } from './components/EvolutionTreeGraph';
 import { DigimonDetails } from './components/DigimonDetails';
+import { VerticalEvolutionView } from './components/VerticalEvolutionView';
+import { useIsMobile } from './components/ui/use-mobile';
+
+const LIGHT_MODE_COLOR = '#F8AE5C'; // Orange
+const DARK_MODE_COLOR = '#A398D3'; // Light purple
 
 export default function App() {
-  const [selectedDigimon, setSelectedDigimon] = useState<string>('agumon');
+  // `rootDigimonId` controls which digimon the tree is centered on (prevents redraw on modal open)
+  // `modalDigimonId` is used only for showing the details modal
+  const [rootDigimonId, setRootDigimonId] = useState<string>('agumon');
+  const [modalDigimonId, setModalDigimonId] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [showDetails, setShowDetails] = useState(false);
   const [suggestions, setSuggestions] = useState<typeof digimonData>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+  const [themeColor, setThemeColor] = useState(LIGHT_MODE_COLOR);
+  const [userChangedColor, setUserChangedColor] = useState(false);
+  const isMobile = useIsMobile();
+
+  const handleDarkModeToggle = () => {
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+    
+    // Only auto-change color if user hasn't manually changed it
+    if (!userChangedColor) {
+      setThemeColor(newDarkMode ? DARK_MODE_COLOR : LIGHT_MODE_COLOR);
+    }
+  };
+
+  const handleColorChange = (color: string) => {
+    setThemeColor(color);
+    setUserChangedColor(true);
+  };
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);
@@ -25,40 +52,104 @@ export default function App() {
     }
   };
 
+  // Open details modal without changing the tree root (prevents redraw)
   const handleDigimonClick = (id: string) => {
     const digimon = digimonData.find(d => d.id === id);
     if (digimon) {
+      setModalDigimonId(id);
       setShowDetails(true);
-      setSelectedDigimon(id);
     }
   };
 
+  // Selecting from search navigates the tree to the chosen Digimon
   const handleSelectFromSearch = (id: string) => {
-    setSelectedDigimon(id);
+    setRootDigimonId(id);
     setSearchQuery('');
     setShowSuggestions(false);
     setSuggestions([]);
   };
 
-  const currentDigimon = digimonData.find(d => d.id === selectedDigimon);
+  const currentRootDigimon = digimonData.find(d => d.id === rootDigimonId);
+  const modalDigimon = modalDigimonId ? digimonData.find(d => d.id === modalDigimonId) : null;
+
+  // If mobile, render full-screen vertical view
+  if (isMobile) {
+    return (
+      <>
+        <VerticalEvolutionView
+          digimonData={digimonData}
+          evolutions={evolutions}
+          onDigimonClick={handleDigimonClick}
+          onBackToTree={() => {}} // No back button on mobile
+          showBackButton={false}
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
+          headerColor={themeColor}
+          setHeaderColor={setThemeColor}
+          lineColor={themeColor}
+          setLineColor={setThemeColor}
+        />
+        
+        {/* Details Modal */}
+        {showDetails && modalDigimon && (
+          <div 
+            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+            onClick={() => setShowDetails(false)}
+          >
+            <div onClick={(e) => e.stopPropagation()}>
+              <DigimonDetails 
+                digimon={modalDigimon} 
+                onClose={() => { setShowDetails(false); setModalDigimonId(null); }}
+                darkMode={darkMode}
+              />
+            </div>
+          </div>
+        )}
+      </>
+    );
+  }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300">
+    <div className={`min-h-screen ${darkMode ? 'bg-[#272822]' : 'bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300'}`}>
       {/* Header */}
-      <header className="bg-white shadow-md sticky top-0 z-40">
+      <header className="shadow-md sticky top-0 z-40" style={{ backgroundColor: themeColor }}>
         <div className="max-w-[95%] mx-auto px-4 py-4">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div>
-              <h1 className="text-2xl md:text-3xl text-gray-900">
-                Digimon Evolution Tree
-              </h1>
-              <p className="text-sm text-gray-600 mt-1">
-                Digimon World: Dusk & Dawn
-              </p>
+          <div className="flex flex-col items-center gap-4">
+            {/* Title and Controls */}
+            <div className="w-full flex items-center justify-between">
+              <div className="flex-1" />
+              
+              <div className="text-center">
+                <h1 className="text-3xl md:text-4xl text-white">
+                  Digimon Evolution Tree
+                </h1>
+                <p className={`text-sm mt-1 ${darkMode ? 'text-gray-200' : 'text-gray-800'}`}>
+                  Digimon World: Dusk & Dawn
+                </p>
+              </div>
+              
+              {/* Color Picker and Dark Mode */}
+              <div className="flex-1 flex items-center justify-end gap-3">
+                <div className="flex items-center gap-2">
+                  <label className="text-xs text-gray-300">Theme:</label>
+                  <input
+                    type="color"
+                    value={themeColor}
+                    onChange={(e) => handleColorChange(e.target.value)}
+                    className="w-10 h-10 rounded cursor-pointer border-2 border-white"
+                  />
+                </div>
+                <button
+                  onClick={handleDarkModeToggle}
+                  className="p-2 hover:bg-white/10 rounded-lg transition-colors text-white"
+                >
+                  {darkMode ? <Sun size={24} /> : <Moon size={24} />}
+                </button>
+              </div>
             </div>
             
-            {/* Search Bar */}
-            <div className="relative w-full sm:w-96">
+            {/* Search Bar - Centered */}
+            <div className="relative w-full max-w-md">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
               <input
                 type="text"
@@ -66,17 +157,27 @@ export default function App() {
                 value={searchQuery}
                 onChange={(e) => handleSearch(e.target.value)}
                 onFocus={() => searchQuery && setShowSuggestions(true)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className={`w-full pl-10 pr-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                  darkMode 
+                    ? 'bg-[#3e3d32] text-[#f8f8f2] placeholder-gray-500 border border-[#75715e]' 
+                    : 'bg-white border border-gray-300'
+                }`}
               />
               
               {/* Search Suggestions Dropdown */}
               {showSuggestions && suggestions.length > 0 && (
-                <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-xl border border-gray-200 max-h-96 overflow-y-auto z-50">
+                <div className={`absolute top-full left-0 right-0 mt-2 rounded-lg shadow-xl border max-h-96 overflow-y-auto z-50 ${
+                  darkMode ? 'bg-[#3e3d32] border-[#75715e]' : 'bg-white border-gray-200'
+                }`}>
                   {suggestions.map(d => (
                     <button
                       key={d.id}
                       onClick={() => handleSelectFromSearch(d.id)}
-                      className="w-full text-left px-4 py-3 hover:bg-gray-100 transition-colors border-b border-gray-100 last:border-b-0"
+                      className={`w-full text-left px-4 py-3 transition-colors border-b last:border-b-0 ${
+                        darkMode 
+                          ? 'hover:bg-[#49483e] border-[#75715e]' 
+                          : 'hover:bg-gray-100 border-gray-100'
+                      }`}
                     >
                       <div className="flex items-center gap-3">
                         <img 
@@ -85,8 +186,10 @@ export default function App() {
                           className="w-12 h-12 rounded object-cover"
                         />
                         <div>
-                          <div className="text-gray-900">{d.name}</div>
-                          <div className="text-xs text-gray-600">{d.stage} • {d.type.join(', ')}</div>
+                          <div className={darkMode ? 'text-[#f8f8f2]' : 'text-gray-900'}>{d.name}</div>
+                          <div className={darkMode ? 'text-xs text-[#a6a49f]' : 'text-xs text-gray-600'}>
+                            {d.stage} • {d.type.join(', ')}
+                          </div>
                         </div>
                       </div>
                     </button>
@@ -100,35 +203,31 @@ export default function App() {
 
       {/* Main Content */}
       <main className="max-w-[95%] mx-auto p-4 md:p-6">
-        <div className="bg-white rounded-xl shadow-lg p-4 md:p-6">
-          <div className="mb-4">
-            <h2 className="text-xl text-gray-800">
-              {currentDigimon?.name} Evolution Tree
-            </h2>
-            <p className="text-sm text-gray-600 mt-1">
-              Click on any Digimon to view details and change the evolution tree view
-            </p>
-          </div>
-
+        <div className={`rounded-xl shadow-lg p-4 md:p-6 ${darkMode ? 'bg-[#3e3d32]' : 'bg-white'}`}>
           <EvolutionTreeGraph
-            rootDigimonId={selectedDigimon}
+            rootDigimonId={rootDigimonId}
             digimonData={digimonData}
             evolutions={evolutions}
             onDigimonClick={handleDigimonClick}
+            darkMode={darkMode}
+            lineColor={themeColor}
+            digimonName={currentRootDigimon?.name}
+            isMobile={isMobile}
           />
         </div>
       </main>
 
       {/* Details Modal */}
-      {showDetails && currentDigimon && (
+      {showDetails && modalDigimon && (
         <div 
           className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
           onClick={() => setShowDetails(false)}
         >
           <div onClick={(e) => e.stopPropagation()}>
             <DigimonDetails 
-              digimon={currentDigimon} 
-              onClose={() => setShowDetails(false)}
+              digimon={modalDigimon} 
+              onClose={() => { setShowDetails(false); setModalDigimonId(null); }}
+              darkMode={darkMode}
             />
           </div>
         </div>
