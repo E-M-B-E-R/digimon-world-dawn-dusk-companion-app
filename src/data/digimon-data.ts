@@ -20,8 +20,13 @@ function formatEvoRequirements(evoReqs: Record<string, any> | undefined): string
   const requirements: string[] = [];
   
   Object.entries(evoReqs).forEach(([key, value]) => {
+    const valueStr = String(value);
+    const containsBefriend = valueStr.toLowerCase().includes('befriend');
+    const shouldAddPlus = typeof value === 'number' && !containsBefriend;
+    const suffix = shouldAddPlus ? '+' : '';
+
     if (key === 'level') {
-      requirements.push(`Level ${value}+`);
+      requirements.push(`Level ${value}${suffix}`);
     } else if (key.endsWith('Exp')) {
       // e.g., dragonExp -> Dragon EXP
       const formatted = key.replace(/Exp$/, '').replace(/([A-Z])/g, ' $1').trim();
@@ -29,20 +34,20 @@ function formatEvoRequirements(evoReqs: Record<string, any> | undefined): string
         .split(' ')
         .map(w => w.charAt(0).toUpperCase() + w.slice(1))
         .join(' ');
-      requirements.push(`${capitalized} EXP ${value}+`);
+      requirements.push(`${capitalized} EXP ${value}${suffix}`);
     } else if (key === 'friendship') {
-      requirements.push(`Friendship ${value}+`);
+      requirements.push(`Friendship ${value}${suffix}`);
     } else if (key === 'attack') {
-      requirements.push(`Attack ${value}+`);
+      requirements.push(`Attack ${value}${suffix}`);
     } else if (key === 'defense') {
-      requirements.push(`Defense ${value}+`);
+      requirements.push(`Defense ${value}${suffix}`);
     } else if (key === 'speed') {
-      requirements.push(`Speed ${value}+`);
+      requirements.push(`Speed ${value}${suffix}`);
     } else if (key === 'spirit') {
-      requirements.push(`Spirit ${value}+`);
+      requirements.push(`Spirit ${value}${suffix}`);
     } else {
       // Generic format
-      requirements.push(`${key} ${value}+`);
+      requirements.push(`${key} ${value}${suffix}`);
     }
   });
   
