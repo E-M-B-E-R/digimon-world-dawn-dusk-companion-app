@@ -50,21 +50,52 @@ export function VerticalEvolutionView({
     [digimonData]
   );
   
-  const [rootDigimonId, setRootDigimonId] = useState(inTrainingDigimon[0]?.id || 'koromon');
+  const [rootDigimonId, setRootDigimonId] = useState(
+    inTrainingDigimon[0]?.id || digimonData[0]?.id || ''
+  );
 
-  // Build evolution tree from root - memoized
+  // Build evolution tree from root (both ancestors and descendants) - memoized
   const treeDigimonIds = useMemo(() => {
     const tree: Set<string> = new Set([rootDigimonId]);
-    const queue = [rootDigimonId];
     
-    while (queue.length > 0) {
-      const current = queue.shift()!;
+    // Add all descendants (forward evolutions)
+    const forwardQueue = [rootDigimonId];
+    while (forwardQueue.length > 0) {
+      const current = forwardQueue.shift()!;
       const nextEvolutions = evolutions.filter(e => e.from === current);
       
       nextEvolutions.forEach(evo => {
         if (!tree.has(evo.to)) {
           tree.add(evo.to);
-          queue.push(evo.to);
+          forwardQueue.push(evo.to);
+        }
+      });
+    }
+    
+    // Add all ancestors (reverse evolutions) and their siblings
+    const ancestorQueue = [rootDigimonId];
+    while (ancestorQueue.length > 0) {
+      const current = ancestorQueue.shift()!;
+      const prevEvolutions = evolutions.filter(e => e.to === current);
+      
+      prevEvolutions.forEach(evo => {
+        if (!tree.has(evo.from)) {
+          tree.add(evo.from);
+          ancestorQueue.push(evo.from);
+          
+          // Also add all siblings of current (other evolutions from the same parent)
+          const siblingsQueue = [evo.from];
+          while (siblingsQueue.length > 0) {
+            const parent = siblingsQueue.shift()!;
+            const siblings = evolutions.filter(e => e.from === parent);
+            
+            siblings.forEach(siblingEvo => {
+              if (!tree.has(siblingEvo.to)) {
+                tree.add(siblingEvo.to);
+                siblingsQueue.push(siblingEvo.to); // Continue adding descendants of siblings
+              }
+            });
+          }
         }
       });
     }
@@ -131,8 +162,8 @@ export function VerticalEvolutionView({
             const containerRect = containerRef.current!.getBoundingClientRect();
             newPositions.push({
               id,
-              x: rect.left - containerRect.left + rect.width / 2,
-              y: rect.top - containerRect.top + rect.height / 2,
+              x: rect.left - containerRect.left + containerRef.current!.scrollLeft + rect.width / 2,
+              y: rect.top - containerRect.top + containerRef.current!.scrollTop + rect.height / 2,
               stage: digimon.stage
             });
           }
@@ -145,12 +176,18 @@ export function VerticalEvolutionView({
     // Initial update
     const timer = setTimeout(updatePositions, 100);
     
-    // Only listen to resize, not scroll
+    // Listen to resize and scroll
     window.addEventListener('resize', updatePositions);
+    if (containerRef.current) {
+      containerRef.current.addEventListener('scroll', updatePositions);
+    }
     
     return () => {
       clearTimeout(timer);
       window.removeEventListener('resize', updatePositions);
+      if (containerRef.current) {
+        containerRef.current.removeEventListener('scroll', updatePositions);
+      }
     };
   }, [rootDigimonId, treeDigimon]);
 
@@ -220,9 +257,9 @@ export function VerticalEvolutionView({
   const currentRootDigimon = digimonData.find(d => d.id === rootDigimonId);
 
   return (
-    <div className={`min-h-screen ${darkMode ? 'bg-[#272822]' : 'bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300'}`}>
+    <div className={`flex flex-col h-screen ${darkMode ? 'bg-[#272822]' : 'bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300'}`}>
       {/* Header */}
-      <header className="text-white sticky top-0 z-50 shadow-lg" style={{ backgroundColor: headerColor }}>
+      <header className="text-white sticky top-0 z-50 shadow-lg flex-shrink-0" style={{ backgroundColor: headerColor }}>
         <div className="px-4 py-4 space-y-3">
           <div className="flex items-center justify-between">
             <div className="w-10"></div> {/* Spacer for alignment */}
@@ -309,43 +346,15 @@ export function VerticalEvolutionView({
 
       {/* Root Digimon Title */}
       {currentRootDigimon && (
-        <div className="px-4 py-4">
+        <div className="px-4 py-4 flex-shrink-0">
           <h2 className={`text-2xl text-center ${darkMode ? 'text-[#f8f8f2]' : 'text-gray-900'}`}>
             {currentRootDigimon.name}
           </h2>
         </div>
       )}
 
-      {/* Main Content */}
-      <div className="relative pb-20" ref={containerRef}>
-        {/* SVG for angular connection lines - z-10 to appear over backgrounds */}
-        {positions.length > 0 && (
-          <svg 
-            className="absolute inset-0 pointer-events-none z-10"
-            style={{ 
-              width: '100%', 
-              height: containerRef.current?.scrollHeight || '100%',
-              position: 'absolute',
-              top: 0,
-              left: 0
-            }}
-          >
-            {getAngularConnections().map((conn, idx) => {
-              if (!conn) return null;
-              return (
-                <path
-                  key={idx}
-                  d={conn.path}
-                  stroke={lineColor}
-                  strokeWidth="3"
-                  fill="none"
-                  strokeOpacity="0.7"
-                />
-              );
-            })}
-          </svg>
-        )}
-
+      {/* Main Content - Scrollable */}
+      <div className="relative flex-1 overflow-y-auto overflow-x-hidden" ref={containerRef}>
         {/* Digimon by Stage (with background wrapper) */}
         <div className="relative z-0 px-4 py-6 space-y-8">
           {stageOrder.map(stage => {
@@ -405,7 +414,7 @@ export function VerticalEvolutionView({
 
       {/* Bottom Button - Removed Toggle Legend */}
       {showBackButton && (
-        <div className="fixed bottom-4 left-0 right-0 flex justify-center gap-4 px-4 z-30">
+        <div className="flex-shrink-0 flex justify-center gap-4 px-4 py-4 border-t" style={{ borderColor: 'rgba(0,0,0,0.1)' }}>
           <button
             onClick={onBackToTree}
             className="bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-red-700 transition-colors"
