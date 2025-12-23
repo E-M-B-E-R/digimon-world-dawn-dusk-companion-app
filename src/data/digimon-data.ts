@@ -25,7 +25,11 @@ function formatEvoRequirements(evoReqs: Record<string, any> | undefined): string
     } else if (key.endsWith('Exp')) {
       // e.g., dragonExp -> Dragon EXP
       const formatted = key.replace(/Exp$/, '').replace(/([A-Z])/g, ' $1').trim();
-      requirements.push(`${formatted} EXP ${value}+`);
+      const capitalized = formatted
+        .split(' ')
+        .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+        .join(' ');
+      requirements.push(`${capitalized} EXP ${value}+`);
     } else if (key === 'friendship') {
       requirements.push(`Friendship ${value}+`);
     } else if (key === 'attack') {
