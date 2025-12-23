@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Search, Moon, Sun } from 'lucide-react';
 import { digimonData, evolutions } from './data/digimon-data';
 import { EvolutionTreeGraph } from './components/EvolutionTreeGraph';
