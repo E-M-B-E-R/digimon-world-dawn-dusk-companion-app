@@ -185,20 +185,21 @@ export function VerticalEvolutionView({
       // Clear any pending trailing call
       if (trailingTimeoutRef.current !== null) {
         clearTimeout(trailingTimeoutRef.current);
+        trailingTimeoutRef.current = null;
       }
       
       // If enough time has passed, update immediately
       if (now - lastCallRef.current >= SCROLL_THROTTLE_DELAY) {
         lastCallRef.current = now;
         updatePositions();
+      } else {
+        // Only schedule trailing call if we skipped the immediate execution
+        trailingTimeoutRef.current = window.setTimeout(() => {
+          lastCallRef.current = Date.now();
+          updatePositions();
+          trailingTimeoutRef.current = null;
+        }, SCROLL_THROTTLE_DELAY - (now - lastCallRef.current));
       }
-      
-      // Schedule a trailing call to ensure final position is captured
-      trailingTimeoutRef.current = window.setTimeout(() => {
-        lastCallRef.current = Date.now();
-        updatePositions();
-        trailingTimeoutRef.current = null;
-      }, SCROLL_THROTTLE_DELAY);
     };
 
     // Initial update
@@ -214,6 +215,7 @@ export function VerticalEvolutionView({
       clearTimeout(timer);
       if (trailingTimeoutRef.current !== null) {
         clearTimeout(trailingTimeoutRef.current);
+        trailingTimeoutRef.current = null;
       }
       window.removeEventListener('resize', updatePositions);
       if (containerRef.current) {
