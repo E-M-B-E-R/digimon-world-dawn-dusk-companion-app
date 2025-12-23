@@ -173,20 +173,31 @@ export function VerticalEvolutionView({
       }
     };
 
+    // Throttle function to limit execution frequency
+    let lastCall = 0;
+    const throttleDelay = 100; // milliseconds
+    const throttledUpdatePositions = () => {
+      const now = Date.now();
+      if (now - lastCall >= throttleDelay) {
+        lastCall = now;
+        updatePositions();
+      }
+    };
+
     // Initial update
     const timer = setTimeout(updatePositions, 100);
     
-    // Listen to resize and scroll
+    // Listen to resize and scroll with throttling
     window.addEventListener('resize', updatePositions);
     if (containerRef.current) {
-      containerRef.current.addEventListener('scroll', updatePositions);
+      containerRef.current.addEventListener('scroll', throttledUpdatePositions);
     }
     
     return () => {
       clearTimeout(timer);
       window.removeEventListener('resize', updatePositions);
       if (containerRef.current) {
-        containerRef.current.removeEventListener('scroll', updatePositions);
+        containerRef.current.removeEventListener('scroll', throttledUpdatePositions);
       }
     };
   }, [rootDigimonId, treeDigimon]);
