@@ -1,0 +1,85 @@
+name: PR Auto Version Bump
+
+on:
+  pull_request_target:
+    types: [opened, labeled, synchronize, reopened]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  bump:
+    name: Bump version from label
+    runs-on: ubuntu-latest
+    steps:
+      - name: Determine bump type from labels
+        id: bump
+        run: |
+          labels_json='${{ toJson(github.event.pull_request.labels) }}'
+          echo "$labels_json" | jq -r '.[].name' | tee labels.txt
+
+          bump=""
+          if grep -qi '^major$' labels.txt; then bump="major"; fi
+          if grep -qi '^minor$' labels.txt && [ -z "$bump" ]; then bump="minor"; fi
+          if grep -qi '^patch$' labels.txt && [ -z "$bump" ]; then bump="patch"; fi
+
+          if [ -z "$bump" ]; then
+            echo "No bump label found (need major/minor/patch)." >&2
+            echo "bump=" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+
+          echo "Selected bump: $bump"
+          echo "bump=$bump" >> $GITHUB_OUTPUT
+
+      - name: Check out PR branch
+        if: steps.bump.outputs.bump != ''
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PR_WRITE_TOKEN || secrets.GITHUB_TOKEN }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      - name: Configure Git
+        if: steps.bump.outputs.bump != ''
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Bump version in package.json (npm)
+        if: steps.bump.outputs.bump != ''
+        run: |
+          npm version ${{ steps.bump.outputs.bump }} --no-git-tag-version
+
+      - name: Commit changes
+        if: steps.bump.outputs.bump != ''
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git add package.json
+          git commit -m "chore: bump version (${{ steps.bump.outputs.bump }})"
+          git push origin HEAD:${{ github.event.pull_request.head.ref }}
+
+      - name: Add 'version-bumped' label to PR
+        if: steps.bump.outputs.bump != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/labels \
+            -f labels='["version-bumped"]'
+
+      - name: Comment summary
+        if: steps.bump.outputs.bump != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          NEW_VERSION=$(node -p "require('./package.json').version")
+          gh api repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments \
+            -f body="Version bumped to ${NEW_VERSION} using '${{ steps.bump.outputs.bump }}'."
+
+    # Note:
+    # - For PRs from forks, pushing changes may require a PAT with 'repo' scope.
+    #   Create a secret named PR_WRITE_TOKEN in the base repository for this workflow to push back to the fork.
