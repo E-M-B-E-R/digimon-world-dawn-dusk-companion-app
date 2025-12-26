@@ -2,7 +2,7 @@ name: PR Auto Version Bump
 
 on:
   pull_request_target:
-    types: [opened, labeled, synchronize, reopened]
+    types: [opened, labeled, reopened]
 
 permissions:
   contents: write
@@ -13,17 +13,25 @@ jobs:
     name: Bump version from label
     runs-on: ubuntu-latest
     steps:
+      - name: Check out PR branch to inspect commits
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 2
+
       - name: Check if last commit was from bot
         id: bot_check
         run: |
-          commit_author="${{ github.event.pull_request.head.user.login }}"
-          commit_message="${{ github.event.pull_request.title }}"
+          last_commit_msg=$(git log -1 --pretty=%B)
+          last_commit_author=$(git log -1 --pretty=%an)
+          
+          echo "Last commit author: $last_commit_author"
+          echo "Last commit message: $last_commit_msg"
           
           # Skip if the last commit author is the bot or message is a version number
-          if [[ "${{ github.event.head_commit.author.name }}" == "github-actions[bot]" ]] || \
-             [[ "${{ github.event.pull_request.head.ref }}" == *"version-bump"* ]] || \
-             [[ "$commit_message" == *"chore: bump version"* ]] || \
-             [[ "$commit_message" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+          if [[ "$last_commit_author" == "github-actions[bot]" ]] || \
+             [[ "$last_commit_msg" == *"chore: bump version"* ]] || \
+             [[ "$last_commit_msg" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
             echo "skip=true" >> $GITHUB_OUTPUT
             echo "Skipping: Last commit was from bot or version bump detected"
             exit 0
@@ -78,7 +86,7 @@ jobs:
             exit 0
           fi
           git add package.json
-          git commit -m "chore: bump version (${{ steps.bump.outputs.bump }})"
+          git commit -m "chore: bump version (${{ steps.bump.outputs.bump }}) [skip ci]"
           git push origin HEAD:${{ github.event.pull_request.head.ref }}
 
       - name: Add 'version-bumped' label to PR
