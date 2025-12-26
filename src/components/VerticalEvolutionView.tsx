@@ -404,7 +404,7 @@ export function VerticalEvolutionView({
                           const borderColor = isArmor ? ARMOR_COLOR : lineColor;
                           return (
                         <div
-                          className={`w-full h-full rounded-lg overflow-hidden transition-transform group-hover:scale-110 shadow-md ${
+                          className={`w-full h-full rounded-lg overflow-hidden transition-transform group-hover:scale-110 shadow-md flex items-center justify-center ${
                             darkMode ? 'bg-[#49483e]' : 'bg-gray-50'
                           }`}
                           style={{
@@ -414,7 +414,8 @@ export function VerticalEvolutionView({
                           <img
                             src={digimon.image}
                             alt={digimon.name}
-                            className="w-full h-full object-cover"
+                            className="mx-auto block"
+                            style={{ maxWidth: '100%', maxHeight: '100%' }}
                           />
                         </div>
                           );

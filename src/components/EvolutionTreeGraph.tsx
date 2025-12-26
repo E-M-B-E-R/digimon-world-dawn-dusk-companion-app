@@ -548,7 +548,12 @@ export function EvolutionTreeGraph({
               <div className={`w-full h-32 mb-2 rounded-lg overflow-hidden flex items-center justify-center ${
                 darkMode ? 'bg-[#75715e]' : 'bg-gray-100'
               }`}>
-                <img src={node.digimon.image} alt="" className="max-h-full max-w-full object-contain" />
+                <img
+                  src={node.digimon.image}
+                  alt=""
+                  className="mx-auto block"
+                  style={{ maxWidth: '100%', maxHeight: '100%' }}
+                />
               </div>
               <div className="text-center flex-1 flex flex-col justify-end">
                 <div className={`text-sm truncate px-1 ${darkMode ? 'text-[#f8f8f2]' : 'text-gray-900'}`}>
