@@ -142,6 +142,9 @@
   },
   {
     "id": 15,
+    "altNames": [
+      "Gumymon"
+    ],
     "fullName": "Gummymon",
     "evoReqs": {
       "level": 4
@@ -254,6 +257,9 @@
   },
   {
     "id": 26,
+    "altNames": [
+      "Vmon"
+    ],
     "fullName": "Veemon",
     "evoReqs": {
       "level": 10,
@@ -364,6 +370,9 @@
   },
   {
     "id": 38,
+    "altNames": [
+      "Bakumon"
+    ],
     "fullName": "Tapirmon",
     "evoReqs": {
       "level": 16,
@@ -430,6 +439,9 @@
   },
   {
     "id": 45,
+    "altNames": [
+      "Armadimon"
+    ],
     "fullName": "Armadillomon",
     "evoReqs": {
       "level": 11,
@@ -515,6 +527,9 @@
   },
   {
     "id": 53,
+    "altNames": [
+      "Goblimon"
+    ],
     "fullName": "Goburimon",
     "evoReqs": {
       "level": 12,
@@ -570,6 +585,9 @@
   },
   {
     "id": 58,
+    "altNames": [
+      "Shakomon"
+    ],
     "fullName": "Syakomon",
     "evoReqs": {
       "level": 9
@@ -607,6 +625,9 @@
   },
   {
     "id": 62,
+    "altNames": [
+      "Ganimon"
+    ],
     "fullName": "Crabmon",
     "evoReqs": {
       "level": 16,
@@ -651,7 +672,8 @@
     "id": 66,
     "altNames": [
       "Arurarumon",
-      "Alraunemon"
+      "Alraunemon",
+      "Alraumon"
     ],
     "fullName": "Aruraumon",
     "evoReqs": {
@@ -663,6 +685,9 @@
   },
   {
     "id": 67,
+    "gifName": [
+      "ToyAgumonBlack"
+    ],
     "shortName": "ToyAgumonB",
     "fullName": "ToyAgumon(Black)",
     "habitat": "Sunken Tunnel",
@@ -679,6 +704,9 @@
   },
   {
     "id": 69,
+    "altNames": [
+      "PawnChessmonBlack"
+    ],
     "shortName": "PwnChssmnB",
     "fullName": "PawnChessmon(Black)",
     "evoReqs": {
@@ -747,6 +775,9 @@
   },
   {
     "id": 75,
+    "altNames": [
+      "PawnChessmonWhite"
+    ],
     "shortName": "PwnChssmnW",
     "fullName": "PawnChessmon(White)",
     "evoReqs": {
@@ -780,6 +811,9 @@
   },
   {
     "id": 78,
+    "altNames": [
+      "Mushmon"
+    ],
     "fullName": "Mushroomon",
     "evoReqs": {
       "level": 13,
@@ -868,6 +902,9 @@
   },
   {
     "id": 87,
+    "altNames": [
+      "Tyranomon"
+    ],
     "fullName": "Tyrannomon",
     "evoReqs": {
       "level": 21,
@@ -1062,6 +1099,9 @@
   },
   {
     "id": 105,
+    "altNames": [
+      "Wizarmon"
+    ],
     "fullName": "Wizardmon",
     "evoReqs": {
       "level": 25,
@@ -1084,6 +1124,11 @@
   },
   {
     "id": 107,
+    "altNames": [
+      "Gardromon",
+      "Guardramon",
+      "Guadromon"
+    ],
     "fullName": "Guardromon",
     "evoReqs": {
       "level": 20,
@@ -1140,6 +1185,9 @@
   },
   {
     "id": 112,
+    "altNames": [
+      "Galgomon"
+    ],
     "fullName": "Gargomon",
     "evoReqs": {
       "level": 20,
@@ -1448,7 +1496,8 @@
   {
     "id": 138,
     "altNames": [
-      "FlaRizamon"
+      "FlaRizamon",
+      "FlareLizardmon"
     ],
     "fullName": "Flarerizamon",
     "evoReqs": {
@@ -1493,6 +1542,9 @@
   },
   {
     "id": 142,
+    "altNames":[
+      "Leppamon"
+    ],
     "fullName": "Reppamon",
     "evoReqs": {
       "level": 27,
@@ -1914,6 +1966,9 @@
   },
   {
     "id": 177,
+    "altNames": [
+      "Thundermon"
+    ],
     "shortName": "TDBallmon",
     "fullName": "Thunderballmon",
     "evoReqs": {
@@ -1982,7 +2037,7 @@
     "altNames": [
       "J-Mojyamon"
     ],
-    "fullName": "Jungle Mojyamon",
+    "fullName": "JungleMojyamon",
     "evoReqs": {
       "level": 17,
       "beastExp": 350
@@ -2040,6 +2095,9 @@
   },
   {
     "id": 188,
+    "altNames": [
+      "V-dramon"
+    ],
     "fullName": "Veedramon",
     "evoReqs": {
       "level": 18,
@@ -2062,6 +2120,9 @@
   },
   {
     "id": 190,
+    "gifName": [
+      "KnightChessmonWhite"
+    ],
     "shortName": "KChessmonWH",
     "fullName": "KnightChessmon(White)",
     "evoReqs": {
@@ -2073,6 +2134,9 @@
   },
   {
     "id": 191,
+    "gifName": [
+      "KnightChessmonBlack"
+    ],
     "shortName": "KChessmonB",
     "fullName": "KnightChessmon(Black)",
     "evoReqs": {
@@ -2241,6 +2305,9 @@
   {
     "id": 205,
     "shortName": "MKabuterimon",
+    "gifName": [
+      "MegaKabuterimonBlue"
+    ],
     "altNames": [
       "AlturKabuterimon"
     ],
@@ -2496,6 +2563,9 @@
   },
   {
     "id": 226,
+    "altNames": [
+      "Antiramon"
+    ],
     "fullName": "Antylamon",
     "evoReqs": {
       "level": 41,
@@ -2770,6 +2840,10 @@
   },
   {
     "id": 250,
+    "gifName": [
+      "Whamon"
+    ],
+    "altNames": [],
     "shortName": "Whamon",
     "fullName": "Whamon (Ultimate)",
     "evoReqs": {
@@ -2931,7 +3005,8 @@
     "shortName": "Lucemon CM",
     "altNames": [
       "LucemonFM",
-      "CM"
+      "CM",
+      "LucemonFDM"
     ],
     "fullName": "Lucemon Chaos Mode",
     "habitat": "Unknown",
@@ -3114,7 +3189,10 @@
   {
     "id": 282,
     "altNames": [
-      "Shawujinmon"
+      "Shawujinmon",
+      "Shawjamon",
+      "Shawujingmon",
+      "Shaujingmon"
     ],
     "fullName": "Shaujinmon",
     "evoReqs": {
@@ -3457,7 +3535,8 @@
     "shortName": "IPDramonDM",
     "altNames": [
       "ImperialdramonDM",
-      "Imperialdramon Dragon Mode (ImperialdramonDM)"
+      "Imperialdramon Dragon Mode (ImperialdramonDM)",
+      "Imperialdramon"
     ],
     "fullName": "Imperialdramon Dragon Mode",
     "evoReqs": {
@@ -3475,7 +3554,8 @@
     "shortName": "IPDramonFM",
     "altNames": [
       "ImperialdramonFM",
-      "Imperialdramon Fighter Mode (ImperialdramonFM)"
+      "Imperialdramon Fighter Mode (ImperialdramonFM)",
+      "ImperialdramonFighter"
     ],
     "fullName": "Imperialdramon Fighter Mode",
     "evoReqs": {
@@ -3492,7 +3572,8 @@
     "id": 316,
     "shortName": "IPDramonPM",
     "altNames": [
-      "Imperialdramon Paladin Mode (ImperialdramonPM)"
+      "Imperialdramon Paladin Mode (ImperialdramonPM)",
+      "ImperialdramonPaladin"
     ],
     "fullName": "Imperialdramon Paladin Mode",
     "habitat": "Unknown",
@@ -3548,6 +3629,9 @@
   {
     "id": 321,
     "shortName": "CherubimonG",
+    "gifName": [
+      "Cherubimon"
+    ],
     "altNames": [
       "Cherubimon (Vaccine)"
     ],
@@ -3563,6 +3647,9 @@
   {
     "id": 322,
     "shortName": "CherubimonE",
+    "gifName": [
+      "CherubimonVirus"
+    ],
     "altNames": [
       "Cherubimon (Virus)"
     ],
@@ -3606,7 +3693,8 @@
     "id": 325,
     "shortName": "MegaGargomn",
     "altNames": [
-      "SaintGargomon"
+      "SaintGargomon",
+      "SaintGalgomon"
     ],
     "fullName": "Mega Gargomon",
     "evoReqs": {
@@ -3717,7 +3805,8 @@
     "shortName": "IPDramonDB",
     "altNames": [
       "Imperialdramon Dragon Black (ImperialdramonDB)",
-      "BlackImperialdramon"
+      "BlackImperialdramon",
+      "ImperialdramonDMBlack"
     ],
     "fullName": "Imperialdramon Dragon Mode(Black)",
     "evoReqs": {
@@ -3777,7 +3866,8 @@
     "id": 339,
     "shortName": "BSGargomon",
     "altNames": [
-      "BlackMegaGargomon"
+      "BlackMegaGargomon",
+      "BlackSaintGalgomon"
     ],
     "fullName": "Black SaintGargomon",
     "evoReqs": {
@@ -3933,6 +4023,9 @@
   },
   {
     "id": 353,
+    "altNames": [
+      "Galfmon"
+    ],
     "fullName": "Gulfmon",
     "evoReqs": {
       "level": 56,
@@ -3971,6 +4064,9 @@
   {
     "id": 356,
     "shortName": "GhoulmonB",
+    "gifName": [
+      "GhoulmonBlack"
+    ],
     "altNames": [
       "DeathmonBlack"
     ],
@@ -4068,6 +4164,9 @@
   },
   {
     "id": 364,
+    "altNames": [
+      "SkullMammon"
+    ],
     "shortName": "SMammothmon",
     "fullName": "Skull Mammothmon",
     "evoReqs": {
@@ -4313,7 +4412,8 @@
     "id": 385,
     "shortName": "SGreymonBM",
     "altNames": [
-      "ShineGreymon Burst Mode (ShineGreymonBM)"
+      "ShineGreymon Burst Mode (ShineGreymonBM)",
+      "ShineGreymonBurst"
     ],
     "fullName": "Shine Greymon Burst Mode",
     "habitat": "Unknown",
@@ -4323,7 +4423,8 @@
     "id": 386,
     "shortName": "SGreymonRM",
     "altNames": [
-      "ShineGreymon Ruin mode (ShineGreymonRM)"
+      "ShineGreymon Ruin mode (ShineGreymonRM)",
+      "ShineGreymonRuin"
     ],
     "fullName": "Shine Greymon Ruin Mode",
     "habitat": "Unknown",
@@ -4332,6 +4433,9 @@
   {
     "id": 387,
     "shortName": "MGaogamnBM",
+    "gifName": [
+      "MirageGaogamonBurst"
+    ],
     "altNames": [
       "MirageGaogamon Burst Mode (MirageGaogamonBM)"
     ],
@@ -4342,6 +4446,9 @@
   {
     "id": 388,
     "shortName": "Ravemon BM",
+    "gifName": [
+      "RavemonBurst"
+    ],
     "altNames": [
       "Ravemon Burst Mode (RavemonBM)"
     ],
@@ -4395,7 +4502,8 @@
     "id": 392,
     "shortName": "BeelzemonBM",
     "altNames": [
-      "Beelzemon Blast Mode (BeelzemonBM)"
+      "Beelzemon Blast Mode (BeelzemonBM)",
+      "BeelzebumonBlaster"
     ],
     "fullName": "Beelzemon Blast Mode",
     "habitat": "Unknown",
@@ -4404,6 +4512,9 @@
   {
     "id": 393,
     "shortName": "Rosemon BM",
+    "gifName": [
+      "RosemonBurst"
+    ],
     "altNames": [
       "Rosemon Burst Mode (RosemonBM)"
     ],
@@ -4415,7 +4526,8 @@
     "id": 394,
     "shortName": "ArgomonMG",
     "altNames": [
-      "Argomon Mega (ArgomonMG)"
+      "Argomon Mega (ArgomonMG)",
+      "ArgomonPerfect"
     ],
     "fullName": "Argomon Mega",
     "evoReqs": {

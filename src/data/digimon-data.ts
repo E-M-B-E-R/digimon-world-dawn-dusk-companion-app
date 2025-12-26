@@ -1,17 +1,120 @@
-import { Digimon, Evolution, EvolutionTree } from '../types/digimon';
+import { Digimon, Evolution, EvolutionTree, DigimonStage } from '../types/digimon';
 import rawDigimonData from '../evolution_data/digimon.json';
 import rawEvoLines from '../evolution_data/evo_lines.json';
 
+// Use Vite's glob import to get all available gifs
+const gifModules = import.meta.glob('/src/images/animated/**/*.gif', { eager: true, as: 'url' });
+
+// Build a lookup map: normalize(filename) -> full path
+const gifLookup = new Map<string, string>();
+for (const [path, url] of Object.entries(gifModules)) {
+  const filename = path.split('/').pop()?.replace('.gif', '').replace(/\s+/g, '') || '';
+  const normalized = filename.toLowerCase().replace(/[\s\-']/g, '');
+  gifLookup.set(normalized, url as string);
+  // Also store the original filename
+  gifLookup.set(filename.toLowerCase(), url as string);
+  gifLookup.set(filename, url as string);
+  // Store without vowels for fuzzy matching (handles Galgomon vs Galgoumon)
+  const noVowels = filename.toLowerCase().replace(/[aeiou]/gi, '');
+  if (!gifLookup.has(noVowels)) {
+    gifLookup.set(noVowels, url as string);
+  }
+}
+
+// Collect all possible name variations without preferring any
+function collectNameVariants(d: any): string[] {
+  const variants = new Set<string>();
+  
+  // Add all name fields as-is and with common normalizations
+  const nameFields = [
+    ...(Array.isArray(d.gifName) ? d.gifName : []),
+    ...(Array.isArray(d.altNames) ? d.altNames : []),
+    d.fullName,
+    d.shortName
+  ].filter(Boolean);
+  
+  for (const name of nameFields) {
+    if (typeof name === 'string' && name.trim()) {
+      variants.add(name);
+      variants.add(name.replace(/\s+/g, ''));
+      variants.add(name.replace(/[\s\-']/g, ''));
+    }
+  }
+  
+  return Array.from(variants);
+}
+
+function stageFolder(stage: DigimonStage): string | null {
+  const map: Record<DigimonStage, string> = {
+    'In-Training': 'in-training',
+    'Rookie': 'rookie',
+    'Champion': 'champion',
+    'Ultimate': 'ultimate',
+    'Mega': 'mega'
+  };
+  return map[stage] ?? null;
+}
+
 // Transform raw JSON data into app format
 function transformDigimonData(): Digimon[] {
-  return (rawDigimonData as any[]).map(d => ({
-    id: (d.fullName || d.altNames?.[0] || '').toLowerCase().replace(/\s+/g, ''),
-    name: d.fullName || d.altNames?.[0] || '',
-    stage: d.stage || 'Rookie',
-    image: `https://via.placeholder.com/200?text=${encodeURIComponent(d.fullName || '')}`,
-    type: [],
-    description: `${d.fullName || ''} - Habitat: ${d.habitat || 'Unknown'}`
-  }));
+  return (rawDigimonData as any[]).map(d => {
+    const name = d.fullName || d.altNames?.[0] || '';
+    const id = name.toLowerCase().replace(/\s+/g, '');
+    if (!d.stage) {
+      console.warn(`Digimon "${name}" missing stage property`);
+    }
+    const stage: DigimonStage = d.stage || 'Rookie';
+
+    // Determine the folder based on stage
+    const folder = stageFolder(stage);
+
+    let imagePath: string;
+    if (folder) {
+      // Get all name variants and check which one exists in our gif lookup
+      const candidates = collectNameVariants(d);
+      let foundGif: string | undefined;
+      
+      for (const candidate of candidates) {
+        const normalized = candidate.toLowerCase().replace(/[\s\-']/g, '');
+        if (gifLookup.has(normalized)) {
+          foundGif = gifLookup.get(normalized);
+          break;
+        }
+        if (gifLookup.has(candidate.toLowerCase())) {
+          foundGif = gifLookup.get(candidate.toLowerCase());
+          break;
+        }
+        if (gifLookup.has(candidate)) {
+          foundGif = gifLookup.get(candidate);
+          break;
+        }
+      }
+      
+      // Fallback: try fuzzy matching without vowels
+      if (!foundGif) {
+        for (const candidate of candidates) {
+          const noVowels = candidate.toLowerCase().replace(/[aeiou]/gi, '');
+          if (gifLookup.has(noVowels)) {
+            foundGif = gifLookup.get(noVowels);
+            break;
+          }
+        }
+      }
+      
+      imagePath = foundGif || `https://via.placeholder.com/200?text=${encodeURIComponent(name || '')}`;
+    } else {
+      imagePath = `https://via.placeholder.com/200?text=${encodeURIComponent(name || '')}`;
+    }
+    
+    return {
+      id,
+      name,
+      stage,
+      image: imagePath,
+      type: [],
+      description: `${name} - Habitat: ${d.habitat || 'Unknown'}`
+    };
+  });
 }
 
 function formatEvoRequirements(evoReqs: Record<string, any> | undefined): string | undefined {

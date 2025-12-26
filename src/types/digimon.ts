@@ -1,4 +1,4 @@
-export type DigimonStage = 'Fresh' | 'In-Training' | 'Rookie' | 'Champion' | 'Ultimate' | 'Mega';
+export type DigimonStage = 'In-Training' | 'Rookie' | 'Champion' | 'Ultimate' | 'Mega';
 
 export interface Digimon {
   id: string;

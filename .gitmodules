@@ -1,0 +1,3 @@
+[submodule "src/images/animated"]
+	path = src/images/animated
+	url = https://github.com/E-M-B-E-R/digimon-world-ds-dawn-dusk-animated-sprites.git

@@ -14,7 +14,6 @@ export function DigimonDetails({ digimon, onClose, darkMode }: DigimonDetailsPro
   const evolvesTo = evolutions.filter(evo => evo.from === digimon.id);
   
   const stageColors = {
-    'Fresh': 'from-gray-400 to-gray-600',
     'In-Training': 'from-green-400 to-green-600',
     'Rookie': 'from-blue-400 to-blue-600',
     'Champion': 'from-yellow-400 to-yellow-600',

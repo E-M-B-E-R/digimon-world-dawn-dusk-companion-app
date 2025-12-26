@@ -23,16 +23,14 @@ interface PositionedNode {
 }
 
 const STAGE_ORDER: Record<DigimonStage, number> = {
-  'Fresh': 0,
-  'In-Training': 1,
-  'Rookie': 2,
-  'Champion': 3,
-  'Ultimate': 4,
-  'Mega': 5
+  'In-Training': 0,
+  'Rookie': 1,
+  'Champion': 2,
+  'Ultimate': 3,
+  'Mega': 4
 };
 
 const STAGE_COLORS: Record<DigimonStage, string> = {
-  'Fresh': 'border-purple-400',
   'In-Training': 'border-purple-400',
   'Rookie': 'border-purple-400',
   'Champion': 'border-purple-400',
@@ -498,10 +496,10 @@ export function EvolutionTreeGraph({
               <div className="absolute top-2 right-2 z-50 pointer-events-auto">
                 <button
                   onClick={(e) => { e.stopPropagation(); toggleCollapse(node.id); }}
-                  className="w-10 h-10 flex items-center justify-center rounded-full text-2xl font-bold shadow-lg leading-none"
+                  className="w-8 h-8 flex items-center justify-center rounded-full text-xl font-bold shadow-md leading-none"
                   style={{ 
                     lineHeight: '1',
-                    backgroundColor: collapsed.has(node.id) ? '#ef4444' : '#22c55e',
+                    backgroundColor: collapsed.has(node.id) ? '#86efac' : '#fca5a5',
                     color: '#000000'
                   }}
                 >
@@ -510,10 +508,10 @@ export function EvolutionTreeGraph({
               </div>
             )}
             <div className="p-3 h-full flex flex-col">
-              <div className={`w-full h-32 mb-2 rounded-lg overflow-hidden ${
+              <div className={`w-full h-32 mb-2 rounded-lg overflow-hidden flex items-center justify-center ${
                 darkMode ? 'bg-[#75715e]' : 'bg-gray-100'
               }`}>
-                <img src={node.digimon.image} alt={node.digimon.name} className="w-full h-full object-cover" />
+                <img src={node.digimon.image} alt="" className="max-h-full max-w-full object-contain" />
               </div>
               <div className="text-center flex-1 flex flex-col justify-end">
                 <div className={`text-sm truncate px-1 ${darkMode ? 'text-[#f8f8f2]' : 'text-gray-900'}`}>
