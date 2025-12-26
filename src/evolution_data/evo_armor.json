@@ -1,142 +1,152 @@
 {
   "Armadillomon": {
-    "devolveFriendship": 60,
     "eggs": {
       "friendship": {
         "result": "Kenkimon",
         "reqs": {
           "level": 24,
-          "machineExp": 2300
+          "machineExp": 2300,
+          "friendship": 60
         }
       },
       "light": {
         "result": "Seahomon",
         "reqs": {
           "level": 27,
-          "dragonExp": 2700
+          "dragonExp": 2700,
+          "friendship": 60
         }
       }
     }
   },
   "Hawkmon": {
-    "devolveFriendship": 70,
     "eggs": {
       "kindness": {
         "result": "Toucanmon",
         "reqs": {
           "level": 20,
-          "defense": 105
+          "defense": 105,
+          "friendship": 70
         }
       },
       "courage": {
         "result": "Allomon",
         "reqs": {
           "level": 21,
-          "attack": 110
+          "attack": 110,
+          "friendship": 70
         }
       },
       "purity": {
         "result": "Shurimon",
         "reqs": {
           "level": 22,
-          "insectPlantExp": 800
+          "insectPlantExp": 800,
+          "friendship": 70
         }
       }
     }
   },
   "Patamon": {
-    "devolveFriendship": 50,
     "eggs": {
       "love": {
         "result": "Pipismon",
         "reqs": {
           "level": 21,
-          "speed": 100
+          "speed": 100,
+          "friendship": 50
         }
       },
       "purity": {
         "result": "Ponchomon",
         "reqs": {
           "level": 23,
-          "darkExp": 2000
+          "darkExp": 2000,
+          "friendship": 50
         }
       },
       "kindness": {
         "result": "Prairiemon",
         "reqs": {
           "level": 27,
-          "attack": 135
+          "attack": 135,
+          "friendship": 50
         }
       }
     }
   },
   "Veemon": {
-    "devolveFriendship": 50,
     "eggs": {
       "courage": {
         "result": "Flamedramon",
         "reqs": {
           "level": 22,
-          "dragonExp": 2500
+          "dragonExp": 2500,
+          "friendship": 50
         }
       },
       "miracles": {
         "result": "Magnamon",
         "reqs": {
           "level": 40,
-          "holyExp": 10000
+          "holyExp": 10000,
+          "friendship": 50
         }
       }
     }
   },
   "Wormmon": {
-    "devolveFriendship": 50,
     "eggs": {
       "love": {
         "result": "Aurumon",
         "reqs": {
           "level": 21,
-          "spirit": 110
+          "spirit": 110,
+          "friendship": 50
         }
       },
       "courage": {
         "result": "Shadramon",
         "reqs": {
           "level": 30,
-          "darkExp": 6000
+          "darkExp": 6000,
+          "friendship": 50
         }
       },
       "miracles": {
         "result": "Kongoumon",
         "reqs": {
           "level": 32,
-          "attack": 190
+          "attack": 190,
+          "friendship": 50
         }
       }
     }
   },
   "Gatomon": {
-    "devolveFriendship": 70,
     "eggs": {
       "honesty": {
         "result": "Tylomon",
         "reqs": {
           "level": 27,
-          "aquaExp": 2200
+          "aquaExp": 2200,
+          "friendship": 70
         }
       },
       "purity": {
         "result": "Kabukimon",
         "reqs": {
           "level": 31,
-          "insectPlantExp": 2000
+          "insectPlantExp": 2000,
+          "friendship": 70
         }
       },
       "courage": {
         "result": "Lanksmon",
         "reqs": {
           "level": 29,
-          "speed": 130
+          "speed": 130,
+          "friendship": 70
         }
       }
     }
