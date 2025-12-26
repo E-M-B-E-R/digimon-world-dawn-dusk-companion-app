@@ -142,6 +142,9 @@
   },
   {
     "id": 15,
+    "altNames": [
+      "Gumymon"
+    ],
     "fullName": "Gummymon",
     "evoReqs": {
       "level": 4
@@ -364,6 +367,9 @@
   },
   {
     "id": 38,
+    "altNames": [
+      "Bakumon"
+    ],
     "fullName": "Tapirmon",
     "evoReqs": {
       "level": 16,
@@ -430,6 +436,9 @@
   },
   {
     "id": 45,
+    "altNames": [
+      "Armadimon"
+    ],
     "fullName": "Armadillomon",
     "evoReqs": {
       "level": 11,
@@ -515,6 +524,9 @@
   },
   {
     "id": 53,
+    "altNames": [
+      "Goblimon"
+    ],
     "fullName": "Goburimon",
     "evoReqs": {
       "level": 12,
@@ -607,6 +619,9 @@
   },
   {
     "id": 62,
+    "altNames": [
+      "Ganimon"
+    ],
     "fullName": "Crabmon",
     "evoReqs": {
       "level": 16,
@@ -651,7 +666,8 @@
     "id": 66,
     "altNames": [
       "Arurarumon",
-      "Alraunemon"
+      "Alraunemon",
+      "Alraumon"
     ],
     "fullName": "Aruraumon",
     "evoReqs": {
@@ -679,6 +695,9 @@
   },
   {
     "id": 69,
+    "altNames": [
+      "PawnChessmonBlack"
+    ],
     "shortName": "PwnChssmnB",
     "fullName": "PawnChessmon(Black)",
     "evoReqs": {
@@ -747,6 +766,9 @@
   },
   {
     "id": 75,
+    "altNames": [
+      "PawnChessmonWhite"
+    ],
     "shortName": "PwnChssmnW",
     "fullName": "PawnChessmon(White)",
     "evoReqs": {
@@ -1062,6 +1084,9 @@
   },
   {
     "id": 105,
+    "altNames": [
+      "Wizarmon"
+    ],
     "fullName": "Wizardmon",
     "evoReqs": {
       "level": 25,
@@ -1084,6 +1109,11 @@
   },
   {
     "id": 107,
+    "altNames": [
+      "Gardromon",
+      "Guardramon",
+      "Guadromon"
+    ],
     "fullName": "Guardromon",
     "evoReqs": {
       "level": 20,
@@ -1140,6 +1170,9 @@
   },
   {
     "id": 112,
+    "altNames": [
+      "Galgomon"
+    ],
     "fullName": "Gargomon",
     "evoReqs": {
       "level": 20,
@@ -1914,6 +1947,9 @@
   },
   {
     "id": 177,
+    "altNames": [
+      "Thundermon"
+    ],
     "shortName": "TDBallmon",
     "fullName": "Thunderballmon",
     "evoReqs": {
@@ -1982,7 +2018,7 @@
     "altNames": [
       "J-Mojyamon"
     ],
-    "fullName": "Jungle Mojyamon",
+    "fullName": "JungleMojyamon",
     "evoReqs": {
       "level": 17,
       "beastExp": 350
@@ -2040,6 +2076,9 @@
   },
   {
     "id": 188,
+    "altNames": [
+      "V-dramon"
+    ],
     "fullName": "Veedramon",
     "evoReqs": {
       "level": 18,
@@ -3606,7 +3645,8 @@
     "id": 325,
     "shortName": "MegaGargomn",
     "altNames": [
-      "SaintGargomon"
+      "SaintGargomon",
+      "SaintGalgomon"
     ],
     "fullName": "Mega Gargomon",
     "evoReqs": {
@@ -3933,6 +3973,9 @@
   },
   {
     "id": 353,
+    "altNames": [
+      "Galfmon"
+    ],
     "fullName": "Gulfmon",
     "evoReqs": {
       "level": 56,
