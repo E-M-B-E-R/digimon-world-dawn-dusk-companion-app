@@ -193,7 +193,7 @@ export function MyTeam({ digimonData, darkMode, themeColor, onSelectDigimon }: M
 
           {/* Team Grid */}
           <div className="w-full flex justify-center">
-            <div className="grid gap-0" style={{ width: '600px', gridTemplateColumns: 'repeat(3, 200px)' }}>
+            <div className="gap-0" style={{ display: 'grid', width: '600px', gridTemplateColumns: 'repeat(3, 200px)', gridAutoFlow: 'row' }}>
             {slots.map(slot => {
               const digimon = slot.digimonId ? getDigimonById(slot.digimonId) : null;
               
