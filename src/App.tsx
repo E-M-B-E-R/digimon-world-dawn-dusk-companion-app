@@ -4,6 +4,7 @@ import { digimonData, evolutions } from './data/digimon-data';
 import { EvolutionTreeGraph } from './components/EvolutionTreeGraph';
 import { DigimonDetails } from './components/DigimonDetails';
 import { VerticalEvolutionView } from './components/VerticalEvolutionView';
+import { MyTeam } from './components/MyTeam';
 import { useIsMobile } from './components/ui/use-mobile';
 
 const LIGHT_MODE_COLOR = '#F8AE5C'; // Orange
@@ -21,6 +22,7 @@ export default function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [themeColor, setThemeColor] = useState(LIGHT_MODE_COLOR);
   const [userChangedColor, setUserChangedColor] = useState(false);
+  const [currentView, setCurrentView] = useState<'evolution' | 'team'>('team');
   const isMobile = useIsMobile();
 
   const handleDarkModeToggle = () => {
@@ -69,6 +71,12 @@ export default function App() {
     setSuggestions([]);
   };
 
+  // Handle selecting a digimon from team (switch to evolution view)
+  const handleTeamDigimonSelect = (id: string) => {
+    setRootDigimonId(id);
+    setCurrentView('evolution');
+  };
+
   const currentRootDigimon = digimonData.find(d => d.id === rootDigimonId);
   const modalDigimon = modalDigimonId ? digimonData.find(d => d.id === modalDigimonId) : null;
 
@@ -76,17 +84,68 @@ export default function App() {
   if (isMobile) {
     return (
       <>
-        <VerticalEvolutionView
-          digimonData={digimonData}
-          evolutions={evolutions}
-          onDigimonClick={handleDigimonClick}
-          darkMode={darkMode}
-          setDarkMode={setDarkMode}
-          headerColor={themeColor}
-          setHeaderColor={setThemeColor}
-          lineColor={themeColor}
-          setLineColor={setThemeColor}
-        />
+        {currentView === 'team' ? (
+          <div className="flex flex-col min-h-screen">
+            <header className="text-white sticky top-0 z-50 shadow-lg flex-shrink-0" style={{ backgroundColor: themeColor }}>
+              <div className="px-4 py-4 space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="w-10"></div>
+                  <h1 className="text-2xl">Digimon Evolution</h1>
+                  <button
+                    onClick={() => setDarkMode(!darkMode)}
+                    className="p-2 hover:bg-white/10 rounded-lg transition-colors"
+                  >
+                    {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+                  </button>
+                </div>
+
+                {/* Navigation Tabs */}
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => setCurrentView('evolution')}
+                    className={`flex-1 py-2 px-4 rounded-lg transition-colors ${
+                      currentView === 'evolution'
+                        ? 'bg-white/20 text-white font-medium'
+                        : 'text-white/70 hover:bg-white/10'
+                    }`}
+                  >
+                    Evolution Tree
+                  </button>
+                  <button
+                    onClick={() => setCurrentView('team')}
+                    className={`flex-1 py-2 px-4 rounded-lg transition-colors ${
+                      currentView === 'team'
+                        ? 'bg-white/20 text-white font-medium'
+                        : 'text-white/70 hover:bg-white/10'
+                    }`}
+                  >
+                    My Team
+                  </button>
+                </div>
+              </div>
+            </header>
+            <MyTeam
+              digimonData={digimonData}
+              darkMode={darkMode}
+              themeColor={themeColor}
+              onSelectDigimon={handleTeamDigimonSelect}
+            />
+          </div>
+        ) : (
+          <VerticalEvolutionView
+            digimonData={digimonData}
+            evolutions={evolutions}
+            onDigimonClick={handleDigimonClick}
+            darkMode={darkMode}
+            setDarkMode={setDarkMode}
+            headerColor={themeColor}
+            setHeaderColor={setThemeColor}
+            lineColor={themeColor}
+            setLineColor={setThemeColor}
+            currentView={currentView}
+            setCurrentView={setCurrentView}
+          />
+        )}
         
         {/* Details Modal */}
         {showDetails && modalDigimon && (
@@ -146,7 +205,32 @@ export default function App() {
               </div>
             </div>
             
-            {/* Search Bar - Centered */}
+            {/* Navigation Tabs */}
+            <div className="flex gap-3 mb-2">
+              <button
+                onClick={() => setCurrentView('evolution')}
+                className={`py-2 px-6 rounded-lg transition-all ${
+                  currentView === 'evolution'
+                    ? 'bg-white/20 text-white font-medium shadow-lg'
+                    : 'text-white/70 hover:bg-white/10'
+                }`}
+              >
+                Evolution Tree
+              </button>
+              <button
+                onClick={() => setCurrentView('team')}
+                className={`py-2 px-6 rounded-lg transition-all ${
+                  currentView === 'team'
+                    ? 'bg-white/20 text-white font-medium shadow-lg'
+                    : 'text-white/70 hover:bg-white/10'
+                }`}
+              >
+                My Team
+              </button>
+            </div>
+            
+            {/* Search Bar - Centered - Only show in evolution view */}
+            {currentView === 'evolution' && (
             <div className="relative w-full max-w-md">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
               <input
@@ -195,24 +279,34 @@ export default function App() {
                 </div>
               )}
             </div>
+            )}
           </div>
         </div>
       </header>
 
       {/* Main Content */}
       <main className="max-w-[95%] mx-auto p-4 md:p-6">
-        <div className={`rounded-xl shadow-lg p-4 md:p-6 ${darkMode ? 'bg-[#3e3d32]' : 'bg-white'}`}>
-          <EvolutionTreeGraph
-            rootDigimonId={rootDigimonId}
+        {currentView === 'team' ? (
+          <MyTeam
             digimonData={digimonData}
-            evolutions={evolutions}
-            onDigimonClick={handleDigimonClick}
             darkMode={darkMode}
-            lineColor={themeColor}
-            digimonName={currentRootDigimon?.name}
-            isMobile={isMobile}
+            themeColor={themeColor}
+            onSelectDigimon={handleTeamDigimonSelect}
           />
-        </div>
+        ) : (
+          <div className={`rounded-xl shadow-lg p-4 md:p-6 ${darkMode ? 'bg-[#3e3d32]' : 'bg-white'}`}>
+            <EvolutionTreeGraph
+              rootDigimonId={rootDigimonId}
+              digimonData={digimonData}
+              evolutions={evolutions}
+              onDigimonClick={handleDigimonClick}
+              darkMode={darkMode}
+              lineColor={themeColor}
+              digimonName={currentRootDigimon?.name}
+              isMobile={isMobile}
+            />
+          </div>
+        )}
       </main>
 
       {/* Details Modal */}
