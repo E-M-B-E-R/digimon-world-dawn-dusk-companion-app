@@ -12,6 +12,8 @@ interface VerticalEvolutionViewProps {
   setHeaderColor: (value: string) => void;
   lineColor: string;
   setLineColor: (value: string) => void;
+  currentView?: 'evolution' | 'team';
+  setCurrentView?: (view: 'evolution' | 'team') => void;
 }
 
 const stageOrder: DigimonStage[] = ['In-Training', 'Rookie', 'Champion', 'Ultimate', 'Mega'];
@@ -32,7 +34,9 @@ export function VerticalEvolutionView({
   headerColor,
   setHeaderColor,
   lineColor,
-  setLineColor
+  setLineColor,
+  currentView,
+  setCurrentView
 }: VerticalEvolutionViewProps) {
   const [positions, setPositions] = useState<DigimonPosition[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
@@ -271,6 +275,32 @@ export function VerticalEvolutionView({
               </button>
             </div>
           </div>
+
+          {/* Navigation Tabs */}
+          {setCurrentView && (
+            <div className="flex gap-2">
+              <button
+                onClick={() => setCurrentView('evolution')}
+                className={`flex-1 py-2 px-4 rounded-lg transition-colors ${
+                  currentView === 'evolution'
+                    ? 'bg-white/20 text-white font-medium'
+                    : 'text-white/70 hover:bg-white/10'
+                }`}
+              >
+                Evolution Tree
+              </button>
+              <button
+                onClick={() => setCurrentView('team')}
+                className={`flex-1 py-2 px-4 rounded-lg transition-colors ${
+                  currentView === 'team'
+                    ? 'bg-white/20 text-white font-medium'
+                    : 'text-white/70 hover:bg-white/10'
+                }`}
+              >
+                My Team
+              </button>
+            </div>
+          )}
 
           {/* Color Picker */}
           <div className="flex items-center gap-4 justify-center">
