@@ -370,7 +370,6 @@ export function MyTeam({ digimonData, darkMode, themeColor, onSelectDigimon }: M
                         <div className={`text-xs mt-2 ${
                           darkMode ? 'text-[#a6a49f]' : 'text-gray-500'
                         }`}>
-                          Add Digimon
                         </div>
                       </div>
                     </div>
