@@ -25,6 +25,40 @@ export default function App() {
   const [currentView, setCurrentView] = useState<'evolution' | 'team'>('team');
   const isMobile = useIsMobile();
 
+  // Ensure the initial history state contains the current view for back nav
+  React.useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const state = window.history.state;
+    if (!state || !state.view) {
+      window.history.replaceState({ view: currentView }, '', `${window.location.pathname}${window.location.search}#${currentView}`);
+    }
+
+    const handlePopState = (event: PopStateEvent) => {
+      const view = event.state?.view as 'evolution' | 'team' | undefined;
+      if (view === 'evolution' || view === 'team') {
+        setCurrentView(view);
+        // If a root digimon id was stored, restore it so the view matches the history entry
+        if (event.state?.rootDigimonId) {
+          setRootDigimonId(event.state.rootDigimonId as string);
+        }
+      } else {
+        setCurrentView('team');
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, [currentView]);
+
+  const pushViewState = (view: 'evolution' | 'team', extraState: Record<string, unknown> = {}) => {
+    if (typeof window === 'undefined') return;
+    window.history.pushState(
+      { view, ...extraState },
+      '',
+      `${window.location.pathname}${window.location.search}#${view}`
+    );
+  };
+
   const handleDarkModeToggle = () => {
     const newDarkMode = !darkMode;
     setDarkMode(newDarkMode);
@@ -73,6 +107,7 @@ export default function App() {
 
   // Handle selecting a digimon from team (switch to evolution view)
   const handleTeamDigimonSelect = (id: string) => {
+    pushViewState('evolution', { rootDigimonId: id });
     setRootDigimonId(id);
     setCurrentView('evolution');
   };
