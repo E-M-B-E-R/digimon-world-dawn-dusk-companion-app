@@ -14,6 +14,7 @@ interface VerticalEvolutionViewProps {
   setLineColor: (value: string) => void;
   currentView?: 'evolution' | 'team';
   setCurrentView?: (view: 'evolution' | 'team') => void;
+  initialRootDigimonId?: string;
 }
 
 const stageOrder: DigimonStage[] = ['In-Training', 'Rookie', 'Champion', 'Ultimate', 'Mega'];
@@ -56,7 +57,8 @@ export function VerticalEvolutionView({
   lineColor,
   setLineColor,
   currentView,
-  setCurrentView
+  setCurrentView,
+  initialRootDigimonId
 }: VerticalEvolutionViewProps) {
   const [positions, setPositions] = useState<DigimonPosition[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
@@ -71,8 +73,17 @@ export function VerticalEvolutionView({
   );
   
   const [rootDigimonId, setRootDigimonId] = useState(
-    inTrainingDigimon[0]?.id || digimonData[0]?.id || ''
+    initialRootDigimonId || inTrainingDigimon[0]?.id || digimonData[0]?.id || ''
   );
+
+  // Keep internal root in sync when parent provides a new selection
+  useEffect(() => {
+    if (initialRootDigimonId && initialRootDigimonId !== rootDigimonId) {
+      setRootDigimonId(initialRootDigimonId);
+    }
+    // We intentionally exclude rootDigimonId from deps to avoid loops when searching locally
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [initialRootDigimonId]);
 
   // Build evolution tree from root (both ancestors and descendants) - memoized
   const treeDigimonIds = useMemo(() => {
@@ -410,7 +421,7 @@ export function VerticalEvolutionView({
             return (
               <div key={stage} className="flex justify-center">
                 <div 
-                  className={`rounded-2xl p-6 ${
+                  className={`w-full max-w-full rounded-2xl p-6 ${
                     darkMode 
                       ? 'bg-[#3e3d32]/60' 
                       : 'bg-white/40'
