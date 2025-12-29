@@ -170,8 +170,8 @@ export function MyTeam({ digimonData, darkMode, themeColor, onSelectDigimon }: M
   }));
 
   return (
-    <div className={`min-h-screen flex items-center justify-center ${darkMode ? 'bg-[#272822]' : 'bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300'}`}>
-      <div className="max-w-5xl mx-auto px-4 py-8">
+    <div className={`${'min-h-screen flex justify-center items-start'} ${darkMode ? 'bg-[#272822]' : 'bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300'}`}>
+      <div className={`max-w-5xl mx-auto px-4 py-6`}>
         <div className={`rounded-xl shadow-lg p-6 md:p-8 ${darkMode ? 'bg-[#3e3d32]' : 'bg-white'}`}>
           {isEditingName ? (
             <div className="flex items-center justify-center mb-6 gap-2">
