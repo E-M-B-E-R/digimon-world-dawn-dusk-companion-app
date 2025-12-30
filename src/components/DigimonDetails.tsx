@@ -7,10 +7,11 @@ import { useState } from 'react';
 interface DigimonDetailsProps {
   digimon: Digimon;
   onClose: () => void;
+  onDigimonClick?: (digimon: Digimon) => void;
   darkMode?: boolean;
 }
 
-export function DigimonDetails({ digimon, onClose, darkMode }: DigimonDetailsProps) {
+export function DigimonDetails({ digimon, onClose, onDigimonClick, darkMode }: DigimonDetailsProps) {
   const [activeTab, setActiveTab] = useState<'evolutions' | 'dna'>('evolutions');
 
   // Get evolutions from and to this Digimon
@@ -201,9 +202,13 @@ export function DigimonDetails({ digimon, onClose, darkMode }: DigimonDetailsPro
                     if (!fromDigimon) return null;
                     
                     return (
-                      <div key={evo.from} className={`flex items-center gap-3 p-3 rounded-lg ${
-                        darkMode ? 'bg-[#49483e]' : 'bg-gray-50'
-                      }`}>
+                      <div 
+                        key={evo.from} 
+                        onClick={() => onDigimonClick?.(fromDigimon)}
+                        className={`flex items-center gap-3 p-3 rounded-lg cursor-pointer transition-all ${
+                          darkMode ? 'bg-[#49483e] hover:bg-[#5a5951]' : 'bg-gray-50 hover:bg-gray-100'
+                        }`}
+                      >
                         <img 
                           src={fromDigimon.image} 
                           alt={fromDigimon.name}
@@ -238,9 +243,13 @@ export function DigimonDetails({ digimon, onClose, darkMode }: DigimonDetailsPro
                     if (!toDigimon) return null;
                     
                     return (
-                      <div key={evo.to} className={`flex items-center gap-3 p-3 rounded-lg ${
-                        darkMode ? 'bg-[#49483e]' : 'bg-gray-50'
-                      }`}>
+                      <div 
+                        key={evo.to} 
+                        onClick={() => onDigimonClick?.(toDigimon)}
+                        className={`flex items-center gap-3 p-3 rounded-lg cursor-pointer transition-all ${
+                          darkMode ? 'bg-[#49483e] hover:bg-[#5a5951]' : 'bg-gray-50 hover:bg-gray-100'
+                        }`}
+                      >
                         <img 
                           src={toDigimon.image} 
                           alt={toDigimon.name}
@@ -291,7 +300,13 @@ export function DigimonDetails({ digimon, onClose, darkMode }: DigimonDetailsPro
                           if (typeof entry === 'string') {
                             const partner = getByNameOrId(entry);
                             return (
-                              <div key={i} className="flex items-center gap-2">
+                              <div 
+                                key={i} 
+                                onClick={() => partner && onDigimonClick?.(partner)}
+                                className={`flex items-center gap-2 cursor-pointer transition-colors ${
+                                  partner ? (darkMode ? 'hover:text-blue-400' : 'hover:text-blue-600') : ''
+                                }`}
+                              >
                                 {partner && (
                                   <img src={partner.image} alt={partner.name} className="w-8 h-8 rounded object-cover" />
                                 )}
@@ -307,14 +322,34 @@ export function DigimonDetails({ digimon, onClose, darkMode }: DigimonDetailsPro
                             return (
                               <div key={i} className="flex items-center gap-2">
                                 {d1 && (
-                                  <img src={d1.image} alt={d1.name} className="w-8 h-8 rounded object-cover" />
+                                  <img 
+                                    src={d1.image} 
+                                    alt={d1.name} 
+                                    onClick={() => onDigimonClick?.(d1)}
+                                    className="w-8 h-8 rounded object-cover cursor-pointer hover:opacity-80 transition-opacity" 
+                                  />
                                 )}
-                                <span className={`${darkMode ? 'text-[#f8f8f2]' : 'text-gray-900'} text-sm`}>{d1Name}</span>
+                                <span 
+                                  onClick={() => d1 && onDigimonClick?.(d1)}
+                                  className={`${darkMode ? 'text-[#f8f8f2]' : 'text-gray-900'} text-sm cursor-pointer transition-colors ${
+                                    d1 ? (darkMode ? 'hover:text-blue-400' : 'hover:text-blue-600') : ''
+                                  }`}
+                                >{d1Name}</span>
                                 <span className={`${darkMode ? 'text-[#a6a49f]' : 'text-gray-500'} text-xs`}>+</span>
                                 {d2 && (
-                                  <img src={d2.image} alt={d2.name} className="w-8 h-8 rounded object-cover" />
+                                  <img 
+                                    src={d2.image} 
+                                    alt={d2.name} 
+                                    onClick={() => onDigimonClick?.(d2)}
+                                    className="w-8 h-8 rounded object-cover cursor-pointer hover:opacity-80 transition-opacity" 
+                                  />
                                 )}
-                                <span className={`${darkMode ? 'text-[#f8f8f2]' : 'text-gray-900'} text-sm`}>{d2Name}</span>
+                                <span 
+                                  onClick={() => d2 && onDigimonClick?.(d2)}
+                                  className={`${darkMode ? 'text-[#f8f8f2]' : 'text-gray-900'} text-sm cursor-pointer transition-colors ${
+                                    d2 ? (darkMode ? 'hover:text-blue-400' : 'hover:text-blue-600') : ''
+                                  }`}
+                                >{d2Name}</span>
                               </div>
                             );
                           }

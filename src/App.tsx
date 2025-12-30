@@ -193,6 +193,9 @@ export default function App() {
               <DigimonDetails 
                 digimon={modalDigimon} 
                 onClose={() => { setShowDetails(false); setModalDigimonId(null); }}
+                onDigimonClick={(newDigimon) => {
+                  setModalDigimonId(newDigimon.id);
+                }}
                 darkMode={darkMode}
               />
             </div>
@@ -355,6 +358,9 @@ export default function App() {
             <DigimonDetails 
               digimon={modalDigimon} 
               onClose={() => { setShowDetails(false); setModalDigimonId(null); }}
+              onDigimonClick={(newDigimon) => {
+                setModalDigimonId(newDigimon.id);
+              }}
               darkMode={darkMode}
             />
           </div>
