@@ -1,5 +1,8 @@
 # Digimon World Dawn & Dusk Companion App
-  ## Hosting: https://digimon-world-dawn-dusk-companion.netlify.app
+  ## Hosting:
+  [![Netlify Status](https://api.netlify.com/api/v1/badges/f3b84f2a-ed61-4104-8ecc-1c48c7356e96/deploy-status)](https://app.netlify.com/projects/digimon-world-dawn-dusk-companion/deploys)
+  
+  https://digimon-world-dawn-dusk-companion.netlify.app
 
   ## Features:
   * Digivolution tree for each Digimon in the game.
