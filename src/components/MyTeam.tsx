@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Digimon } from '../types/digimon';
-import { Search, Plus, X } from 'lucide-react';
+import { Search, Plus, X, Sun, Moon } from 'lucide-react';
 
 interface MyTeamProps {
   digimonData: Digimon[];
@@ -347,10 +347,17 @@ export function MyTeam({ digimonData, darkMode, themeColor, onSelectDigimon }: M
                           />
                         </div>
                         <div className="text-center w-full" style={{ maxHeight: isDesktop ? '30%' : '40%' }}>
-                          <div className={`font-medium ${isDesktop ? 'text-sm' : 'text-[11px]'} truncate max-w-full ${
+                          <div className={`font-medium ${isDesktop ? 'text-sm' : 'text-[11px]'} truncate max-w-full flex items-center justify-center gap-1 ${
                             darkMode ? 'text-[#f8f8f2]' : 'text-gray-900'
                           }`}>
-                            {digimon.name}
+                            {digimon.exclusive && (
+                              digimon.exclusive === 'Dawn' ? (
+                                <Sun className="text-yellow-400 drop-shadow-md flex-shrink-0" fill="currentColor" style={{ width: '16px', height: '16px' }} />
+                              ) : (
+                                <Moon className="text-blue-300 drop-shadow-md flex-shrink-0" fill="currentColor" style={{ width: '16px', height: '16px' }} />
+                              )
+                            )}
+                            <span className="truncate">{digimon.name}</span>
                           </div>
                           <div className={`${isDesktop ? 'text-xs' : ''} mt-0.5 ${
                             darkMode ? 'text-[#a6a49f]' : 'text-gray-600'

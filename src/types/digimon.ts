@@ -7,6 +7,7 @@ export interface Digimon {
   image: string;
   type: string[];
   description: string;
+  exclusive?: 'Dawn' | 'Dusk';
   stats?: {
     hp: number;
     mp: number;

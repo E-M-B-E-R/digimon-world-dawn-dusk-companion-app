@@ -301,14 +301,25 @@ export default function App() {
                       }`}
                     >
                       <div className="flex items-center gap-3">
-                        <img 
-                          src={d.image} 
-                          alt={d.name}
-                          className="rounded object-contain"
-                          style={{ maxWidth: '3rem', maxHeight: '3rem' }}
-                        />
+                        <div className="relative">
+                          <img 
+                            src={d.image} 
+                            alt={d.name}
+                            className="rounded object-contain"
+                            style={{ maxWidth: '3rem', maxHeight: '3rem' }}
+                          />
+                        </div>
                         <div>
-                          <div className={darkMode ? 'text-[#f8f8f2]' : 'text-gray-900'}>{d.name}</div>
+                          <div className={`flex items-center gap-1 ${darkMode ? 'text-[#f8f8f2]' : 'text-gray-900'}`}>
+                            {d.exclusive && (
+                              d.exclusive === 'Dawn' ? (
+                                <Sun className="text-yellow-400 drop-shadow-md flex-shrink-0" fill="currentColor" style={{ width: '16px', height: '16px' }} />
+                              ) : (
+                                <Moon className="text-blue-300 drop-shadow-md flex-shrink-0" fill="currentColor" style={{ width: '16px', height: '16px' }} />
+                              )
+                            )}
+                            <span>{d.name}</span>
+                          </div>
                           <div className={darkMode ? 'text-xs text-[#a6a49f]' : 'text-xs text-gray-600'}>
                             {d.stage} • {d.type.join(', ')}
                           </div>

@@ -435,10 +435,9 @@ export function VerticalEvolutionView({
                         key={digimon.id}
                         data-digimon-id={digimon.id}
                         onClick={() => onDigimonClick(digimon.id)}
-                        className="relative group z-20"
+                        className="relative group z-20 flex flex-col items-center"
                         style={{
                           width: '80px',
-                          height: '80px',
                         }}
                       >
                         {(() => {
@@ -446,11 +445,13 @@ export function VerticalEvolutionView({
                           const borderColor = isArmor ? ARMOR_COLOR : lineColor;
                           return (
                         <div
-                          className={`w-full h-full rounded-lg overflow-hidden transition-transform group-hover:scale-110 shadow-md flex items-center justify-center ${
+                          className={`w-full rounded-lg overflow-hidden transition-transform group-hover:scale-110 shadow-md flex items-center justify-center relative ${
                             darkMode ? 'bg-[#49483e]' : 'bg-gray-50'
                           }`}
                           style={{
                             border: `3px solid ${borderColor}`,
+                            width: '80px',
+                            height: '80px',
                           }}
                         >
                           <img
@@ -462,10 +463,17 @@ export function VerticalEvolutionView({
                         </div>
                           );
                         })()}
-                        <div className={`absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs opacity-0 group-hover:opacity-100 transition-opacity px-2 py-1 rounded shadow-sm z-30 ${
-                          darkMode ? 'bg-[#49483e] text-[#f8f8f2]' : 'bg-white text-gray-700'
-                        }`}>
-                          {digimon.name}
+                        <div className={`mt-1 flex items-center justify-center gap-1 w-full ${
+                          darkMode ? 'text-[#f8f8f2]' : 'text-gray-900'
+                        }`} style={{ fontSize: '14px' }}>
+                          {digimon.exclusive && (
+                            digimon.exclusive === 'Dawn' ? (
+                              <Sun className="text-yellow-400 drop-shadow-md flex-shrink-0" fill="currentColor" style={{ width: '16px', height: '16px' }} />
+                            ) : (
+                              <Moon className="text-blue-300 drop-shadow-md flex-shrink-0" fill="currentColor" style={{ width: '16px', height: '16px' }} />
+                            )
+                          )}
+                          <span className="truncate">{digimon.name}</span>
                         </div>
                       </button>
                     ))}

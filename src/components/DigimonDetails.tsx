@@ -1,5 +1,5 @@
 import { Digimon } from '../types/digimon';
-import { X } from 'lucide-react';
+import { X, Sun, Moon } from 'lucide-react';
 import { evolutions, digimonData } from '../data/digimon-data';
 import rawDnaData from '../evolution_data/evo_dna.json';
 import { useState } from 'react';
@@ -135,7 +135,16 @@ export function DigimonDetails({ digimon, onClose, onDigimonClick, darkMode }: D
             />
           </div>
           <div>
-            <h2 className="text-2xl mb-1">{digimon.name}</h2>
+            <div className="flex items-center gap-2">
+              {digimon.exclusive && (
+                digimon.exclusive === 'Dawn' ? (
+                  <Sun className="text-yellow-300" fill="currentColor" style={{ width: '16px', height: '16px' }} />
+                ) : (
+                  <Moon className="text-blue-200" fill="currentColor" style={{ width: '16px', height: '16px' }} />
+                )
+              )}
+              <h2 className="text-2xl mb-1">{digimon.name}</h2>
+            </div>
             <div className="text-sm opacity-90">{digimon.stage}</div>
             <div className="flex flex-wrap gap-1 mt-2">
               {digimon.type.map(type => (

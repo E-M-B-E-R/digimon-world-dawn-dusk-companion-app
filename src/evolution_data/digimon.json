@@ -84,7 +84,8 @@
       ]
     },
     "habitat": "Magnet Mine",
-    "stage": "In-Training"
+    "stage": "In-Training",
+    "exclusive": "Dusk"
   },
   {
     "id": 10,
@@ -114,7 +115,8 @@
       ]
     },
     "habitat": "Task Canyon",
-    "stage": "In-Training"
+    "stage": "In-Training",
+    "exclusive": "Dawn"
   },
   {
     "id": 12,
@@ -138,7 +140,8 @@
       "level": 5
     },
     "habitat": "Task Canyon",
-    "stage": "In-Training"
+    "stage": "In-Training",
+    "exclusive": "Dawn"
   },
   {
     "id": 15,
@@ -174,7 +177,8 @@
       ]
     },
     "habitat": "Shadow Abyss",
-    "stage": "In-Training"
+    "stage": "In-Training",
+    "exclusive": "Dusk"
   },
   {
     "id": 18,
@@ -222,7 +226,8 @@
       ]
     },
     "habitat": "Task Canyon",
-    "stage": "In-Training"
+    "stage": "In-Training",
+    "exclusive": "Dawn"
   },
   {
     "id": 23,
@@ -234,7 +239,8 @@
       ]
     },
     "habitat": "Magnet Mine",
-    "stage": "In-Training"
+    "stage": "In-Training",
+    "exclusive": "Dusk"
   },
   {
     "id": 24,
@@ -278,7 +284,8 @@
       ]
     },
     "habitat": "Task Canyon",
-    "stage": "Rookie"
+    "stage": "Rookie",
+    "exclusive": "Dawn"
   },
   {
     "id": 28,
@@ -500,7 +507,8 @@
       ]
     },
     "habitat": "Magnet Mine",
-    "stage": "Rookie"
+    "stage": "Rookie",
+    "exclusive": "Dusk"
   },
   {
     "id": 51,
@@ -740,7 +748,8 @@
       ]
     },
     "habitat": "Unknown",
-    "stage": "Rookie"
+    "stage": "Rookie",
+    "exclusive": "Dusk"
   },
   {
     "id": 72,
@@ -753,7 +762,8 @@
       ]
     },
     "habitat": "Task Canyon",
-    "stage": "Rookie"
+    "stage": "Rookie",
+    "exclusive": "Dawn"
   },
   {
     "id": 73,
@@ -798,7 +808,8 @@
       ]
     },
     "habitat": "Unknown",
-    "stage": "Rookie"
+    "stage": "Rookie",
+    "exclusive": "Dawn"
   },
   {
     "id": 77,
@@ -865,7 +876,8 @@
       "friendship": 50
     },
     "habitat": "Unknown",
-    "stage": "Rookie"
+    "stage": "Rookie",
+    "exclusive": "Dawn"
   },
   {
     "id": 84,
@@ -875,7 +887,8 @@
       "friendship": 50
     },
     "habitat": "Unknown",
-    "stage": "Rookie"
+    "stage": "Rookie",
+    "exclusive": "Dusk"
   },
   {
     "id": 85,
@@ -934,7 +947,8 @@
       ]
     },
     "habitat": "HighlightHaven",
-    "stage": "Champion"
+    "stage": "Champion",
+    "exclusive": "Dawn"
   },
   {
     "id": 90,
@@ -1208,7 +1222,8 @@
       ]
     },
     "habitat": "Unknown",
-    "stage": "Champion"
+    "stage": "Champion",
+    "exclusive": "Dawn"
   },
   {
     "id": 114,
@@ -1234,7 +1249,8 @@
       ]
     },
     "habitat": "Magnet Mine",
-    "stage": "Champion"
+    "stage": "Champion",
+    "exclusive": "Dusk"
   },
   {
     "id": 116,
@@ -1552,7 +1568,8 @@
       "holyExp": 800
     },
     "habitat": "Unknown",
-    "stage": "Champion"
+    "stage": "Champion",
+    "exclusive": "Dawn"
   },
   {
     "id": 143,
@@ -1681,7 +1698,8 @@
       ]
     },
     "habitat": "Magnet Mine",
-    "stage": "Champion"
+    "stage": "Champion",
+    "exclusive": "Dusk"
   },
   {
     "id": 153,
@@ -2155,7 +2173,8 @@
       "beastExp": 700
     },
     "habitat": "Unknown",
-    "stage": "Champion"
+    "stage": "Champion",
+    "exclusive": "Dawn"
   },
   {
     "id": 193,
@@ -2168,7 +2187,8 @@
       "friendship": 70
     },
     "habitat": "Unknown",
-    "stage": "Champion"
+    "stage": "Champion",
+    "exclusive": "Dusk"
   },
   {
     "id": 194,
@@ -2217,7 +2237,8 @@
       ]
     },
     "habitat": "Shadow Abyss",
-    "stage": "Ultimate"
+    "stage": "Ultimate",
+    "exclusive": "Dusk"
   },
   {
     "id": 198,
@@ -2679,7 +2700,8 @@
       ]
     },
     "habitat": "Unknown",
-    "stage": "Ultimate"
+    "stage": "Ultimate",
+    "exclusive": "Dusk"
   },
   {
     "id": 236,
@@ -2774,7 +2796,8 @@
       ]
     },
     "habitat": "Unknown",
-    "stage": "Ultimate"
+    "stage": "Ultimate",
+    "exclusive": "Dusk"
   },
   {
     "id": 244,
@@ -2942,7 +2965,8 @@
       "holyExp": 7100
     },
     "habitat": "HighlightHaven",
-    "stage": "Ultimate"
+    "stage": "Ultimate",
+    "exclusive": "Dawn"
   },
   {
     "id": 259,
@@ -3247,7 +3271,8 @@
       "spirit": 140
     },
     "habitat": "Unknown",
-    "stage": "Ultimate"
+    "stage": "Ultimate",
+    "exclusive": "Dawn"
   },
   {
     "id": 287,
@@ -3258,7 +3283,8 @@
       "darkExp": 2800
     },
     "habitat": "Unknown",
-    "stage": "Ultimate"
+    "stage": "Ultimate",
+    "exclusive": "Dusk"
   },
   {
     "id": 288,
@@ -3324,7 +3350,8 @@
       "insectPlantExp": 20000
     },
     "habitat": "Thriller Ruins",
-    "stage": "Ultimate"
+    "stage": "Ultimate",
+    "exclusive": "Dusk"
   },
   {
     "id": 297,
@@ -3412,7 +3439,8 @@
       ]
     },
     "habitat": "Shadow Abyss",
-    "stage": "Mega"
+    "stage": "Mega",
+    "exclusive": "Dusk"
   },
   {
     "id": 305,
@@ -3550,7 +3578,8 @@
       ]
     },
     "habitat": "Unknown",
-    "stage": "Mega"
+    "stage": "Mega",
+    "exclusive": "Dawn"
   },
   {
     "id": 315,
@@ -3561,6 +3590,7 @@
       "ImperialdramonFighter"
     ],
     "fullName": "Imperialdramon Fighter Mode",
+    "exclusive": "Dawn",
     "evoReqs": {
       "level": 60,
       "friendship": 80,
@@ -3580,7 +3610,8 @@
     ],
     "fullName": "Imperialdramon Paladin Mode",
     "habitat": "Unknown",
-    "stage": "Mega"
+    "stage": "Mega",
+    "exclusive": "Dawn"
   },
   {
     "id": 317,
@@ -3679,7 +3710,8 @@
       ]
     },
     "habitat": "Unknown",
-    "stage": "Mega"
+    "stage": "Mega",
+    "exclusive": "Dawn"
   },
   {
     "id": 324,
@@ -3690,7 +3722,8 @@
     ],
     "fullName": "Gallantmon Crimson Mode",
     "habitat": "Unknown",
-    "stage": "Mega"
+    "stage": "Mega",
+    "exclusive": "Dawn"
   },
   {
     "id": 325,
@@ -3732,7 +3765,8 @@
       ]
     },
     "habitat": "Unknown",
-    "stage": "Mega"
+    "stage": "Mega",
+    "exclusive": "Dusk"
   },
   {
     "id": 328,
@@ -3791,7 +3825,8 @@
     "shortName": "Armageddemn",
     "fullName": "Armageddemon",
     "habitat": "Magnet Mine",
-    "stage": "Mega"
+    "stage": "Mega",
+    "exclusive": "Dusk"
   },
   {
     "id": 333,
@@ -3989,7 +4024,8 @@
     ],
     "fullName": "Bantyo Leomon",
     "habitat": "Unknown",
-    "stage": "Mega"
+    "stage": "Mega",
+    "exclusive": "Dusk"
   },
   {
     "id": 350,
@@ -4014,7 +4050,8 @@
       ]
     },
     "habitat": "Unknown",
-    "stage": "Mega"
+    "stage": "Mega",
+    "exclusive": "Dusk"
   },
   {
     "id": 352,
@@ -4055,7 +4092,8 @@
       ]
     },
     "habitat": "HighlightHaven",
-    "stage": "Mega"
+    "stage": "Mega",
+    "exclusive": "Dawn"
   },
   {
     "id": 355,
@@ -4065,7 +4103,8 @@
     ],
     "fullName": "ZeedMillenniummon",
     "habitat": "Unknown",
-    "stage": "Mega"
+    "stage": "Mega",
+    "exclusive": "Dusk"
   },
   {
     "id": 356,
@@ -4106,7 +4145,8 @@
     ],
     "fullName": "Chaos Gallantmon",
     "habitat": "Unknown",
-    "stage": "Mega"
+    "stage": "Mega",
+    "exclusive": "Dusk"
   },
   {
     "id": 359,
@@ -4245,7 +4285,8 @@
     ],
     "fullName": "Millenniummon",
     "habitat": "Unknown",
-    "stage": "Mega"
+    "stage": "Mega",
+    "exclusive": "Dusk"
   },
   {
     "id": 371,
@@ -4264,7 +4305,8 @@
       ]
     },
     "habitat": "Unknown",
-    "stage": "Mega"
+    "stage": "Mega",
+    "exclusive": "Dusk"
   },
   {
     "id": 372,
@@ -4280,7 +4322,8 @@
       ]
     },
     "habitat": "Unknown",
-    "stage": "Mega"
+    "stage": "Mega",
+    "exclusive": "Dawn"
   },
   {
     "id": 373,
@@ -4291,7 +4334,8 @@
       "holyExp": 48000
     },
     "habitat": "Unknown",
-    "stage": "Mega"
+    "stage": "Mega",
+    "exclusive": "Dawn"
   },
   {
     "id": 374,
@@ -4402,7 +4446,8 @@
       "holyExp": 17500
     },
     "habitat": "Unknown",
-    "stage": "Mega"
+    "stage": "Mega",
+    "exclusive": "Dawn"
   },
   {
     "id": 384,
@@ -4413,7 +4458,8 @@
       "darkExp": 14500
     },
     "habitat": "Unknown",
-    "stage": "Mega"
+    "stage": "Mega",
+    "exclusive": "Dusk"
   },
   {
     "id": 385,
@@ -4424,7 +4470,8 @@
     ],
     "fullName": "Shine Greymon Burst Mode",
     "habitat": "Unknown",
-    "stage": "Mega"
+    "stage": "Mega",
+    "exclusive": "Dawn"
   },
   {
     "id": 386,
@@ -4489,7 +4536,8 @@
       "machineExp": 12000
     },
     "habitat": "Unknown",
-    "stage": "Mega"
+    "stage": "Mega",
+    "exclusive": "Dawn"
   },
   {
     "id": 391,
@@ -4503,7 +4551,8 @@
       ]
     },
     "habitat": "Unknown",
-    "stage": "Mega"
+    "stage": "Mega",
+    "exclusive": "Dusk"
   },
   {
     "id": 392,
@@ -4514,7 +4563,8 @@
     ],
     "fullName": "Beelzemon Blast Mode",
     "habitat": "Unknown",
-    "stage": "Mega"
+    "stage": "Mega",
+    "exclusive": "Dusk"
   },
   {
     "id": 393,
@@ -4543,7 +4593,8 @@
       "darkExp": 40000
     },
     "habitat": "Unknown",
-    "stage": "Mega"
+    "stage": "Mega",
+    "exclusive": "Dusk"
   },
   {
     "id": 395,

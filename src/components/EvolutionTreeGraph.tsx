@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Digimon, Evolution, DigimonStage } from '../types/digimon';
 import { getDigimonById, getEvolutionsFrom, getEvolutionsTo } from '../data/digimon-data';
+import { Sun, Moon } from 'lucide-react';
 
 interface EvolutionTreeGraphProps {
   rootDigimonId: string;
@@ -556,8 +557,15 @@ export function EvolutionTreeGraph({
                 />
               </div>
               <div className="text-center flex-1 flex flex-col justify-end">
-                <div className={`text-sm truncate px-1 ${darkMode ? 'text-[#f8f8f2]' : 'text-gray-900'}`}>
-                  {node.digimon.name}
+                <div className={`text-sm px-1 flex items-center justify-center gap-1 ${darkMode ? 'text-[#f8f8f2]' : 'text-gray-900'}`}>
+                  {node.digimon.exclusive && (
+                    node.digimon.exclusive === 'Dawn' ? (
+                      <Sun className="text-yellow-400 drop-shadow-lg flex-shrink-0" fill="currentColor" style={{ width: '16px', height: '16px' }} />
+                    ) : (
+                      <Moon className="text-blue-300 drop-shadow-lg flex-shrink-0" fill="currentColor" style={{ width: '16px', height: '16px' }} />
+                    )
+                  )}
+                  <span className="truncate">{node.digimon.name}</span>
                 </div>
                 <div className={`text-xs mt-1 ${darkMode ? 'text-[#75715e]' : 'text-gray-600'}`}>
                   {node.digimon.stage}

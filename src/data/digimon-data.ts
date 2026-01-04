@@ -123,7 +123,8 @@ function transformDigimonData(): Digimon[] {
       stage,
       image: imagePath,
       type: [],
-      description: `${name} - Habitat: ${d.habitat || 'Unknown'}`
+      description: `${name} - Habitat: ${d.habitat || 'Unknown'}`,
+      exclusive: d.exclusive as 'Dawn' | 'Dusk' | undefined
     };
   });
 }
