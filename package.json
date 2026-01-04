@@ -1,6 +1,6 @@
 {
     "name": "digimon-world-dawn-dusk-evolution-website",
-    "version": "2.6.0",
+    "version": "2.6.1",
     "private": true,
     "dependencies": {
         "@radix-ui/react-accordion": "^1.2.3",
