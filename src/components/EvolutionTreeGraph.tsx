@@ -196,6 +196,7 @@ export function EvolutionTreeGraph({
           .map(p => positionMap.get(p))
           .filter(Boolean) as Array<{ x: number; y: number }>;
         
+        const gridRow = nodeToGridRow.get(id) ?? 0;
         let baseY = 0;
         
         if (predecessorPositions.length > 0) {
@@ -224,7 +225,6 @@ export function EvolutionTreeGraph({
           }
         } else {
           // No parent, use grid row for initial positioning
-          const gridRow = nodeToGridRow.get(id) ?? 0;
           baseY = gridRow * verticalGap;
         }
         
@@ -238,7 +238,7 @@ export function EvolutionTreeGraph({
             x,
             y: baseY,
             column: columnIndex,
-            row: nodeToGridRow.get(id) ?? 0
+            row: gridRow
           });
         }
       });
