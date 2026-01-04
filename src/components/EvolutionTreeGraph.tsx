@@ -190,6 +190,10 @@ export function EvolutionTreeGraph({
         return rowA - rowB;
       });
       
+      // Track used Y positions in this column to enforce minimum spacing
+      const usedYPositions: Array<{ y: number; id: string }> = [];
+      const minVerticalSpacing = cardHeight + 80; // Minimum 280 pixels between card centers
+      
       sortedIds.forEach((id) => {
         const predecessors = getEvolutionsTo(id).map(e => e.from);
         const predecessorPositions = predecessors
@@ -228,6 +232,21 @@ export function EvolutionTreeGraph({
           baseY = gridRow * verticalGap;
         }
         
+        // Ensure minimum spacing with already positioned nodes in this column
+        for (const used of usedYPositions) {
+          const distance = Math.abs(baseY - used.y);
+          if (distance < minVerticalSpacing) {
+            // Collision detected - shift down to maintain minimum spacing
+            if (baseY >= used.y) {
+              baseY = used.y + minVerticalSpacing;
+            } else {
+              // If this node should be above, shift it up further
+              baseY = used.y - minVerticalSpacing;
+            }
+          }
+        }
+        
+        usedYPositions.push({ y: baseY, id });
         positionMap.set(id, { x, y: baseY });
         
         const digimon = getDigimonById(id);
