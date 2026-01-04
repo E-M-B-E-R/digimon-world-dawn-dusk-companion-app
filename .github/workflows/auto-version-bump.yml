@@ -8,12 +8,23 @@ permissions:
   contents: write
   pull-requests: write
 
+concurrency:
+  group: version-bump-${{ github.event.pull_request.number }}
+  cancel-in-progress: false
+
 jobs:
   bump:
     name: Bump version from label
     runs-on: ubuntu-latest
     steps:
+      - name: Skip if triggered by version-bumped label
+        if: github.event.action == 'labeled' && github.event.label.name == 'version-bumped'
+        run: |
+          echo "Skipping: This run was triggered by adding the version-bumped label"
+          exit 0
+
       - name: Check out PR branch to inspect commits
+        if: github.event.action != 'labeled' || github.event.label.name != 'version-bumped'
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.ref }}
@@ -39,7 +50,7 @@ jobs:
           echo "skip=false" >> $GITHUB_OUTPUT
 
       - name: Determine bump type from labels
-        if: steps.bot_check.outputs.skip != 'true'
+        if: (github.event.action != 'labeled' || github.event.label.name != 'version-bumped') && steps.bot_check.outputs.skip != 'true'
         id: bump
         run: |
           labels_json='${{ toJson(github.event.pull_request.labels) }}'
