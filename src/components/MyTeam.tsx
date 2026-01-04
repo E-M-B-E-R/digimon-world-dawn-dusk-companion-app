@@ -337,11 +337,11 @@ export function MyTeam({ digimonData, darkMode, themeColor, onSelectDigimon }: M
                       
                       {/* Digimon Image */}
                       <div className="w-full h-full flex flex-col items-center" style={{ padding: isDesktop ? '20px' : '12px' }}>
-                        <div className="w-full flex items-center justify-center mb-1" style={{ maxHeight: isDesktop ? '70%' : '60%' }}>
+                        <div className="w-full h-full flex items-center justify-center mb-1" style={{ maxHeight: isDesktop ? '70%' : '60%' }}>
                           <img
                             src={digimon.image}
                             alt={digimon.name}
-                            className="mx-auto block"
+                            className="object-contain"
                             style={{ maxWidth: '100%', maxHeight: '100%' }}
                           />
                         </div>
