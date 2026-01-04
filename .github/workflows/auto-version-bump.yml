@@ -54,8 +54,7 @@ jobs:
         id: bump
         run: |
           labels_json='${{ toJson(github.event.pull_request.labels) }}'
-          echo "$labels_json" | jq -r '.[].name' | tee labels.txtexit 0
-          fi
+          echo "$labels_json" | jq -r '.[].name' | tee labels.txt
 
           bump=""
           if grep -qi '^major$' labels.txt; then bump="major"; fi
