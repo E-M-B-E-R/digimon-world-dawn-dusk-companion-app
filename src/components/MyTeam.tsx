@@ -347,9 +347,9 @@ export function MyTeam({ digimonData, darkMode, themeColor, onSelectDigimon }: M
                           />
                         </div>
                         <div className="text-center w-full" style={{ maxHeight: isDesktop ? '30%' : '40%' }}>
-                          <div className={`font-medium ${isDesktop ? 'text-sm' : 'text-[11px]'} truncate max-w-full flex items-center justify-center gap-1 ${
+                          <div className={`font-medium truncate max-w-full flex items-center justify-center gap-1 ${
                             darkMode ? 'text-[#f8f8f2]' : 'text-gray-900'
-                          }`}>
+                          }`} style={{ fontSize: isDesktop ? '0.875rem' : '11px' }}>
                             {digimon.exclusive && (
                               digimon.exclusive === 'Dawn' ? (
                                 <Sun className="text-yellow-400 drop-shadow-md flex-shrink-0" fill="currentColor" style={{ width: '16px', height: '16px' }} />
