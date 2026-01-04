@@ -126,11 +126,12 @@ export function DigimonDetails({ digimon, onClose, onDigimonClick, darkMode }: D
           <X size={24} />
         </button>
         <div className="flex items-center gap-4">
-          <div className="w-24 h-24 rounded-lg overflow-hidden bg-white/10 backdrop-blur-sm">
+          <div className="w-24 h-24 rounded-lg overflow-hidden bg-white/10 backdrop-blur-sm flex items-center justify-center">
             <img 
               src={digimon.image} 
               alt={digimon.name}
-              className="w-full h-full object-cover"
+              className="object-contain"
+              style={{ maxWidth: '100%', maxHeight: '100%' }}
             />
           </div>
           <div>
@@ -212,7 +213,8 @@ export function DigimonDetails({ digimon, onClose, onDigimonClick, darkMode }: D
                         <img 
                           src={fromDigimon.image} 
                           alt={fromDigimon.name}
-                          className="w-12 h-12 rounded object-cover"
+                          className="rounded object-contain"
+                          style={{ maxWidth: '3rem', maxHeight: '3rem' }}
                         />
                         <div className="flex-1">
                           <div className={darkMode ? 'text-[#f8f8f2]' : 'text-gray-900'}>{fromDigimon.name}</div>
@@ -253,7 +255,8 @@ export function DigimonDetails({ digimon, onClose, onDigimonClick, darkMode }: D
                         <img 
                           src={toDigimon.image} 
                           alt={toDigimon.name}
-                          className="w-12 h-12 rounded object-cover"
+                          className="rounded object-contain"
+                          style={{ maxWidth: '3rem', maxHeight: '3rem' }}
                         />
                         <div className="flex-1">
                           <div className={darkMode ? 'text-[#f8f8f2]' : 'text-gray-900'}>{toDigimon.name}</div>
@@ -308,7 +311,7 @@ export function DigimonDetails({ digimon, onClose, onDigimonClick, darkMode }: D
                                 }`}
                               >
                                 {partner && (
-                                  <img src={partner.image} alt={partner.name} className="w-8 h-8 rounded object-cover" />
+                                  <img src={partner.image} alt={partner.name} className="rounded object-contain" style={{ maxWidth: '2rem', maxHeight: '2rem' }} />
                                 )}
                                 <span className={`${darkMode ? 'text-[#f8f8f2]' : 'text-gray-900'} text-sm`}>{entry}</span>
                               </div>
@@ -326,7 +329,8 @@ export function DigimonDetails({ digimon, onClose, onDigimonClick, darkMode }: D
                                     src={d1.image} 
                                     alt={d1.name} 
                                     onClick={() => onDigimonClick?.(d1)}
-                                    className="w-8 h-8 rounded object-cover cursor-pointer hover:opacity-80 transition-opacity" 
+                                    className="rounded object-contain cursor-pointer hover:opacity-80 transition-opacity"
+                                    style={{ maxWidth: '2rem', maxHeight: '2rem' }}
                                   />
                                 )}
                                 <span 
@@ -341,7 +345,8 @@ export function DigimonDetails({ digimon, onClose, onDigimonClick, darkMode }: D
                                     src={d2.image} 
                                     alt={d2.name} 
                                     onClick={() => onDigimonClick?.(d2)}
-                                    className="w-8 h-8 rounded object-cover cursor-pointer hover:opacity-80 transition-opacity" 
+                                    className="rounded object-contain cursor-pointer hover:opacity-80 transition-opacity"
+                                    style={{ maxWidth: '2rem', maxHeight: '2rem' }}
                                   />
                                 )}
                                 <span 

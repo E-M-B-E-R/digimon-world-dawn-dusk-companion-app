@@ -304,7 +304,8 @@ export default function App() {
                         <img 
                           src={d.image} 
                           alt={d.name}
-                          className="w-12 h-12 rounded object-cover"
+                          className="rounded object-contain"
+                          style={{ maxWidth: '3rem', maxHeight: '3rem' }}
                         />
                         <div>
                           <div className={darkMode ? 'text-[#f8f8f2]' : 'text-gray-900'}>{d.name}</div>
