@@ -233,22 +233,12 @@ export function EvolutionTreeGraph({
         }
         
         // Ensure minimum spacing with already positioned nodes in this column
-        // Keep adjusting until no collisions exist
-        let adjusted = true;
-        while (adjusted) {
-          adjusted = false;
-          for (const used of usedYPositions) {
-            const distance = Math.abs(baseY - used.y);
-            if (distance < minVerticalSpacing) {
-              // Collision detected - shift to maintain minimum spacing
-              if (baseY >= used.y) {
-                baseY = used.y + minVerticalSpacing;
-              } else {
-                baseY = used.y - minVerticalSpacing;
-              }
-              adjusted = true;
-              break; // Re-check from the start after adjustment
-            }
+        // Always push nodes down to maintain predictable ordering
+        for (const used of usedYPositions) {
+          const distance = baseY - used.y;
+          if (distance >= 0 && distance < minVerticalSpacing) {
+            // Too close to a node above - push down
+            baseY = used.y + minVerticalSpacing;
           }
         }
         
