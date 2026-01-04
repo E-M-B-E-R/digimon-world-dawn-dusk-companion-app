@@ -222,10 +222,11 @@ export function EvolutionTreeGraph({
             const totalSpread = (orderedChildren.length - 1) * verticalSpacing / 2;
             baseY = parentY + (childIndex * verticalSpacing) - totalSpread;
           }
+        } else {
+          // No parent, use grid row for initial positioning
+          const gridRow = nodeToGridRow.get(id) ?? 0;
+          baseY = gridRow * verticalGap;
         }
-        
-        const gridRow = nodeToGridRow.get(id) ?? 0;
-        baseY = Math.max(baseY, gridRow * verticalGap);
         
         positionMap.set(id, { x, y: baseY });
         
@@ -237,7 +238,7 @@ export function EvolutionTreeGraph({
             x,
             y: baseY,
             column: columnIndex,
-            row: gridRow
+            row: nodeToGridRow.get(id) ?? 0
           });
         }
       });
