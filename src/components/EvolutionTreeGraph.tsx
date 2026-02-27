@@ -241,6 +241,29 @@ export function EvolutionTreeGraph({
       });
     });
     
+    // Collision resolution: push apart overlapping nodes within each column
+    const minNodeGap = cardHeight + 20; // card height + padding
+    const nodesByColumn = new Map<number, PositionedNode[]>();
+    positionedNodes.forEach(node => {
+      if (!nodesByColumn.has(node.column)) nodesByColumn.set(node.column, []);
+      nodesByColumn.get(node.column)!.push(node);
+    });
+    nodesByColumn.forEach((columnNodes) => {
+      columnNodes.sort((a, b) => a.y - b.y);
+      for (let i = 1; i < columnNodes.length; i++) {
+        const gap = columnNodes[i].y - columnNodes[i - 1].y;
+        if (gap < minNodeGap) {
+          const shift = minNodeGap - gap;
+          // Push this node and all subsequent nodes down
+          for (let j = i; j < columnNodes.length; j++) {
+            columnNodes[j].y += shift;
+            const pos = positionMap.get(columnNodes[j].id);
+            if (pos) pos.y += shift;
+          }
+        }
+      }
+    });
+
     // Normalize positions so min Y is at least 0 with padding
     const allYPositions = positionedNodes.map(n => n.y);
     const minY = Math.min(...allYPositions, 0);
