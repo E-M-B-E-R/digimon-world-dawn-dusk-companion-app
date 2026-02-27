@@ -160,6 +160,7 @@ export function EvolutionTreeGraph({
       const digimonIds = Array.from(nodesByStage.get(stageLevel) || []).filter(id => !hiddenNodes.has(id));
       
       // Sort by parent position to keep siblings together and reduce crossings
+      // When siblings share the same parent, use the canonical child order from evolution data
       const sortedIds = digimonIds.sort((a, b) => {
         const parentsA = getEvolutionsTo(a).map(e => e.from).filter(p => visited.has(p));
         const parentsB = getEvolutionsTo(b).map(e => e.from).filter(p => visited.has(p));
@@ -167,7 +168,13 @@ export function EvolutionTreeGraph({
         if (parentsA.length > 0 && parentsB.length > 0) {
           const posA = nodeToGridRow.get(parentsA[0]) ?? 0;
           const posB = nodeToGridRow.get(parentsB[0]) ?? 0;
-          return posA - posB;
+          if (posA !== posB) return posA - posB;
+          
+          // Same parent: use canonical child order from getEvolutionsFrom
+          if (parentsA[0] === parentsB[0]) {
+            const childOrder = getEvolutionsFrom(parentsA[0]).map(e => e.to);
+            return childOrder.indexOf(a) - childOrder.indexOf(b);
+          }
         }
         
         return 0;
