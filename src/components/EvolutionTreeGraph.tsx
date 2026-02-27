@@ -531,7 +531,7 @@ export function EvolutionTreeGraph({
             onClick={() => onDigimonClick(node.id)}
           >
             {!isMobile && getEvolutionsFrom(node.id).length > 0 && (
-              <div className="absolute top-2 right-2 z-50 pointer-events-auto">
+              <div className="absolute top-2 right-2 z-20 pointer-events-auto">
                 <button
                   onClick={(e) => { e.stopPropagation(); toggleCollapse(node.id); }}
                   className="w-8 h-8 flex items-center justify-center rounded-full text-xl font-bold shadow-md leading-none"
