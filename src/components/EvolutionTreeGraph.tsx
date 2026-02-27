@@ -160,14 +160,21 @@ export function EvolutionTreeGraph({
       const digimonIds = Array.from(nodesByStage.get(stageLevel) || []).filter(id => !hiddenNodes.has(id));
       
       // Sort by parent position to keep siblings together and reduce crossings
+      // When siblings share the same parent, use the canonical child order from evolution data
       const sortedIds = digimonIds.sort((a, b) => {
-        const parentsA = getEvolutionsTo(a).map(e => e.from);
-        const parentsB = getEvolutionsTo(b).map(e => e.from);
+        const parentsA = getEvolutionsTo(a).map(e => e.from).filter(p => visited.has(p));
+        const parentsB = getEvolutionsTo(b).map(e => e.from).filter(p => visited.has(p));
         
         if (parentsA.length > 0 && parentsB.length > 0) {
           const posA = nodeToGridRow.get(parentsA[0]) ?? 0;
           const posB = nodeToGridRow.get(parentsB[0]) ?? 0;
-          return posA - posB;
+          if (posA !== posB) return posA - posB;
+          
+          // Same parent: use canonical child order from getEvolutionsFrom
+          if (parentsA[0] === parentsB[0]) {
+            const childOrder = getEvolutionsFrom(parentsA[0]).map(e => e.to);
+            return childOrder.indexOf(a) - childOrder.indexOf(b);
+          }
         }
         
         return 0;
@@ -191,22 +198,20 @@ export function EvolutionTreeGraph({
       });
       
       sortedIds.forEach((id) => {
-        const predecessors = getEvolutionsTo(id).map(e => e.from);
-        const predecessorPositions = predecessors
-          .map(p => positionMap.get(p))
-          .filter(Boolean) as Array<{ x: number; y: number }>;
+        // Find the first parent that has been positioned in the tree
+        const positionedParentEvos = getEvolutionsTo(id).filter(e => positionMap.has(e.from));
         
         let baseY = 0;
         
-        if (predecessorPositions.length > 0) {
+        if (positionedParentEvos.length > 0) {
           // Position relative to parent, accounting for all siblings
-          const parentY = predecessorPositions[0].y;
-          const parent = getEvolutionsTo(id)[0];
+          const parent = positionedParentEvos[0];
+          const parentY = positionMap.get(parent.from)!.y;
           
           if (parent) {
             const allChildren = getEvolutionsFrom(parent.from)
               .map(e => e.to)
-              .filter(childId => !hiddenNodes.has(childId));
+              .filter(childId => !hiddenNodes.has(childId) && visited.has(childId));
             
             // Separate armor evolutions from normal evolutions
             const armorEvos = new Set(['flamedramon', 'magnamon', 'kenkimon', 'seahomon', 'toucanmon', 'allomon', 'shurimon', 'pipismon', 'ponchomon', 'prairiemon', 'aurumon', 'shadramon', 'kongoumon', 'tylomon', 'kabukimon', 'lanksmon']);
@@ -243,6 +248,29 @@ export function EvolutionTreeGraph({
       });
     });
     
+    // Collision resolution: push apart overlapping nodes within each column
+    const minNodeGap = cardHeight + 20; // card height + padding
+    const nodesByColumn = new Map<number, PositionedNode[]>();
+    positionedNodes.forEach(node => {
+      if (!nodesByColumn.has(node.column)) nodesByColumn.set(node.column, []);
+      nodesByColumn.get(node.column)!.push(node);
+    });
+    nodesByColumn.forEach((columnNodes) => {
+      columnNodes.sort((a, b) => a.y - b.y);
+      for (let i = 1; i < columnNodes.length; i++) {
+        const gap = columnNodes[i].y - columnNodes[i - 1].y;
+        if (gap < minNodeGap) {
+          const shift = minNodeGap - gap;
+          // Push this node and all subsequent nodes down
+          for (let j = i; j < columnNodes.length; j++) {
+            columnNodes[j].y += shift;
+            const pos = positionMap.get(columnNodes[j].id);
+            if (pos) pos.y += shift;
+          }
+        }
+      }
+    });
+
     // Normalize positions so min Y is at least 0 with padding
     const allYPositions = positionedNodes.map(n => n.y);
     const minY = Math.min(...allYPositions, 0);
