@@ -161,8 +161,8 @@ export function EvolutionTreeGraph({
       
       // Sort by parent position to keep siblings together and reduce crossings
       const sortedIds = digimonIds.sort((a, b) => {
-        const parentsA = getEvolutionsTo(a).map(e => e.from);
-        const parentsB = getEvolutionsTo(b).map(e => e.from);
+        const parentsA = getEvolutionsTo(a).map(e => e.from).filter(p => visited.has(p));
+        const parentsB = getEvolutionsTo(b).map(e => e.from).filter(p => visited.has(p));
         
         if (parentsA.length > 0 && parentsB.length > 0) {
           const posA = nodeToGridRow.get(parentsA[0]) ?? 0;
@@ -191,22 +191,20 @@ export function EvolutionTreeGraph({
       });
       
       sortedIds.forEach((id) => {
-        const predecessors = getEvolutionsTo(id).map(e => e.from);
-        const predecessorPositions = predecessors
-          .map(p => positionMap.get(p))
-          .filter(Boolean) as Array<{ x: number; y: number }>;
+        // Find the first parent that has been positioned in the tree
+        const positionedParentEvos = getEvolutionsTo(id).filter(e => positionMap.has(e.from));
         
         let baseY = 0;
         
-        if (predecessorPositions.length > 0) {
+        if (positionedParentEvos.length > 0) {
           // Position relative to parent, accounting for all siblings
-          const parentY = predecessorPositions[0].y;
-          const parent = getEvolutionsTo(id)[0];
+          const parent = positionedParentEvos[0];
+          const parentY = positionMap.get(parent.from)!.y;
           
           if (parent) {
             const allChildren = getEvolutionsFrom(parent.from)
               .map(e => e.to)
-              .filter(childId => !hiddenNodes.has(childId));
+              .filter(childId => !hiddenNodes.has(childId) && visited.has(childId));
             
             // Separate armor evolutions from normal evolutions
             const armorEvos = new Set(['flamedramon', 'magnamon', 'kenkimon', 'seahomon', 'toucanmon', 'allomon', 'shurimon', 'pipismon', 'ponchomon', 'prairiemon', 'aurumon', 'shadramon', 'kongoumon', 'tylomon', 'kabukimon', 'lanksmon']);
