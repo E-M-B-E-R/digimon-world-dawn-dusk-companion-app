@@ -208,7 +208,7 @@ export default function App() {
   return (
     <div className={`min-h-screen ${darkMode ? 'bg-[#272822]' : 'bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300'}`}>
       {/* Header */}
-      <header className="shadow-md sticky top-0 z-40" style={{ backgroundColor: themeColor }}>
+      <header className="shadow-md sticky top-0 z-50" style={{ backgroundColor: themeColor }}>
         <div className="max-w-[95%] mx-auto px-4 py-4">
           <div className="flex flex-col items-center gap-4">
             {/* Title and Controls */}
