@@ -1,2 +1,3 @@
 node_modules
-build
+buildtest-results/
+playwright-report/
