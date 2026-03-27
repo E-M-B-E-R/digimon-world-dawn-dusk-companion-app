@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { Search, Moon, Sun } from 'lucide-react';
+import { Moon, Sun } from 'lucide-react';
 import { digimonData, evolutions } from './data/digimon-data';
 import { EvolutionTreeGraph } from './components/EvolutionTreeGraph';
 import { DigimonDetails } from './components/DigimonDetails';
 import { VerticalEvolutionView } from './components/VerticalEvolutionView';
 import { MyTeam } from './components/MyTeam';
 import { useIsMobile } from './components/ui/use-mobile';
+import { useDigimonSearch } from './hooks/useDigimonSearch';
+import { DigimonSearchBar } from './components/shared/DigimonSearchBar';
 
 const LIGHT_MODE_COLOR = '#F8AE5C'; // Orange
 const DARK_MODE_COLOR = '#A398D3'; // Light purple
@@ -15,10 +17,8 @@ export default function App() {
   // `modalDigimonId` is used only for showing the details modal
   const [rootDigimonId, setRootDigimonId] = useState<string>('agumon');
   const [modalDigimonId, setModalDigimonId] = useState<string | null>(null);
-  const [searchQuery, setSearchQuery] = useState('');
   const [showDetails, setShowDetails] = useState(false);
-  const [suggestions, setSuggestions] = useState<typeof digimonData>([]);
-  const [showSuggestions, setShowSuggestions] = useState(false);
+  const { query: searchQuery, suggestions, showSuggestions, setShowSuggestions, handleSearch, clear: clearSearch } = useDigimonSearch(digimonData);
   const [darkMode, setDarkMode] = useState(false);
   const [themeColor, setThemeColor] = useState(LIGHT_MODE_COLOR);
   const [userChangedColor, setUserChangedColor] = useState(false);
@@ -78,20 +78,6 @@ export default function App() {
     setUserChangedColor(true);
   };
 
-  const handleSearch = (query: string) => {
-    setSearchQuery(query);
-    if (query.trim()) {
-      const filtered = digimonData.filter(d => 
-        d.name.toLowerCase().includes(query.toLowerCase())
-      );
-      setSuggestions(filtered);
-      setShowSuggestions(true);
-    } else {
-      setSuggestions([]);
-      setShowSuggestions(false);
-    }
-  };
-
   // Open details modal without changing the tree root (prevents redraw)
   const handleDigimonClick = (id: string) => {
     const digimon = digimonData.find(d => d.id === id);
@@ -105,9 +91,7 @@ export default function App() {
   const handleSelectFromSearch = (id: string) => {
     pushViewState('evolution', { rootDigimonId: id });
     setRootDigimonId(id);
-    setSearchQuery('');
-    setShowSuggestions(false);
-    setSuggestions([]);
+    clearSearch();
   };
 
   // Handle selecting a digimon from team (switch to evolution view)
@@ -276,64 +260,18 @@ export default function App() {
             {/* Search Bar - Centered - Only show in evolution view */}
             {currentView === 'evolution' && (
             <div className="relative w-full max-w-md">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
-              <input
-                type="text"
+              <DigimonSearchBar
+                query={searchQuery}
+                suggestions={suggestions}
+                showSuggestions={showSuggestions}
+                onSearch={handleSearch}
+                onFocus={() => setShowSuggestions(true)}
+                onSelect={d => handleSelectFromSearch(d.id)}
                 placeholder="Search Digimon..."
-                value={searchQuery}
-                onChange={(e) => handleSearch(e.target.value)}
-                onFocus={() => searchQuery && setShowSuggestions(true)}
-                className={`w-full pl-10 pr-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                  darkMode 
-                    ? 'bg-[#3e3d32] text-[#f8f8f2] placeholder-gray-500 border border-[#75715e]' 
-                    : 'bg-white border border-gray-300'
-                }`}
+                darkMode={darkMode}
+                showType
+                showExclusive
               />
-              
-              {/* Search Suggestions Dropdown */}
-              {showSuggestions && suggestions.length > 0 && (
-                <div className={`absolute top-full left-0 right-0 mt-2 rounded-lg shadow-xl border max-h-96 overflow-y-auto z-50 ${
-                  darkMode ? 'bg-[#3e3d32] border-[#75715e]' : 'bg-white border-gray-200'
-                }`}>
-                  {suggestions.map(d => (
-                    <button
-                      key={d.id}
-                      onClick={() => handleSelectFromSearch(d.id)}
-                      className={`w-full text-left px-4 py-3 transition-colors border-b last:border-b-0 ${
-                        darkMode 
-                          ? 'hover:bg-[#49483e] border-[#75715e]' 
-                          : 'hover:bg-gray-100 border-gray-100'
-                      }`}
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className="relative">
-                          <img 
-                            src={d.image} 
-                            alt={d.name}
-                            className="rounded object-contain"
-                            style={{ maxWidth: '3rem', maxHeight: '3rem' }}
-                          />
-                        </div>
-                        <div>
-                          <div className={`flex items-center gap-1 ${darkMode ? 'text-[#f8f8f2]' : 'text-gray-900'}`}>
-                            {d.exclusive && (
-                              d.exclusive === 'Dawn' ? (
-                                <Sun className="text-yellow-400 drop-shadow-md flex-shrink-0" fill="currentColor" style={{ width: '16px', height: '16px' }} />
-                              ) : (
-                                <Moon className="text-blue-300 drop-shadow-md flex-shrink-0" fill="currentColor" style={{ width: '16px', height: '16px' }} />
-                              )
-                            )}
-                            <span>{d.name}</span>
-                          </div>
-                          <div className={darkMode ? 'text-xs text-[#a6a49f]' : 'text-xs text-gray-600'}>
-                            {d.stage} • {d.type.join(', ')}
-                          </div>
-                        </div>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              )}
             </div>
             )}
           </div>
