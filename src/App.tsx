@@ -25,12 +25,18 @@ export default function App() {
   const [currentView, setCurrentView] = useState<'evolution' | 'team'>('team');
   const isMobile = useIsMobile();
 
-  // Ensure the initial history state contains the current view for back nav
+  // Ensure the initial history state contains the current view for back nav.
+  // Runs once on mount only — currentView is intentionally excluded from deps
+  // so this doesn't re-run (and clobber history) on every view change.
   React.useEffect(() => {
     if (typeof window === 'undefined') return;
     const state = window.history.state;
     if (!state || !state.view) {
-      window.history.replaceState({ view: currentView }, '', `${window.location.pathname}${window.location.search}#${currentView}`);
+      window.history.replaceState(
+        { view: 'team' },
+        '',
+        `${window.location.pathname}${window.location.search}#team`
+      );
     }
 
     const handlePopState = (event: PopStateEvent) => {
@@ -48,7 +54,8 @@ export default function App() {
 
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
-  }, [currentView]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const pushViewState = (view: 'evolution' | 'team', extraState: Record<string, unknown> = {}) => {
     if (typeof window === 'undefined') return;
@@ -99,6 +106,7 @@ export default function App() {
 
   // Selecting from search navigates the tree to the chosen Digimon
   const handleSelectFromSearch = (id: string) => {
+    pushViewState('evolution', { rootDigimonId: id });
     setRootDigimonId(id);
     setSearchQuery('');
     setShowSuggestions(false);
@@ -127,7 +135,7 @@ export default function App() {
                   <div className="w-10"></div>
                   <h1 className="text-2xl">Digimon Evolution</h1>
                   <button
-                    onClick={() => setDarkMode(!darkMode)}
+                    onClick={handleDarkModeToggle}
                     className="p-2 hover:bg-white/10 rounded-lg transition-colors"
                   >
                     {darkMode ? <Sun size={20} /> : <Moon size={20} />}
