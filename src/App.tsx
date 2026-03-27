@@ -25,9 +25,7 @@ export default function App() {
   const [currentView, setCurrentView] = useState<'evolution' | 'team'>('team');
   const isMobile = useIsMobile();
 
-  // Ensure the initial history state contains the current view for back nav.
-  // Runs once on mount only — currentView is intentionally excluded from deps
-  // so this doesn't re-run (and clobber history) on every view change.
+  // Seed the initial history entry and register the popstate listener once on mount.
   React.useEffect(() => {
     if (typeof window === 'undefined') return;
     const state = window.history.state;
