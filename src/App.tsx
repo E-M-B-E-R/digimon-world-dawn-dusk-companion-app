@@ -54,7 +54,6 @@ export default function App() {
 
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const pushViewState = (view: 'evolution' | 'team', extraState: Record<string, unknown> = {}) => {
