@@ -189,6 +189,7 @@ export function EvolutionTreeGraph({
           return (
             <div
               key={node.id}
+              data-testid="digimon-node"
               className={`relative cursor-pointer transition-all hover:scale-105 hover:shadow-2xl hover:z-10 rounded-xl shadow-lg border-4 overflow-visible ${
                 darkMode ? 'bg-[#49483e]' : 'bg-white'
               }`}
@@ -198,6 +199,7 @@ export function EvolutionTreeGraph({
               {!isMobile && getEvolutionsFrom(node.id).length > 0 && (
                 <div className="absolute top-2 right-2 z-20 pointer-events-auto">
                   <button
+                    aria-label={collapsed.has(node.id) ? 'Expand evolutions' : 'Collapse evolutions'}
                     onClick={e => { e.stopPropagation(); toggleCollapse(node.id); }}
                     className="w-8 h-8 flex items-center justify-center rounded-full text-xl font-bold shadow-md leading-none"
                     style={{

@@ -175,6 +175,7 @@ export default function App() {
         {/* Details Modal */}
         {showDetails && modalDigimon && (
           <div 
+            data-testid="modal-backdrop"
             className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
             onClick={() => setShowDetails(false)}
           >
@@ -306,6 +307,7 @@ export default function App() {
       {/* Details Modal */}
       {showDetails && modalDigimon && (
         <div 
+          data-testid="modal-backdrop"
           className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
           onClick={() => setShowDetails(false)}
         >

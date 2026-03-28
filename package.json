@@ -1,6 +1,6 @@
 {
     "name": "digimon-world-dawn-dusk-evolution-website",
-    "version": "3.0.0",
+    "version": "3.1.0",
     "private": true,
     "dependencies": {
         "@radix-ui/react-accordion": "^1.2.3",
@@ -47,6 +47,7 @@
         "vaul": "^1.1.2"
     },
     "devDependencies": {
+        "@playwright/test": "^1.58.2",
         "@types/node": "^20.10.0",
         "@types/react": "^19.2.7",
         "@types/react-dom": "^19.2.3",
@@ -55,6 +56,9 @@
     },
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "test": "playwright test",
+        "test:ui": "playwright test --ui",
+        "test:report": "playwright show-report"
     }
 }

@@ -59,6 +59,7 @@ export function DigimonSearchBar({
 
       {showSuggestions && suggestions.length > 0 && (
         <div
+          data-testid="search-suggestions"
           className={`absolute top-full left-0 right-0 mt-2 rounded-lg shadow-xl border max-h-96 overflow-y-auto z-50 ${
             darkMode ? 'bg-[#49483e] border-[#75715e]' : 'bg-white border-gray-200'
           }`}
@@ -104,12 +105,16 @@ export function DigimonSearchBar({
                     {showExclusive && d.exclusive && (
                       d.exclusive === 'Dawn' ? (
                         <Sun
+                          aria-label="Dawn exclusive"
+                          role="img"
                           className="text-yellow-400 drop-shadow-md flex-shrink-0"
                           fill="currentColor"
                           style={{ width: '16px', height: '16px' }}
                         />
                       ) : (
                         <Moon
+                          aria-label="Dusk exclusive"
+                          role="img"
                           className="text-blue-300 drop-shadow-md flex-shrink-0"
                           fill="currentColor"
                           style={{ width: '16px', height: '16px' }}

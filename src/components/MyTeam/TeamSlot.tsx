@@ -51,6 +51,7 @@ export function TeamSlot({
       {digimon ? (
         <>
           <button
+            aria-label="Remove from team"
             onClick={onRemove}
             className="absolute top-0.5 left-0.5 z-30 rounded-full bg-red-600 text-white hover:bg-red-700 shadow ring-2 ring-white/80"
             style={{ left: '4px', right: 'auto', padding: isDesktop ? '6px' : '4px' }}
@@ -59,6 +60,7 @@ export function TeamSlot({
           </button>
 
           <button
+            aria-label="Switch Digimon"
             onClick={onSwitch}
             className="absolute top-0.5 right-0.5 z-30 rounded font-medium shadow hover:opacity-90"
             style={{
