@@ -1,3 +1,4 @@
 node_modules
-buildtest-results/
+build
+test-results/
 playwright-report/
