@@ -11,6 +11,7 @@ export function DigimonDetailsHeader({ digimon, onClose }: DigimonDetailsHeaderP
   return (
     <div className={`bg-gradient-to-r ${STAGE_GRADIENT_COLORS[digimon.stage]} p-6 text-white relative`}>
       <button
+        aria-label="Close"
         onClick={onClose}
         className="absolute top-4 right-4 p-1 hover:bg-white/20 rounded-full transition-colors"
       >
