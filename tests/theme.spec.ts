@@ -48,18 +48,20 @@ test.describe('Theme and Dark Mode', () => {
     const initialColor = await header.evaluate(el => (el as HTMLElement).style.backgroundColor);
 
     const colorPicker = page.locator('input[type="color"]');
-    // Fill with a known hex value
+    // React 18 requires triggering the change via the native value setter so
+    // its synthetic onChange handler fires correctly.
     await colorPicker.evaluate((input: HTMLInputElement) => {
-      input.value = '#ff0000';
+      const nativeSetter = Object.getOwnPropertyDescriptor(
+        HTMLInputElement.prototype, 'value'
+      )!.set!;
+      nativeSetter.call(input, '#ff0000');
       input.dispatchEvent(new Event('input', { bubbles: true }));
-      input.dispatchEvent(new Event('change', { bubbles: true }));
     });
 
-    // The header should now use the new color
+    // The header should reflect the new color; browsers convert hex to rgb()
     const newColor = await header.evaluate(el => (el as HTMLElement).style.backgroundColor);
-    // Color should have changed (either the value is different or RGB has changed)
-    // Note: browser may convert hex to rgb
-    expect(newColor).not.toBe('');
+    expect(newColor).not.toBe(initialColor);
+    expect(newColor).toBe('rgb(255, 0, 0)');
   });
 
   test('dark mode toggle button is visible in the header', async ({ page }) => {

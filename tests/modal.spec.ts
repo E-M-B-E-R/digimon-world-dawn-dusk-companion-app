@@ -18,7 +18,9 @@ test.describe('Digimon Details Modal', () => {
   test('displays Digimon name in the modal', async ({ page }) => {
     await page.locator(DIGIMON_NODE).first().click();
 
-    const modalName = page.locator('h2.text-2xl').last();
+    const modal = page.getByTestId('modal-backdrop');
+    await expect(modal).toBeVisible();
+    const modalName = modal.locator('h2').first();
     await expect(modalName).toBeVisible();
     const nameText = await modalName.textContent();
     expect(nameText?.trim()).not.toBe('');
@@ -63,14 +65,14 @@ test.describe('Digimon Details Modal', () => {
     await page.waitForSelector(DIGIMON_NODE, { timeout: 10_000 });
     await page.locator(DIGIMON_NODE, { has: page.locator('text=Omnimon') }).first().click();
 
-    const dnaTab = page.getByRole('button', { name: 'DNA Evolution' });
-    await expect(dnaTab).toBeVisible();
+    const modal = page.getByTestId('modal-backdrop');
+    await expect(modal).toBeVisible();
 
-    const isDisabled = await dnaTab.getAttribute('disabled');
-    if (!isDisabled) {
-      await dnaTab.click();
-      await expect(dnaTab).toHaveClass(/border-b-2/);
-    }
+    const dnaTab = modal.getByRole('button', { name: 'DNA Evolution' });
+    await expect(dnaTab).toBeVisible();
+    await expect(dnaTab).toBeEnabled();
+    await dnaTab.click();
+    await expect(dnaTab).toHaveClass(/border-b-2/);
   });
 
   test('shows the Digimon image in the modal header', async ({ page }) => {
