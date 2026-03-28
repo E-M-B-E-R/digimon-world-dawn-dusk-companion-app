@@ -49,10 +49,15 @@ test.describe('Digimon Search', () => {
   });
 
   test('shows exclusive icons (Dawn/Dusk) for exclusive Digimon', async ({ page }) => {
-    await page.getByPlaceholder('Search Digimon...').fill('a');
-
-    const suggestions = page.getByTestId('search-suggestions');
+    // Chibomon is Dawn-exclusive → Sun icon; Kuramon is Dusk-exclusive → Moon icon
+    await page.getByPlaceholder('Search Digimon...').fill('Chibomon');
+    let suggestions = page.getByTestId('search-suggestions');
     await expect(suggestions).toBeVisible();
-    await expect(suggestions.locator('> *').first()).toBeVisible();
+    await expect(suggestions.getByRole('img', { name: 'Dawn exclusive' })).toBeVisible();
+
+    await page.getByPlaceholder('Search Digimon...').fill('Kuramon');
+    suggestions = page.getByTestId('search-suggestions');
+    await expect(suggestions).toBeVisible();
+    await expect(suggestions.getByRole('img', { name: 'Dusk exclusive' })).toBeVisible();
   });
 });
