@@ -30,7 +30,7 @@ test.describe('My Team', () => {
 
     const suggestions = page.getByTestId('search-suggestions');
     await expect(suggestions).toBeVisible();
-    await suggestions.getByText('Agumon', { exact: false }).first().click();
+    await suggestions.getByText('Agumon', { exact: true }).first().click();
 
     await expect(page.getByRole('button', { name: 'Remove from team' }).first()).toBeVisible();
   });
@@ -43,7 +43,7 @@ test.describe('My Team', () => {
 
     const suggestions = page.getByTestId('search-suggestions');
     await expect(suggestions).toBeVisible();
-    await suggestions.getByText('Agumon', { exact: false }).first().click();
+    await suggestions.getByText('Agumon', { exact: true }).first().click();
 
     await page.locator('div[role="button"]').first().hover();
 
@@ -96,7 +96,7 @@ test.describe('My Team', () => {
 
     const suggestions = page.getByTestId('search-suggestions');
     await expect(suggestions).toBeVisible();
-    await suggestions.getByText('Agumon', { exact: false }).first().click();
+    await suggestions.getByText('Agumon', { exact: true }).first().click();
 
     await page.reload();
 
@@ -111,7 +111,7 @@ test.describe('My Team', () => {
 
     const suggestions = page.getByTestId('search-suggestions');
     await expect(suggestions).toBeVisible();
-    await suggestions.getByText('Agumon', { exact: false }).first().click();
+    await suggestions.getByText('Agumon', { exact: true }).first().click();
 
     await page.locator('div[role="button"]').first().click();
 

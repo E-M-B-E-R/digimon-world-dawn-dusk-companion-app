@@ -16,7 +16,7 @@ test.describe('Digimon Search', () => {
 
     const suggestions = page.getByTestId('search-suggestions');
     await expect(suggestions).toBeVisible();
-    await expect(suggestions.getByText('Agumon', { exact: false }).first()).toBeVisible();
+    await expect(suggestions.getByText('Agumon', { exact: true }).first()).toBeVisible();
   });
 
   test('filters suggestions as user types', async ({ page }) => {
@@ -32,7 +32,7 @@ test.describe('Digimon Search', () => {
 
     const suggestions = page.getByTestId('search-suggestions');
     await expect(suggestions).toBeVisible();
-    await suggestions.getByText('Gabumon', { exact: false }).first().click();
+    await suggestions.getByText('Gabumon', { exact: true }).first().click();
 
     await expect(page.getByPlaceholder('Search Digimon...')).toHaveValue('');
     await expect(page).toHaveURL(/#evolution/);

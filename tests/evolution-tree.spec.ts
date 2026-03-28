@@ -28,7 +28,7 @@ test.describe('Evolution Tree', () => {
 
     const suggestions = page.getByTestId('search-suggestions');
     await expect(suggestions).toBeVisible();
-    await suggestions.getByText('Gabumon', { exact: false }).first().click();
+    await suggestions.getByText('Gabumon', { exact: true }).first().click();
 
     await page.waitForSelector('[data-testid="digimon-node"]', { timeout: 10_000 });
     const rootName = page.locator('h2').filter({ hasText: /Gabumon/i });

@@ -58,7 +58,7 @@ test.describe('Digimon Details Modal', () => {
     await page.getByPlaceholder('Search Digimon...').fill('Omnimon');
     const suggestions = page.getByTestId('search-suggestions');
     await expect(suggestions).toBeVisible();
-    await suggestions.getByText('Omnimon', { exact: false }).first().click();
+    await suggestions.getByText('Omnimon', { exact: true }).first().click();
 
     await page.waitForSelector(DIGIMON_NODE, { timeout: 10_000 });
     await page.locator(DIGIMON_NODE, { has: page.locator('text=Omnimon') }).first().click();
