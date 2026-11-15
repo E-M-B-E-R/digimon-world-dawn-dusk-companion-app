@@ -1,4 +1,5 @@
 # Digimon World Dawn & Dusk Companion App
+  [<img width="122" height="25" alt="support_me_on_kofi_red" src="https://github.com/user-attachments/assets/b1cc34fd-a138-4909-b45d-f5ee03a344f9" />](https://ko-fi.com/committed)
   ## Hosting:
   [![Netlify Status](https://api.netlify.com/api/v1/badges/f3b84f2a-ed61-4104-8ecc-1c48c7356e96/deploy-status)](https://app.netlify.com/projects/digimon-world-dawn-dusk-companion/deploys)
   
